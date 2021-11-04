@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+/* ASSUMES WE'LL USE FLEX */ 
+
+nav {
+  position: absolute;
+  margin-top: 0px;
+  height: 72px;
+  display: flex;
+  justify-content: row;
+  background-color: hsl(53, 100%, 71%);
+
+   p {
+     color: 
+   }
+}
+
