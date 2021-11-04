@@ -11,12 +11,12 @@ from django.db.models.fields.related import ForeignKey
 # class User(Model):
 
 class Post(Model):
-    title = CharField(max_length=100)
-    img = CharField(max_length=250)
-    description = TextField(max_length=4000)
-    # Possibly created_at, but client didn't ask
+  title = CharField(max_length=100)
+  img = CharField(max_length=250)
+  description = TextField(max_length=4000)
+  # Possibly created_at, but client didn't ask
 
-    user = ForeignKey(User, on_delete=models.CASCADE)
+  user = ForeignKey(User, on_delete=models.CASCADE)
 
-    def __str__(self) -> str:
-        return self.title
+  def __str__(self) -> str:
+    return self.title
