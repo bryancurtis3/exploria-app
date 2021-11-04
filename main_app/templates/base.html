@@ -13,14 +13,13 @@
     <!-- Local Styles -->
     <link rel="stylesheet" href="{% static 'styles/main.css' %}">
     <!-- Local Scripts -->
-    <script src="{% static 'scripts/app.js' %}"</script>
+    <script src="{% static 'scripts/app.js' %}" defer></script>
 
     <title>Exploria - {% block title %}{% endblock title %}</title>
 </head>
 
 <body>
     <!-- Navbar can go here since it will be on all pages -->
-    
 
     <!-- Content block for extending pages -->
     {% block content %}{% endblock content %}
