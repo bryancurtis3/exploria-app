@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% comment %} {% block title %}Post Detail{% endblock title %} {% endcomment %}
+
+{% block content %}
+
+{% for post in user.posts.all %}
+  <h2>
+    Testing
+  </h2>
+{% endfor %}
+
+
+<h2>JAZZBURGER</h2>
+
+<img src="https://www.happysocks.com/icons/jazzburger.svg" alt="">
+
+{% endblock content %}
