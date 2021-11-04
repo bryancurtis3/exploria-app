@@ -29,15 +29,16 @@
     </div>
     
     {% if user.is_authenticated %}
-    <div id="nav-links-container">
-      <p id="signup-link">Profile</p>
-      <p id="signup-link">Logout</p>
-    </div>          
-    {% else %}
-    <div id="nav-links-container">
-      <p id="signup-link">Login</p>
-      <p id="signup-link">Signup</p>
-    </div>      
+        <div class="navbar-menu navbar-end">
+        <span class="navbar-item">Welcome: {{user.username}}</span>
+        <a class="navbar-item" href="{% url 'profile' %}">Profile</a>
+        <a class="navbar-item" href="{% url 'logout' %}">Logout</a>
+    </div>
+{% else %}
+    <div class="navbar-menu navbar-end">
+       <a class="navbar-item" href="{% url 'login' %}">Log In</a>
+       <a class="navbar-item" href="{% url 'signup' %}">Sign Up</a>
+    </div> 
     {% endif %}
   </nav>
 
