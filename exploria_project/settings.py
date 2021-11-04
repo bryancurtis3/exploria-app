@@ -129,3 +129,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Where to direct users after successful login; currently set to home page until profile template is set up
+LOGIN_REDIRECT_URL = '/'
+
+# Directs users to home page upon logout
+LOGOUT_REDIRECT_URL = '/'
