@@ -30,7 +30,7 @@ class Signup(TemplateView):
       if form.is_valid():
           user = form.save()
           login(request, user)
-          return redirect("artist_list")
+          return redirect("/")
       else:
           context = {"form": form}
           return render(request, "registration/signup.html", context)
