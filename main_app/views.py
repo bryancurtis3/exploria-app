@@ -12,3 +12,6 @@ class Home(TemplateView):
 
 class PostDetail(TemplateView):
   template_name = "post_detail.html"
+
+class Signup(TemplateView):
+  template_name = "signup.html"
