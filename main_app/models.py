@@ -8,7 +8,12 @@ from django.db.models.fields.related import ForeignKey
 
 # Create your models here.
 
-# class User(Model):
+# class User(Model) extends the User model to include additional attributes:
+class Profile(Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    location = models.CharField(max_length=100)
+    join = models.DateTimeField(auto_now_add=True)
+
 
 class Post(Model):
   title = CharField(max_length=100)
