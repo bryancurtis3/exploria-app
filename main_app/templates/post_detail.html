@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% load sass_tags %}
+
+{% block styles %}<link rel="stylesheet" href="{% sass_src 'styles/post_detail.scss' %}">{% endblock styles %}
 
 {% block title %}Post Detail{% endblock title %}
 
@@ -9,13 +12,13 @@
     <h1 class="post-detail-title">{{ post.title }}</h1>
 
     <div class="post-show-profile">
-      <div id="post-show-profile-container">
-        <img id="post-show-profile-pic" src="https://i.imgur.com/lGf1aIv.jpg" alt="">
-      </div>
+      <a id="post-show-profile-container" href="{% url 'profile' post.user.pk %}">
+        <img id="post-show-profile-pic" src="{{ post.user.profile.image }}" alt="">
+      </a>
 
       <div class="post-show-user-text">
-        <h4>{{ post.user.username }}</h4>
-        <h5>{{ post.user.profile.location }}</h5>
+        <a href="{% url 'profile' post.user.pk %}">{{ post.user.username }}</a>
+        <p>{{ post.user.profile.location }}</p>
       </div>
     </div>
 
@@ -23,7 +26,7 @@
 
     {% comment %} <img src="{{ post.img }}" alt=""> {% endcomment %}
     <!-- {{ post.description }} -->
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores eius aliquam, omnis animi voluptatibus est ex cum nemo necessitatibus veniam nam ipsa non obcaecati laudantium minima nisi quibusdam, aspernatur consectetur. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut laudantium fugit maiores temporibus molestiae minima exercitationem qui cum doloremque soluta non facere provident tempore perspiciatis ex quia eveniet, incidunt repudiandae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, at. Dolorem nobis mollitia adipisci dolore perferendis aspernatur perspiciatis quibusdam rem! Aliquam nostrum animi sed, voluptatem perferendis nobis quo. Dicta, omnis!</p>
+    <p>{{ post.description }}</p>
 
 
     {% comment %} {% for post in user.posts.all %}
