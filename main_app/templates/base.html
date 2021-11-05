@@ -15,12 +15,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- Local Styles -->
-<<<<<<< HEAD
-    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
-=======
     <link rel="stylesheet" href="{% sass_src 'styles/main.scss' %}">
 
->>>>>>> dev
     <!-- Local Scripts -->
 
     <script src="{% static 'scripts/app.js' %}" defer></script>
@@ -40,7 +36,7 @@
     {% if user.is_authenticated %}
         <div class="navbar-menu navbar-end">
         <span class="navbar-item">Welcome: {{user.username}}</span>
-        <a class="navbar-item" href="{% url 'profile' %}">Profile</a>
+        <a class="navbar-item" href="{% url 'user_list' %}">Profile</a>
         <a class="navbar-item" href="{% url 'logout' %}">Logout</a>
     </div>
 {% else %}

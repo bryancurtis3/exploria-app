@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %} Users {% endblock %}
+
+{% block content %}
+
+<h1> Shows all user profiles publicly </h1>
+{% for user in users%}
+<h2>{{user.location}}</h2>
+{% endfor %}
+
+{% endblock %}
