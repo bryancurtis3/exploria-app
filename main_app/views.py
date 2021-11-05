@@ -50,16 +50,6 @@ class Signup(TemplateView):
           context = {"form": form}
           return render(request, "registration/signup.html", context)
 
-class UserList(TemplateView):
-  template_name = "user_list.html"
-
-  def get_context_data(self, **kwargs):
-      context = super().get_context_data(**kwargs)
-      context["users"] = Profile.objects.all()
-      return context
-
-
-
 class UserProfile(DetailView):
   model = Profile
   template_name = "profile.html"
