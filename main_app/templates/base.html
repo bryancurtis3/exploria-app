@@ -45,7 +45,7 @@
     {% if user.is_authenticated %}
     <div class="">
       <span class="navbar-item">Welcome: {{ user.username }} </span>
-      <a class="navbar-item" href="" >Logout</a>   
+      <a class="navbar-item" href="{% url 'logout' %}" >Logout</a>   
     </div>          
     {% else %} 
     <div class="navbar-two">
@@ -71,5 +71,26 @@
 <!-- below is added in case it might be useful for presentation-->
 <p class="footer-copyright">copyright</p>
 </footer>
+<div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="{% url 'login' %}">
+          {% csrf_token %} {{ form.as_p }}
+          <input type="submit" class="btn" value="login" />
+          <input type="hidden" name="next" value="{{ next }}" />
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
