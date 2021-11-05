@@ -1,3 +1,6 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;800&display=swap');
+
 // Resets CSS 
 * {
   box-sizing: border-box;
@@ -39,6 +42,8 @@ body {
   grid-gap: 10px;
   margin: 20px;
   border: 2px solid red;
+  font-family: 'Rubik', sans-serif;
+  font-size: 24px;
 }
 // Holds all user information on left
 .left-user-info {
@@ -57,4 +62,16 @@ body {
 .right-user-posts {
   border: 2px solid blue;
   background-color: var(--mediumorange);
+}
+
+// index page of all user profiles main container
+.users-show-main {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  grid-gap: 10px;
+  margin: 20px;
+  border: 2px solid red;
+  font-family: 'Rubik', sans-serif;
+  font-size: 24px;
 }

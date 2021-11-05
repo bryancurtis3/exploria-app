@@ -1,3 +1,4 @@
+from typing import Mapping
 from django.db import models
 
 from django.db.models import Model
