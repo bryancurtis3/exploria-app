@@ -9,6 +9,8 @@ from django.views.generic.base import TemplateView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
+from .models import Profile
+
 # Create your views here.
 
 class Home(TemplateView):
@@ -34,4 +36,14 @@ class Signup(TemplateView):
       else:
           context = {"form": form}
           return render(request, "registration/signup.html", context)
+
+class UserProfile(DetailView):
+  model = Profile
+  template_name = "profile.html"
+
+  def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    context["profile"] = Profile.objects.filter(user=self.request.user)
+    return context
+
 
