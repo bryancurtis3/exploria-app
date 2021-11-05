@@ -20,9 +20,10 @@ class Post(Model):
   title = CharField(max_length=100)
   img = CharField(max_length=250)
   description = TextField(max_length=4000)
+  city = CharField(max_length=50, default="San Francisco")
   # Possibly created_at, but client didn't ask
 
-  user = ForeignKey(User, on_delete=models.CASCADE)
+  user = ForeignKey(User, on_delete=models.CASCADE, related_name="posts")
 
   def __str__(self) -> str:
     return self.title
