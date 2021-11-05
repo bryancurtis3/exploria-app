@@ -1,4 +1,5 @@
 {% load static %}
+{% load sass_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,10 +9,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- Local Styles -->
-  <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <link rel="stylesheet" href="{% sass_src 'styles/main.scss' %}">
+
     <!-- Local Scripts -->
 
     <script src="{% static 'scripts/app.js' %}" defer></script>
@@ -31,7 +36,7 @@
     {% if user.is_authenticated %}
         <div class="navbar-menu navbar-end">
         <span class="navbar-item">Welcome: {{user.username}}</span>
-        <a class="navbar-item" href="{% url 'profile' %}">Profile</a>
+        <a class="navbar-item" href="{% url 'user_list' %}">Profile</a>
         <a class="navbar-item" href="{% url 'logout' %}">Logout</a>
     </div>
 {% else %}
