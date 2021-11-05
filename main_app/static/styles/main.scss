@@ -1,4 +1,5 @@
 // Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 // Resets CSS 
 * {
@@ -19,6 +20,39 @@ body {
   height: 100vh;
 }
 
+#app-navbar {
+  position: absolute;
+  margin-top: 0px;
+  height: 80px;
+  width: 100vw;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: var(--neonyellow);
+
+
+}
+
+.navbar-one {
+  display: flex;
+  align-items: center;
+    h1 {
+      font-family: Poppins;
+    };
+
+}
+
+.navbar-two {
+  
+  display: flex;
+  justify-content: space-between;
+  
+  gap: 20px;
+  a {
+    font-family: Poppins;
+    color: var(--pink);
+  };
+}
+
 // ************ Bryan's CSS *************
 
 /* Post Detail Page */
@@ -26,6 +60,7 @@ body {
     display: grid;
     justify-content: center;
 }
+
 
 .post-show-main {
     display: grid;
@@ -73,61 +108,10 @@ body {
         font-size: 18px;
         line-height: 28px;
     }
-    // #post-show-profile-container {
-    //     height: 70px;
-    //     aspect-ratio: 1;
-    // }
-    // background-color: red;
-}
-
-//************* Kathy's CSS *************
-
-// profile page main container
-.profile-show-main {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  grid-template-rows: 100%;
-  grid-gap: 10px;
-  margin: 20px;
-  border: 2px solid red;
-  font-family: 'Rubik', sans-serif;
-  font-size: 24px;
-}
-// Holds all user information on left
-.left-user-info {
-  border: 2px solid limegreen;
-  background-color: var(--lightorange);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  .user-info-text {
-    text-align: center;
-  }
-}
-// Holds all current user's posts on right-side
-.right-user-posts {
-  border: 2px solid blue;
-  background-color: var(--mediumorange);
-}
-
-// index page of all user profiles main container
-.users-show-main {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 100%;
-  grid-gap: 10px;
-  margin: 20px;
-  border: 2px solid red;
-  font-family: 'Rubik', sans-serif;
-  font-size: 24px;
+    background-color: red;
 }
 
 
-/* === Gail === */
 
-// button
-.btn {
-  background-color: var(--blue);
-}
+    
+
