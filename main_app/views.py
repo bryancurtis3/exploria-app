@@ -6,12 +6,11 @@ from django.views import View
 from django.views.generic.base import TemplateView
 from django.views.generic.detail import DetailView
 
-from main_app.models import Post, User, Profile
+from main_app.models import Post, User
 
 # Auth imports
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-
 
 # Create your views here.
 
@@ -45,27 +44,3 @@ class Signup(TemplateView):
       else:
           context = {"form": form}
           return render(request, "registration/signup.html", context)
-
-class UserList(TemplateView):
-  template_name = "user_list.html"
-
-  def get_context_data(self, **kwargs):
-      context = super().get_context_data(**kwargs)
-      context["users"] = Profile.objects.all()
-
-      
-      return context
-
-
-
-class UserProfile(DetailView):
-  model = Profile
-  template_name = "profile.html"
-
-  def get_context_data(self, **kwargs):
-    context = super().get_context_data(**kwargs)
-    context["posts"] = Post.objects.all()
-    return context
-
-
-
