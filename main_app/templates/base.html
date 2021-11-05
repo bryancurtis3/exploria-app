@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load sass_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,31 +34,29 @@
 
 <body>
     <!-- Navbar can go here since it will be on all pages -->
-  <nav class="navbar">
-        <!-- **insert img or icon -->
+  <nav id="app-navbar" class="navbar">
+       
     
     <div class="navbar-one">
+       <!-- **insert img or icon -->
+      <img src="" >
       <h1>Exploria</h1>
     </div>
-    <div class="navbar-two">
-      <p>Login</p>
-      <p>Signup</p>
-    </div>
-      
-  </nav> 
-    
-    <!--{% if user.is_authenticated %}
-    <div class="navbar-div">
-      <span class="navbar-item">Welcome: {{ user.username}} </span>
+    {% if user.is_authenticated %}
+    <div class="">
+      <span class="navbar-item">Welcome: {{ user.username }} </span>
       <a class="navbar-item" href="" >Logout</a>   
     </div>          
-    {% else %} -->
-    
-     
-  
+    {% else %} 
+    <div class="navbar-two">
+      <a class="navbar-item" href="{% url 'login' %}">Login</a>
+      <a class="navbar-item" href="{% url 'signup' %}">Signup</a>
+    </div>
+    {% endif %}  
+  </nav>    
   <section id="main-content">
     <div>
-   <!--- {% endif %}  -->
+  
   
 
     <!-- Content block for extending pages -->

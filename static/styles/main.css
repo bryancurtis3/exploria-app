@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 * {
   box-sizing: border-box; }
 
@@ -14,33 +15,31 @@ body {
   width: 100vw;
   height: 100vh; }
 
-/* Post Detail Page */
-<<<<<<< HEAD
-* {
-  box-sizing: border-box; }
-
-/* ASSUMES WE'LL USE FLEX */
-nav {
-  border: 2px solid black;
+#app-navbar {
   position: absolute;
   margin-top: 0px;
-  height: 72px;
-  min-width: 100vw;
-  display: grid;
-  grid-template-rows: 100%;
-  grid-template-columns: repeat(5/20%);
+  height: 80px;
+  width: 100vw;
+  padding-left: 20px;
+  padding-right: 20px;
   background-color: var(--neonyellow); }
 
-.post-show-main {
-  background-color: red; }
-  .post-show-main #post-show-profile-pic {
-    height: 100px;
-    clip-path: polygon(50%, 0%, 0%, 100%, 100%, 100%); }
+.navbar-one {
+  display: flex;
+  align-items: center; }
+  .navbar-one h1 {
+    font-family: Poppins; }
 
-.profile-show-main {
-=======
+.navbar-two {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; }
+  .navbar-two a {
+    font-family: Poppins;
+    color: var(--pink); }
+
+/* Post Detail Page */
 .post-show-content {
->>>>>>> dev
   display: grid;
   justify-content: center; }
 
