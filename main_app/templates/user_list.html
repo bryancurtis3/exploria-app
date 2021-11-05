@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
+{% load sass_tags %}
 
 {% block title %} Users {% endblock %}
-{% block pagecss %} <link rel="stylesheet" href="{% sass_src 'styles/user_list.scss' %}">{% endblock %}
+{% block styles %} <link rel="stylesheet" href="{% sass_src 'styles/user_list.scss' %}">{% endblock %}
 
 {% block content %}
 
@@ -10,16 +11,15 @@
 <main class="users-show-main">
 {% for user in users%}
     <section class="user-info-card">
-      <a href="{% url 'profile' %}"><span><img src="{{user.image}}" alt="Profile picture of {{user.user.username}}"></span></a>
+      <a href="{% url 'profile' user.pk %}"><span><img src="{{user.image}}" alt="Profile picture of {{user.user.username}}"></span></a>
       <article class="user-info-text">
         <p>{{user.user.username}}</p>
         <p>{{user.user.first_name}} {{user.user.last_name}}</p>
         <p>{{user.location}}</p>
       </article>
     </section>
-
-
-  </main>
 {% endfor %}
+
+</main>
 
 {% endblock %}

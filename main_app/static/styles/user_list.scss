@@ -20,6 +20,8 @@ body {
   height: 100vh;
 }
 
+//************* Kathy's CSS *************
+
 // INDEX PAGE of all user profiles main container
 .users-show-main {
   display: grid;
@@ -31,4 +33,7 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
 
+  img {
+    clip-path: polygon(50% 10%, 0 90%, 100% 90%);
+  }
 }
