@@ -28,15 +28,17 @@
     grid-auto-rows: minmax(70px, 70px);
     align-items: center; }
     .post-show-main .post-show-profile .post-show-user-text {
-      line-height: .4em;
+      line-height: .6em;
       font-weight: 600;
       font-size: 14px; }
       .post-show-main .post-show-profile .post-show-user-text a {
         text-decoration: none;
         color: #292929; }
-      .post-show-main .post-show-profile .post-show-user-text h5 {
-        margin-left: 5px;
-        color: #757575; }
+      .post-show-main .post-show-profile .post-show-user-text p {
+        font-size: 14px;
+        margin: 0 0 0 5px;
+        color: #757575;
+        font-weight: 400; }
   .post-show-main #post-show-image {
     width: 100%;
     max-width: 680px;

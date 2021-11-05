@@ -1,9 +1,13 @@
+from django.db.models import fields
 from django.shortcuts import render, redirect
 
 from django.views import View
 
+from django.urls import reverse
+
 
 from django.views.generic.base import TemplateView
+from django.views.generic.edit import UpdateView, FormView
 from django.views.generic.detail import DetailView
 
 from main_app.models import Post, User, Profile
@@ -65,5 +69,18 @@ class UserProfile(DetailView):
     context["posts"] = Post.objects.filter(user=self.object.pk)
     return context
 
+class ProfileUpdate(UpdateView):
+  model = Profile
+  template_name = "user_update.html"
+  fields = ['location', 'image']
+  
+  # Not sure if this is how the success url is supposed to be looking
+  def get_success_url(self):
+    return reverse('profile', kwargs={'pk': self.object.pk})
 
+  def form_valid(self, form):
 
+    user_id = Profile.objects.get(pk=self.object.pk).user.pk
+    User.objects.filter(pk=user_id).update(username=self.request.POST.get('username'))
+
+    return super(ProfileUpdate, self).form_valid(form)

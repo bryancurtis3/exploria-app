@@ -12,13 +12,13 @@
     <h1 class="post-detail-title">{{ post.title }}</h1>
 
     <div class="post-show-profile">
-      <div id="post-show-profile-container">
+      <a id="post-show-profile-container" href="{% url 'profile' post.user.pk %}">
         <img id="post-show-profile-pic" src="{{ post.user.profile.image }}" alt="">
-      </div>
+      </a>
 
       <div class="post-show-user-text">
         <a href="{% url 'profile' post.user.pk %}">{{ post.user.username }}</a>
-        <h5>{{ post.user.profile.location }}</h5>
+        <p>{{ post.user.profile.location }}</p>
       </div>
     </div>
 

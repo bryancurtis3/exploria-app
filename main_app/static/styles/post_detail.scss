@@ -40,17 +40,19 @@
         align-items: center;
 
         .post-show-user-text {
-            line-height: .4em;
+            line-height: .6em;
             font-weight: 600;
             font-size: 14px;
             a {
                 text-decoration: none;
                 color: #292929;
             }
-
-            h5 {
-                margin-left: 5px;
+            p {
+                font-size: 14px;
+                margin: 0 0 0 5px;
                 color: #757575;
+                font-weight: 400;
+                // line-height: 3em;
             }
         }
     }
