@@ -91,15 +91,4 @@ body {
   font-family: 'Rubik', sans-serif;
   font-size: 24px; }
 
-/* Modal styling */
-.modal {
-  color: black;
-  border: red;
-  background-color: floralwhite;
-  padding: 50px;
-  position: fixed;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
-
 /*# sourceMappingURL=main.css.map */

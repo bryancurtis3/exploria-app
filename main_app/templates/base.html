@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- Local Styles -->
-    <link rel="stylesheet" href="{% sass_src 'styles/main.scss' %}">
+    <link rel="stylesheet" href="{% sass_src 'styles/' %}">
 
 
     <!-- Local Scripts -->
@@ -55,27 +55,47 @@
 
 {% comment %} Modal(s?) {% endcomment %}
 
-<div class="sign-in-modal"></div>
-  <div class="inner--sign-in-modal"></div>
-    <span class="overlay sign-in-side active"></span>
-      <div class="val-info"></div>
-        <div class="tab tab-sign-in active"></div>
-      <div class="content-sign-in active"></div>
-        <div class="wrap--content-sign-in"></div>
-
-
-
-
-
-<div class="modal" id="signUpModal">
-
-  <h1 class="title">Sign Up</h1>
-  <form method="post" action="{% url 'signup' %}">
-    {% csrf_token %} {{ form.as_p }}
-    <input type="submit" class="btn" value="Sign Up">
-  </form>
-
+<div class="sign-in-modal">
+  <div class="inner--sign-in-modal">
+    <div class="val-info">
+      <span class="overlay sign-in-side"></span>
+      <div class="tab tab-sign-in">
+        Login
+      </div>
+      <div class="tab tab-sign-up">
+        Sign Up
+      </div>
+    </div>    
+    <div class="content-sign-in">
+      <div class="wrap--content-sign-in">
+        <div class="greetings">Welcome!</div>
+        <form method="post" action="{% url 'home' %}">
+          <h1 class="title">Log In</h1>
+          {% csrf_token %} {{ form.as_p }}
+          <input type="submit" class="btn" value="login" />
+          <input type="hidden" name="next" value="{{ next }}" />
+        </form>
+      </div>
+    </div>
+    <div class="content-sign-up">
+      <div class="content-sign-up">
+        <div class="wrap--content-sign-up">
+          <div class="greetings">
+            Please register to join in on the fun!
+          </div>
+          <form method="post" action="{% url 'signup' %}">
+            {% csrf_token %} {{ form.as_p }}
+            <input type="submit" class="btn" value="Sign Up" />
+            <input type="hidden" name="next" value="{{ next }}" />
+          </form>
+        </div>
+      </div>
+    </div>   
+  </div>
 </div>
+
+
+
 
 </body>
 </html>
