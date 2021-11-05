@@ -1,0 +1,10 @@
+// ************ Bryan's CSS *************
+/* Post Detail Page */
+
+.post-show-main {
+    #post-show-profile-pic {
+        height: 100px;
+        clip-path: polygon(50%, 0%, 0%, 100%, 100%, 100%);
+    }
+    background-color: red;
+}

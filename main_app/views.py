@@ -6,7 +6,7 @@ from django.views import View
 from django.views.generic.base import TemplateView
 from django.views.generic.detail import DetailView
 
-from main_app.models import Post
+from main_app.models import Post, User
 
 # Create your views here.
 
@@ -16,3 +16,8 @@ class Home(TemplateView):
 class PostDetail(DetailView):
   model = Post
   template_name = "post_detail.html"
+
+  # def get_context_data(self, **kwargs):
+  #   context = super().get_context_data(**kwargs)
+  #   context["user"] = User.objects.
+  #   return context
