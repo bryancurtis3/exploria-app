@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+* {
+  box-sizing: border-box; }
+
+:root {
+  --blue: #70D6FF;
+  --pink: #FF70A6;
+  --mediumorange: #FF9770;
+  --lightorange: #FFD670;
+  --neonyellow: #E9FF70; }
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh; }
+
+.profile-show-main {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: 100%;
+  grid-gap: 10px;
+  margin: 20px;
+  border: 2px solid red;
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px; }
+
+.left-user-info {
+  border: 2px solid limegreen;
+  padding: 20px;
+  background-color: var(--lightorange);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .left-user-info .user-info-text {
+    text-align: center; }
+  .left-user-info img {
+    clip-path: polygon(50% 14%, 9% 85%, 91% 85%); }
+
+.right-user-posts {
+  border: 2px solid blue;
+  padding: 30px 80px;
+  background-color: var(--mediumorange); }
+  .right-user-posts img {
+    width: 280px;
+    height: 280px;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%); }
+
+/*# sourceMappingURL=profile.css.map */

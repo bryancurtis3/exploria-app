@@ -1,6 +1,5 @@
 // Fonts
 
-
 // Resets CSS 
 * {
   box-sizing: border-box;
@@ -12,7 +11,6 @@
   --lightorange: #FFD670;
   --neonyellow: #E9FF70;
 }
-
 
 body {
   padding: 0;
@@ -587,10 +585,3 @@ button{
   }
 }
 
-
-@media(min-width:320px) and (max-width:600px){
-.sign-in-modal .inner--sign-in-modal {
-  min-width:auto;
-  width:90%;
-}
-}
