@@ -19,9 +19,10 @@ div {
 #testModal {
   color: red;
   border: 2px solid green;
+  background-color: floralwhite;
   padding: 50px;
   position: fixed;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 }

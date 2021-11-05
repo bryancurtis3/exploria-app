@@ -4,6 +4,9 @@ from django.views import View
 
 
 from django.views.generic.base import TemplateView
+from django.views.generic.detail import DetailView
+
+from main_app.models import Post, User
 
 # Auth imports
 from django.contrib.auth import login
@@ -14,8 +17,15 @@ from django.contrib.auth.forms import UserCreationForm
 class Home(TemplateView):
   template_name = "home.html"
 
-class PostDetail(TemplateView):
+
+class PostDetail(DetailView):
+  model = Post
   template_name = "post_detail.html"
+
+  # def get_context_data(self, **kwargs):
+  #   context = super().get_context_data(**kwargs)
+  #   context["user"] = User.objects.
+  #   return context
 
 class Signup(TemplateView):
   template_name = "signup.html"
@@ -34,4 +44,3 @@ class Signup(TemplateView):
       else:
           context = {"form": form}
           return render(request, "registration/signup.html", context)
-
