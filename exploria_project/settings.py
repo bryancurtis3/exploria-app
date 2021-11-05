@@ -140,3 +140,9 @@ STATIC_ROOT = BASE_DIR / 'static'
 SASS_PROCESSOR_ROOT = STATIC_ROOT
 
 STATIC_URL = '/static/'
+
+# Where to direct users after successful login; currently set to home page until profile template is set up
+LOGIN_REDIRECT_URL = '/'
+
+# Directs users to home page upon logout
+LOGOUT_REDIRECT_URL = '/'

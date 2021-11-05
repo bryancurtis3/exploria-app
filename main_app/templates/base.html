@@ -4,26 +4,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <!-- Local Styles -->
     <link rel="stylesheet" href="{% sass_src 'styles/main.scss' %}">
+
     <!-- Local Scripts -->
+
     <script src="{% static 'scripts/app.js' %}" defer></script>
 
-    <title>Exploria - {% block title %}{% endblock title %}</title>
+  <title>Exploria - {% block title %}{% endblock title %}</title>
 </head>
 
 <body>
     <!-- Navbar can go here since it will be on all pages -->
+  <nav class="" >
+        <!-- **insert img or icon -->
+    <div id="app-name-container" class="">
+      <img id="" src="">
+      <h1>Exploria</h1>
+    </div>
+    
+    {% if user.is_authenticated %}
+        <div class="navbar-menu navbar-end">
+        <span class="navbar-item">Welcome: {{user.username}}</span>
+        <a class="navbar-item" href="{% url 'profile' %}">Profile</a>
+        <a class="navbar-item" href="{% url 'logout' %}">Logout</a>
+    </div>
+{% else %}
+    <div class="navbar-menu navbar-end">
+       <a class="navbar-item" href="{% url 'login' %}">Log In</a>
+       <a class="navbar-item" href="{% url 'signup' %}">Sign Up</a>
+    </div> 
+    {% endif %}
+  </nav>
 
     <!-- Content block for extending pages -->
     {% block content %}{% endblock content %}
-    
+<!--- <a> <img id="jazzburger-image" src="https://www.happysocks.com/icons/jazzburger.svg" alt="Click for links"></a>-->
+
+  
+
 </body>
 </html>
