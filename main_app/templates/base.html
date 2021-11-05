@@ -10,6 +10,7 @@
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script defer src="js/app.js"></script>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -41,8 +42,8 @@
     </div>
 {% else %}
     <div class="navbar-menu navbar-end">
-       <a class="navbar-item" href="{% url 'login' %}">Log In</a>
-       <a class="navbar-item" href="{% url 'signup' %}">Sign Up</a>
+       <button type="button" name="button" class="navbar-item modal-sign" id ="login" {% comment %} href="{% url 'login' %}" {% endcomment %}>Log In</button>
+       <button type="button" name="button" class="navbar-item modal-sign" id="signUp" {% comment %} href="{% url 'signup' %}" {% endcomment %}>Sign Up</button>
     </div> 
     {% endif %}
   </nav>
@@ -53,11 +54,13 @@
 
 {% comment %} Modal(s?) {% endcomment %}
 <div class="modal" id="signUpModal">
-          <h1>Sign Up</h1><br>
-        <p id="signUpModal">
-          <div>Username: <input type=""
-        </p>
-        <button id="createProfile">Create Profile</button>
+
+  <h1 class="title">Sign Up</h1>
+  <form method="post" action="{% url 'signup' %}">
+    {% csrf_token %} {{ form.as_p }}
+    <input type="submit" class="btn" value="Sign Up">
+  </form>
+
 </div>
 
 </body>
