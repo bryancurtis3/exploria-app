@@ -16,6 +16,21 @@ body {
   height: 100vh; }
 
 /* Post Detail Page */
+* {
+  box-sizing: border-box; }
+
+/* ASSUMES WE'LL USE FLEX */
+nav {
+  border: 2px solid black;
+  position: absolute;
+  margin-top: 0px;
+  height: 72px;
+  min-width: 100vw;
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: repeat(5/20%);
+  background-color: var(--neonyellow); }
+
 .post-show-main {
   background-color: red; }
   .post-show-main #post-show-profile-pic {

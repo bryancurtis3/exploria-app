@@ -24,21 +24,6 @@ body {
 // ************ Bryan's CSS *************
 /* Post Detail Page */
 
-* {
-    box-sizing: border-box;
-  }
-  
-  /* ASSUMES WE'LL USE FLEX */ 
-  
-  nav {
-    position: absolute;
-    margin-top: 0px;
-    height: 72px;
-    display: flex;
-    justify-content: row;
-    background-color: hsl(53, 100%, 71%);
-  
-  }
 
 .post-show-main {
     #post-show-profile-pic {
@@ -91,3 +76,37 @@ body {
   font-family: 'Rubik', sans-serif;
   font-size: 24px;
 }
+
+//************** elliot's css *********************
+
+.navbar {
+  border: 2px solid black;
+  position: absolute;
+  margin-top: 0px;
+  width: 100vw;
+  height: 75px;
+  background-color: var(--neonyellow);
+  display: inline-grid;
+  grid-template-columns: 100px auto 100px;
+  grid-template-rows: 100%;
+}
+    
+.navbar-one {
+      display: inline-grid;
+      grid-column-start: 1;
+}
+
+.navbar-two {
+      display: inline-grid;
+      grid-column-start: 3;
+}
+  
+
+
+ 
+
+      
+  
+
+    
+
