@@ -1,3 +1,26 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;800&display=swap');
+
+// Resets CSS 
+* {
+  box-sizing: border-box;
+}
+:root{
+  --blue: #70D6FF;
+  --pink: #FF70A6;
+  --mediumorange: #FF9770;
+  --lightorange: #FFD670;
+  --neonyellow: #E9FF70;
+}
+
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
 // ************ Bryan's CSS *************
 /* Post Detail Page */
 
@@ -7,4 +30,48 @@
         clip-path: polygon(50%, 0%, 0%, 100%, 100%, 100%);
     }
     background-color: red;
+}
+
+//************* Kathy's CSS *************
+
+// profile page main container
+.profile-show-main {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: 100%;
+  grid-gap: 10px;
+  margin: 20px;
+  border: 2px solid red;
+  font-family: 'Rubik', sans-serif;
+  font-size: 24px;
+}
+// Holds all user information on left
+.left-user-info {
+  border: 2px solid limegreen;
+  background-color: var(--lightorange);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .user-info-text {
+    text-align: center;
+  }
+}
+// Holds all current user's posts on right-side
+.right-user-posts {
+  border: 2px solid blue;
+  background-color: var(--mediumorange);
+}
+
+// index page of all user profiles main container
+.users-show-main {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  grid-gap: 10px;
+  margin: 20px;
+  border: 2px solid red;
+  font-family: 'Rubik', sans-serif;
+  font-size: 24px;
 }
