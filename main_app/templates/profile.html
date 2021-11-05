@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} Profile {% endblock %}
+
+{% block content %}
+
+  <main class="profile-show-main">
+    <section class="left-user-info">
+      <span><img src="{{profile.image}}" alt="Profile picture of {{profile.user.username}}"></span>
+      <article class="user-info-text">
+        <p>{{profile.user.username}}</p>
+        <p>{{profile.user.first_name}} {{profile.user.last_name}}</p>
+        <p>{{profile.location}}</p>
+        <p>{{profile.join}}</p>
+        <p>{{profile.user.date_joined}}</p>
+      </article>
+    
+    </section>
+    <section class="right-user-posts">
+
+    
+    
+    </section>
+
+
+
+  </main>
+
+{% endblock %}
