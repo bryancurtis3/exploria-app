@@ -1,6 +1,5 @@
 {% load static %}
 {% load sass_tags %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,32 +34,42 @@
 
 <body>
     <!-- Navbar can go here since it will be on all pages -->
-  <nav class="" >
-        <!-- **insert img or icon -->
-    <div id="app-name-container" class="">
-      <img id="" src="">
+  <nav id="app-navbar" class="navbar">
+       
+    
+    <div class="navbar-one">
+       <!-- **insert img or icon -->
+      <img src="" >
       <h1>Exploria</h1>
     </div>
-    
     {% if user.is_authenticated %}
-        <div class="navbar-menu navbar-end">
-        <span class="navbar-item">Welcome: {{user.username}}</span>
-        {% comment %} <a class="navbar-item" href="{% url 'profile' user.pk %}">Profile</a> {% endcomment %}
-        {% comment %} <a class="navbar-item" href="{% url 'logout' %}">Logout</a> {% endcomment %}
+    <div class="">
+      <span class="navbar-item">Welcome: {{ user.username }} </span>
+      <a class="navbar-item" href="" >Logout</a>   
+    </div>          
+    {% else %} 
+    <div class="navbar-two">
+      <a class="navbar-item" href="{% url 'login' %}">Login</a>
+      <a class="navbar-item" href="{% url 'signup' %}">Signup</a>
     </div>
-{% else %}
-    <div class="navbar-menu navbar-end">
-       {% comment %} <a class="navbar-item" href="{% url 'login' %}">Log In</a> {% endcomment %}
-       {% comment %} <a class="navbar-item" href="{% url 'signup' %}">Sign Up</a> {% endcomment %}
-    </div> 
-    {% endif %}
-  </nav>
+    {% endif %}  
+  </nav>    
+  <section id="main-content">
+    <div>
+  
+  
 
     <!-- Content block for extending pages -->
     {% block content %}{% endblock content %}
 <!--- <a> <img id="jazzburger-image" src="https://www.happysocks.com/icons/jazzburger.svg" alt="Click for links"></a>-->
 
-  
-
+</div>
+</section>
+<footer>
+<h3>Exploria</h3>
+<a class="footer-item" href="">About</a>
+<!-- below is added in case it might be useful for presentation-->
+<p class="footer-copyright">copyright</p>
+</footer>
 </body>
 </html>
