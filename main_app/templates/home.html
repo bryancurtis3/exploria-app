@@ -9,19 +9,57 @@ Home
 
 {% block content %}
 
-<section id="gallery-container" class="carousel slide" data-bs-ride="carousel">
+<!-- <section id="gallery-container" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner"> 
     <div class="carousel-item active">
       <img id="gallery-image" src="https://www.sfexaminer.com/wp-content/uploads/2021/03/24512192_web1_210314-SFE-VanGogh-Immersive_1.jpeg" class ="d-block w-100" alt="">
     </div>
-    <div class="carousel-item active">
+    <div class="carousel-item">
       <img id="gallery-image" src=https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2021%2F01%2F14%2Fthe-metropolitan-museum-of-art-gallery-wall-PHONETOUR0121.jpg" class ="d-block w-100" alt="">
       </div>
-    <div class="carousel-item active">
-      <img id="gallery-image" src="https://visuall.net/wp-content/uploads/2017/02/2017-020-GalleryImage01.jpg" class ="d-block w-100" alt="">
+    <div class="carousel-item">
+      <img id="gallery-image" src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2021%2F01%2F14%2Fthe-metropolitan-museum-of-art-gallery-wall-PHONETOUR0121.jpg" class ="d-block w-100" alt="">
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </section>
+
+
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>  -->
+  <div id="carousel-holder">
+    <section id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://www.sfexaminer.com/wp-content/uploads/2021/03/24512192_web1_210314-SFE-VanGogh-Immersive_1.jpeg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://visuall.net/wp-content/uploads/2017/02/2017-020-GalleryImage01.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2021%2F01%2F14%2Fthe-metropolitan-museum-of-art-gallery-wall-PHONETOUR0121.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </section>
+  </div>
 <div id="home-about-section">
   <h2 id="home-title">Exploria is...</h2>
   <section id="about-topics-container">
