@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% load sass_tags %}
+
+{% block styles %}<link rel="stylesheet" href="{% sass_src 'styles/home.scss' %}">{% endblock styles %}
 
 {% block title%}
 Home 
@@ -6,28 +9,46 @@ Home
 
 {% block content %}
 
-<section id="gallery-container">
-
-
-
-
+<section id="gallery-container" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner"> 
+    <div class="carousel-item active">
+      <img id="gallery-image" src="https://www.sfexaminer.com/wp-content/uploads/2021/03/24512192_web1_210314-SFE-VanGogh-Immersive_1.jpeg" class ="d-block w-100" alt="">
+    </div>
+    <div class="carousel-item active">
+      <img id="gallery-image" src=https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2021%2F01%2F14%2Fthe-metropolitan-museum-of-art-gallery-wall-PHONETOUR0121.jpg" class ="d-block w-100" alt="">
+      </div>
+    <div class="carousel-item active">
+      <img id="gallery-image" src="https://visuall.net/wp-content/uploads/2017/02/2017-020-GalleryImage01.jpg" class ="d-block w-100" alt="">
+    </div>
+  </div>
 </section>
 <div id="home-about-section">
-<h2>Exploria is...</h2>
-<section id="about-topics-container">
-<div class="div-one">
-  <h3>Topic</h3>
-  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet exercitationem aperiam excepturi nulla corrupti iste aliquam beatae obcaecati deleniti animi, veniam sed perferendis quisquam, dolore, consequatur sequi culpa saepe tempore?</p>
-</div>
-<div>
-  <h3>Topic</h3>
-  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet exercitationem aperiam excepturi nulla corrupti iste aliquam beatae obcaecati deleniti animi, veniam sed perferendis quisquam, dolore, consequatur sequi culpa saepe tempore?</p>
-</div>
-<div>
-  <h3>Topic</h3>
-  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet exercitationem aperiam excepturi nulla corrupti iste aliquam beatae obcaecati deleniti animi, veniam sed perferendis quisquam, dolore, consequatur sequi culpa saepe tempore?</p>
-</div>
-</section>
+  <h2 id="home-title">Exploria is...</h2>
+  <section id="about-topics-container">
+    <div>
+      <h3>Vision and Goal</h3>
+      <p>
+        Exploria.com is an art-based web application that aims to get people buzzing about art, whether that’s in museums, local murals, or art installations. The company behind Exploria specializes in the curation of art and manages museums in major cities across the globe. Due to the ongoing pandemic, there has been a massive decline in people visiting museums and art installations. Through Exploria, we wish to revive the spirit of art destination travelling and experiencing new artwork these cities have to offer.
+      </p>
+    </div>
+    <div>
+      <h3>For You (For the User)</h3>
+      <p>
+        Life in the pandemic has isolated all of us from one another, but we don’t want you to keep feeling that way. We designed Exploria to help us all connect through our love of art — for the feelings, emotions, and stories they tell. Revisit classical exhibits, travel and meet new people in different cities, or even grab a few friends and explore art installations locally, whatever your choice, you can find your next art destination with us today.
+      </p>
+    </div>
+    <div>
+      <h3>Inspirations</h3>
+      <p>
+        The world we live in is full of art and we are inspired by it. Creativity is free-flowing and widely available, surrounding us with beautiful graphics, history-rich museums, and gorgeous pieces to talk about with anyone. Art is everywhere and it is to be enjoyed by everyone. We believe that sharing and connecting through art can bring meaningful stories, experiences, and feelings to create deeper relationships with one another. Our work is inspired by the vibrant colors of the rainbow, the artful crafts of previous and modern-day artists, and the ever-growing world wide web. Some of the websites we imagined our application from are: 
+        <a href="https://www.sqwigl.com/">https://www.sqwigl.com/,</a>
+        <a href="https://www.jonburgerman.com/">https://www.jonburgerman.com/,</a>
+        <a href="https://www.equalparts.studio/">https://www.equalparts.studio/,</a> 
+        <a href="https://www.happysocks.com/gl">https://www.happysocks.com/gl.</a> 
+        We enjoyed the designs from these websites for their nostalgic feel and incorporation of modern day pop art.
+      </p>
+    </div>
+  </section>
 </div>
  
 {% endblock %}
