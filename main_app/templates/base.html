@@ -45,7 +45,7 @@
     {% if user.is_authenticated %}
         <div class="navbar-menu navbar-end">
         <span class="navbar-item">Welcome: {{user.username}}</span>
-        {% comment %} <a class="navbar-item" href="{% url 'user_list' %}">Profile</a> {% endcomment %}
+        {% comment %} <a class="navbar-item" href="{% url 'profile' user.pk %}">Profile</a> {% endcomment %}
         {% comment %} <a class="navbar-item" href="{% url 'logout' %}">Logout</a> {% endcomment %}
     </div>
 {% else %}
