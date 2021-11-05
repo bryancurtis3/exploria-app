@@ -46,13 +46,14 @@
     {% if user.is_authenticated %}
         <div class="navbar-menu navbar-end">
         <span class="navbar-item">Welcome: {{user.username}}</span>
-        {% comment %} <a class="navbar-item" href="{% url 'user_list' %}">Profile</a> {% endcomment %}
-        {% comment %} <a class="navbar-item" href="{% url 'logout' %}">Logout</a> {% endcomment %}
+        <a class="navbar-item" href="{% url 'user_list' %}">Profile</a> 
+        <a class="navbar-item" href="{% url 'logout' %}">Logout</a> 
     </div>
 {% else %}
     <div class="navbar-menu navbar-end">
-       <button type="button" name="button" class="navbar-item modal-sign" id ="login" href="{% url 'login' %}">Log In</button>
-       <button type="button" name="button" class="navbar-item modal-sign" id="signUp" href="{% url 'signup' %}">Sign Up</button>
+      <a class="navbar-item" id ="login" href="{% url 'login' %}">Log In</a>
+      <a class="navbar-item" id ="signUp" href="{% url 'signup' %}">Sign Up</a>
+
     </div> 
     {% endif %}
   </nav>
