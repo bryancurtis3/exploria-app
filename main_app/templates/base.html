@@ -16,12 +16,13 @@
 
     <!-- Local Styles -->
     <link rel="stylesheet" href="{% sass_src 'styles/main.scss' %}">
+    {% block pagecss %} {% endblock %}
 
     <!-- Local Scripts -->
 
     <script src="{% static 'scripts/app.js' %}" defer></script>
 
-  <title>Exploria - {% block title %}{% endblock title %}</title>
+    <title>Exploria - {% block title %}{% endblock title %}</title>
 </head>
 
 <body>

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %} Profile {% endblock %}
+{% block pagecss %}<link rel="stylesheet" href="{% sass_src 'styles/profile.scss' %}">{% endblock pagecss %}
 
 {% block content %}
 
@@ -17,9 +18,14 @@
     
     </section>
     <section class="right-user-posts">
-
-    
-    
+      {% for post in posts%}
+      <article class="post-container">
+        <a href="{% url 'post_detail' %}"><p>{{post.title}}</p></a>
+        <span><img src="{{post.img}}" alt="Picture of {{post.title}}"></span>
+        <p>{{post.description}}</p>
+        <p>{{post.city}}</p>
+      </article>
+      {% endfor %}
     </section>
 
 
