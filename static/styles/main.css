@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 * {
   box-sizing: border-box; }
 
@@ -13,5 +14,72 @@ body {
   margin: 0;
   width: 100vw;
   height: 100vh; }
+
+#app-navbar {
+  position: absolute;
+  margin-top: 0px;
+  height: 80px;
+  width: 100vw;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: var(--neonyellow); }
+
+.navbar-one {
+  display: flex;
+  align-items: center; }
+  .navbar-one h1 {
+    font-family: Poppins; }
+
+.navbar-two {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; }
+  .navbar-two a {
+    font-family: Poppins;
+    color: var(--pink); }
+
+/* Post Detail Page */
+.post-show-content {
+  display: grid;
+  justify-content: center; }
+
+.post-show-main {
+  display: grid;
+  margin: 24px;
+  max-width: 680px;
+  background-color: red; }
+  @media only screen and (min-width: 680px) {
+    .post-show-main .post-show-main {
+      width: 680px;
+      margin: 0;
+      justify-content: center; } }
+  .post-show-main h1 {
+    font-size: 48px;
+    font-weight: 400; }
+  .post-show-main #post-show-profile-pic {
+    height: 60px;
+    width: 60px;
+    clip-path: polygon(50% 10%, 0 90%, 100% 90%);
+    object-fit: cover;
+    object-position: 50% 50%; }
+  .post-show-main .post-show-profile {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    grid-auto-rows: minmax(70px, 70px);
+    align-items: center; }
+    .post-show-main .post-show-profile .post-show-user-text {
+      line-height: .4em;
+      font-weight: 400;
+      font-size: 14px; }
+      .post-show-main .post-show-profile .post-show-user-text h5 {
+        margin-left: 5px;
+        color: #757575; }
+  .post-show-main #post-show-image {
+    width: 100%;
+    max-width: 680px;
+    margin: 28px 0; }
+  .post-show-main p {
+    font-size: 18px;
+    line-height: 28px; }
 
 /*# sourceMappingURL=main.css.map */
