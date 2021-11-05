@@ -24,5 +24,7 @@ body {
   border: 2px solid red;
   font-family: 'Poppins', sans-serif;
   font-size: 24px; }
+  .users-show-main img {
+    clip-path: polygon(50% 10%, 0 90%, 100% 90%); }
 
 /*# sourceMappingURL=user_list.css.map */
