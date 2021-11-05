@@ -22,8 +22,7 @@ body {
 .post-show-main {
   display: grid;
   margin: 24px;
-  max-width: 680px;
-  background-color: red; }
+  max-width: 680px; }
   @media only screen and (min-width: 680px) {
     .post-show-main .post-show-main {
       width: 680px;
