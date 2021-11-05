@@ -1,0 +1,50 @@
+/* Post Detail Page */
+.post-show-content {
+  display: grid;
+  justify-content: center; }
+
+.post-show-main {
+  display: grid;
+  margin: 24px;
+  max-width: 680px; }
+  @media only screen and (min-width: 680px) {
+    .post-show-main .post-show-main {
+      width: 680px;
+      margin: 0;
+      justify-content: center; } }
+  .post-show-main h1 {
+    font-size: 48px;
+    font-weight: 400; }
+  .post-show-main #post-show-profile-pic {
+    height: 60px;
+    width: 60px;
+    clip-path: polygon(50% 10%, 0 90%, 100% 90%);
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: 15px; }
+  .post-show-main .post-show-profile {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    grid-auto-rows: minmax(70px, 70px);
+    align-items: center; }
+    .post-show-main .post-show-profile .post-show-user-text {
+      line-height: .4em;
+      font-weight: 600;
+      font-size: 14px; }
+      .post-show-main .post-show-profile .post-show-user-text a {
+        text-decoration: none;
+        color: #292929; }
+      .post-show-main .post-show-profile .post-show-user-text h5 {
+        margin-left: 5px;
+        color: #757575; }
+  .post-show-main #post-show-image {
+    width: 100%;
+    max-width: 680px;
+    margin: 28px 0;
+    border-radius: 4px;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%); }
+  .post-show-main p {
+    font-size: 18px;
+    line-height: 28px; }
+
+/*# sourceMappingURL=post_detail.css.map */
