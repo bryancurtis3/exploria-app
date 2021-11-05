@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
+{% load sass_tags %}
 
 {% block title %} Profile {% endblock %}
+{% block styles %}<link rel="stylesheet" href="{% sass_src 'styles/profile.scss' %}">{% endblock %}
 
 {% block content %}
 
-  <main class="profile-show-main">
+  <main class="container profile-show-main">
     <section class="left-user-info">
       <span><img src="{{profile.image}}" alt="Profile picture of {{profile.user.username}}"></span>
       <article class="user-info-text">
@@ -17,9 +19,14 @@
     
     </section>
     <section class="right-user-posts">
-
-    
-    
+      {% for post in posts%}
+      <article class="post-container">
+        <a href="{% url 'post_detail' post.pk %}"><p>{{post.title}}</p></a>
+        <span><img src="{{post.img}}" alt="Picture of {{post.title}}"></span>
+        <p>{{post.description}}</p>
+        <p>{{post.city}}</p>
+      </article>
+      {% endfor %}
     </section>
 
 
