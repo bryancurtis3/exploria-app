@@ -31,7 +31,7 @@
     {% if user.is_authenticated %}
         <div class="navbar-menu navbar-end">
         <span class="navbar-item">Welcome: {{user.username}}</span>
-        <a class="navbar-item" href="{% url 'profile' %}">Profile</a>
+        {% comment %} <a class="navbar-item" href="{% url 'profile' %}">Profile</a> {% endcomment %}
         <a class="navbar-item" href="{% url 'logout' %}">Logout</a>
     </div>
 {% else %}
@@ -46,7 +46,8 @@
     {% block content %}{% endblock content %}
 <!--- <a> <img id="jazzburger-image" src="https://www.happysocks.com/icons/jazzburger.svg" alt="Click for links"></a>-->
 
-  
+{% comment %} Modal(s?) {% endcomment %}
+<div class="modal" id="testModal">TEST</div>
 
 </body>
 </html>

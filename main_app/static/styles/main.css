@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 15px, 0px;
+}
+nav {
+  background-color: darkslategrey;
+  padding: 15px;
+}
+
+div {
+  margin: 15px 0px;
+}
+
+#testModal {
+  color: red;
+  border: 2px solid green;
+  padding: 50px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
