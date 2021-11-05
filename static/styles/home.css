@@ -1,0 +1,25 @@
+#gallery-container {
+  height: 50vh; }
+  #gallery-container #gallery-image {
+    height: inherit;
+    width: 100vw;
+    object-fit: cover; }
+
+body {
+  background-color: var(--mediumorange); }
+
+#home-title {
+  margin: 2em 0;
+  text-align: center; }
+
+#about-topics-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0 24px 24px 24px;
+  gap: 24px; }
+  #about-topics-container a {
+    text-decoration: none;
+    background-color: var(--pink);
+    color: var(--blue); }
+
+/*# sourceMappingURL=home.css.map */
