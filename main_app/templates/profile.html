@@ -6,29 +6,38 @@
 
 {% block content %}
 
-  <main class="container profile-show-main">
-    <section class="left-user-info">
-      <span><img src="{{profile.image}}" alt="Profile picture of {{profile.user.username}}"></span>
-      <article class="user-info-text">
-        <p>{{profile.user.username}}</p>
-        <p>{{profile.user.first_name}} {{profile.user.last_name}}</p>
-        <p>{{profile.location}}</p>
-        <p>{{profile.join}}</p>
-        <p>{{profile.user.date_joined}}</p>
-      </article>
-    
+  <main class="container-fluid overflow-hidden profile-show-main">
+    <div class="row m-auto gx-5 justify-content-evenly">
+      <section class="col-5 left-user-info">
+        <span><img src="{{profile.image}}" alt="Profile picture of {{profile.user.username}}"></span>
+        <article class="user-info-text">
+          <p>{{profile.user.username}}</p>
+          <p>{{profile.user.first_name}} {{profile.user.last_name}}</p>
+          <p>{{profile.location}}</p>
+          <p>{{profile.join}}</p>
+          <p>{{profile.user.date_joined}}</p>
+        </article>
+      
+      </section>
+      <section class="col right-user-posts">
+        {% for post in posts%}
+        <div class="card">
+          <div class="card-header">
+            <a href="{% url 'post_detail' post.pk %}" class="text-decoration-none text-dark"><p class="display-6">{{post.city}}</p></a>
+          </div>
+        <div class="card-body d-flex">
+          <span><img src="{{post.img}}" class="card-img-top" alt="Picture of {{post.title}}"></span>
+          <div class="card-body">
+            <p class="card-title fw-bold text-body">{{post.title}}</p>
+            <p class="card-text text-muted lead">{{post.description|slice:":300"}}...</p>
+            <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary">See post</a>
+          </div>
+        </div>
+       </div>
+       <br>
+       {% endfor %}
     </section>
-    <section class="right-user-posts">
-      {% for post in posts%}
-      <article class="post-container">
-        <a href="{% url 'post_detail' post.pk %}"><p>{{post.title}}</p></a>
-        <span><img src="{{post.img}}" alt="Picture of {{post.title}}"></span>
-        <p>{{post.description}}</p>
-        <p>{{post.city}}</p>
-      </article>
-      {% endfor %}
-    </section>
-
+    </div>
 
 
   </main>

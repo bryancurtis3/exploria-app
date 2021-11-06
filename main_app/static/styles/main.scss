@@ -21,7 +21,7 @@ body {
 }
 
 #app-navbar {
-  position: absolute;
+  position: relative;
   margin-top: 0px;
   height: 80px;
   width: 100vw;
@@ -51,64 +51,6 @@ body {
     font-family: Poppins;
     color: var(--pink);
   };
-}
-
-// ************ Bryan's CSS *************
-
-/* Post Detail Page */
-.post-show-content {
-    display: grid;
-    justify-content: center;
-}
-
-
-.post-show-main {
-    display: grid;
-    margin: 24px;
-    max-width: 680px;
-    @media only screen and (min-width: 680px) {
-        .post-show-main {
-            width: 680px;
-            margin: 0;
-            justify-content: center;
-        }
-    }
-    h1 {
-        font-size: 48px;
-        font-weight: 400;
-    }
-    #post-show-profile-pic {
-        height: 60px;
-        width: 60px;
-        clip-path: polygon(50% 10%, 0 90%, 100% 90%);
-        object-fit: cover;
-        object-position: 50% 50%;
-    }
-    .post-show-profile {
-        display: grid;
-        grid-template-columns: 70px 1fr;
-        grid-auto-rows: minmax(70px, 70px);
-        align-items: center;
-        .post-show-user-text {
-            line-height: .4em;
-            font-weight: 400;
-            font-size: 14px;
-            h5 {
-                margin-left: 5px;
-                color: #757575;
-            }
-        }
-    }
-    #post-show-image {
-        width: 100%;
-        max-width: 680px;
-        margin: 28px 0;
-    }
-    p {
-        font-size: 18px;
-        line-height: 28px;
-    }
-    background-color: red;
 }
 
 
