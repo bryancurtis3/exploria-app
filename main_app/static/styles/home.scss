@@ -5,12 +5,18 @@
 
 }
 
+#gallery-button {
+    position: absolute;
+    margin-top: 225px;
+    z-index: 2;
+}
 #gallery-container {
     height: 50vh;
     #gallery-image {
         height: inherit;
         width: 100vw;
         object-fit: cover;
+        object-position: center bottom;
     }
 }
 
@@ -19,7 +25,7 @@ body {
 }
 
 #home-title {
-    margin: 2em 0;
+    margin: 1em 0;
     text-align: center;
 }
 
@@ -28,9 +34,16 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     margin: 0 24px 24px 24px;
     gap: 24px;
+    h3 {
+        font-size:larger;
+
+    }
     a {
         text-decoration: none;
         background-color: var(--pink);
         color: var(--blue)
     }
 }
+
+
+
