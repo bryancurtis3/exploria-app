@@ -1,3 +1,8 @@
+#carousel-holder {
+  height: 300px;
+  overflow: hidden;
+  object-position: center; }
+
 #gallery-container {
   height: 50vh; }
   #gallery-container #gallery-image {
