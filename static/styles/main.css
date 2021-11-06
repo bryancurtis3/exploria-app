@@ -30,6 +30,13 @@ body {
   .navbar-one h1 {
     font-family: Poppins; }
 
+.auth-session {
+  margin: 0px 10px; }
+  .auth-session .navbar-item {
+    margin-left: 15px; }
+  .auth-session .user-profile-link {
+    margin-left: 5px; }
+
 .navbar-two {
   display: flex;
   justify-content: space-between;

@@ -43,8 +43,8 @@
       <h1>Exploria</h1>
     </div>
     {% if user.is_authenticated %}
-    <div class="">
-      <span class="navbar-item">Welcome: {{ user.username }} </span>
+    <div class="auth-session">
+      <span class="navbar-item">Welcome: <a class="user-profile-link" href="{% url 'profile' user.pk %}">{{ user.username }} </a></span>
       <a class="navbar-item" href="{% url 'logout' %}" >Logout</a>   
     </div>          
     {% else %} 
