@@ -9,8 +9,7 @@
   z-index: 2; }
 
 #gallery-container {
-  height: 50vh;
-  position: absolute; }
+  height: 50vh; }
   #gallery-container #gallery-image {
     height: inherit;
     width: 100vw;

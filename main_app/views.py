@@ -12,9 +12,11 @@ from django.views.generic.detail import DetailView
 
 from main_app.models import Post, User, Profile
 
+from django.forms import ModelForm
+
 # Auth imports
 from django.contrib.auth import login
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import UserChangeForm, UserCreationForm, AuthenticationForm
 """ from django.views.generic import UpdateView, ListView
 from django.http import HttpResponse
 from django.template.loader import render_to_string
@@ -69,6 +71,11 @@ class Signup(TemplateView):
           context = {"form": form}
           return render(request, "registration/signup.html", context)
 
+class ProfileForm(ModelForm):
+  class Meta:
+    model = Profile
+    fields = ['location', 'image']
+
 class UserProfile(DetailView):
   model = Profile
   template_name = "profile.html"
@@ -76,18 +83,18 @@ class UserProfile(DetailView):
   def get_context_data(self, **kwargs):
     context = super().get_context_data(**kwargs)
     context["posts"] = Post.objects.filter(user=self.object.pk)
+    context["form"] = ProfileForm(instance=self.object.pk)
     return context
 
 class ProfileUpdate(UpdateView):
   model = Profile
   template_name = "profile.html"
+  fields = ['location', 'image']
 
   def get_context_data(self, **kwargs):
       context = super(ProfileUpdate, self).get_context_data(**kwargs)
       context['User'] = User.objects.get(pk=self.object.pk)
       return context
-
-  fields = [User.username, User.first_name, User.last_name, 'location', 'image']
   
   # Not sure if this is how the success url is supposed to be looking
   def get_success_url(self):
