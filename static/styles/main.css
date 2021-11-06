@@ -38,7 +38,6 @@ body {
     font-family: Poppins;
     color: var(--pink); }
 
-<<<<<<< HEAD
 /* Login/Signup button styling */
 .nav-button {
   vertical-align: center;
@@ -50,7 +49,6 @@ body {
 
 :hover .nav-button {
   background-color: var(--pink darken 20%); }
-=======
 footer {
   position: absolute;
   margin-bottom: 0px;
@@ -63,12 +61,12 @@ footer {
   justify-content: space-between;
   align-items: center;
   background-color: var(--lightorange);
+  
   /* Footer height */ }
 
 .footer-div {
   display: flex;
   align-items: center;
   gap: 5px; }
->>>>>>> dev
 
 /*# sourceMappingURL=main.css.map */
