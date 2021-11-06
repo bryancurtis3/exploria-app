@@ -1,8 +1,12 @@
 #carousel-holder {
+<<<<<<< HEAD
   height: 300px;  // width: 100vw;
   overflow: clip;
+=======
+  height: 50vh;
+  overflow: hidden;
+>>>>>>> dev
   object-position: center;
-
 }
 
 #carouselExampleIndicators {
@@ -13,7 +17,7 @@
 
 #gallery-button {
     position: absolute;
-    margin-top: 225px;
+    // margin-top: 225px;
     z-index: 2;
 }
 
@@ -52,3 +56,13 @@ body {
 
 
 
+.slide, .carousel-inner, .carousel-item {
+    height: inherit;
+}
+
+.carousel-item {
+    img {
+        height: inherit;
+        object-fit: cover;
+    }
+}
