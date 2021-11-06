@@ -42,6 +42,7 @@ class Signup(TemplateView):
     return render(request, "registration/signup.html", context)
     
   def post(self, request):
+    
       form = UserCreationForm(request.POST)
       if form.is_valid():
           user = form.save()
