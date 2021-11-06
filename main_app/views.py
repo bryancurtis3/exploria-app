@@ -80,8 +80,14 @@ class UserProfile(DetailView):
 
 class ProfileUpdate(UpdateView):
   model = Profile
-  template_name = "user_update.html"
-  fields = ['location', 'image']
+  template_name = "profile.html"
+
+  def get_context_data(self, **kwargs):
+      context = super(ProfileUpdate, self).get_context_data(**kwargs)
+      context['User'] = User.objects.get(pk=self.object.pk)
+      return context
+
+  fields = [User.username, User.first_name, User.last_name, 'location', 'image']
   
   # Not sure if this is how the success url is supposed to be looking
   def get_success_url(self):

@@ -3,7 +3,8 @@
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
   padding-left: 0;
-  padding-right: 0; }
+  padding-right: 0;
+  height: 1200px; }
 
 .left-user-info {
   border-width: 50px;
@@ -13,7 +14,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  height: 1200px; }
   .left-user-info .user-info-text {
     text-align: center; }
   .left-user-info img {
@@ -24,7 +26,9 @@
   border-color: var(--blue);
   border-style: dotted dashed groove dotted;
   padding: 60px;
-  background-color: rgba(223, 59, 0, 0.726); }
+  background-color: rgba(223, 59, 0, 0.726);
+  overflow: auto;
+  height: 1200px; }
   .right-user-posts img {
     margin: 20px 10px 5px 15px;
     width: 280px;
