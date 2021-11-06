@@ -15,10 +15,7 @@ from main_app.models import Post, User, Profile
 # Auth imports
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-""" from django.views.generic import UpdateView, ListView
-from django.http import HttpResponse
-from django.template.loader import render_to_string
-from main_app.forms import ItemForm """
+
 
 # Create your views here.
 
@@ -30,21 +27,7 @@ class Home(TemplateView):
     context["signup_form"] = UserCreationForm()
     context["login_form"] = AuthenticationForm()
     return context
-""" 
-  def get(self, request):
-        form = UserCreationForm()
-        context = {"form": form}
-        return render(request, "home.html", context)
-    
-  def post(self, request):
-      form = UserCreationForm(request.POST)
-      if form.is_valid():
-          user = form.save()
-          login(request, user)
-          return redirect("/")
-      else:
-          context = {"form": form}
-          return render(request, "home.html", context) """
+
 
 class PostDetail(DetailView):
   model = Post
