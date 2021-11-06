@@ -1,20 +1,23 @@
 #carousel-holder {
   height: 300px;
-  overflow: hidden;
+  overflow: clip;
   object-position: center; }
+
+#carouselExampleIndicators {
+  height: 300px;
+  overflow: clip;
+  object-fit: center; }
 
 #gallery-button {
   position: absolute;
   margin-top: 225px;
   z-index: 2; }
 
-#gallery-container {
-  height: 50vh; }
-  #gallery-container #gallery-image {
-    height: inherit;
-    width: 100vw;
-    object-fit: cover;
-    object-position: center bottom; }
+#gallery-image {
+  height: inherit;
+  width: 100vw;
+  object-fit: none;
+  object-position: center bottom; }
 
 body {
   background-color: var(--mediumorange); }
