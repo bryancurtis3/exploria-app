@@ -13,11 +13,22 @@
   margin-top: 225px;
   z-index: 2; }
 
+<<<<<<< HEAD
 #gallery-image {
   height: inherit;
   width: 100vw;
   object-fit: none;
   object-position: center bottom; }
+=======
+#gallery-container {
+  height: 50vh;
+  position: absolute; }
+  #gallery-container #gallery-image {
+    height: inherit;
+    width: 100vw;
+    object-fit: cover;
+    object-position: center bottom; }
+>>>>>>> dev
 
 body {
   background-color: var(--mediumorange); }

@@ -9,6 +9,7 @@
   font-size: 24px;
   padding-left: 0;
   padding-right: 0;
+  height: 1200px;
 }
 // Holds all user information on left
 .left-user-info {
@@ -20,6 +21,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 1200px;
 
   .user-info-text {
     text-align: center;
@@ -35,6 +37,8 @@
   border-style: dotted dashed groove dotted;
   padding: 60px;
   background-color: darken(rgba(255, 119, 70, 0.726), 20%);
+  overflow: auto;
+  height: 1200px;
   
   img {
     margin: 20px 10px 5px 15px;

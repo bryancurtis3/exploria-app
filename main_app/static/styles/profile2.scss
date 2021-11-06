@@ -1,0 +1,104 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+//************* Kathy's CSS *************
+
+// PROFILE PAGE main container
+.profile-show-main {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  padding-left: 0;
+  padding-right: 0;
+  height: 100vh;
+  $visualheight: 100vh;
+}
+// Holds all user information on left
+.left-user-info {
+  border-width: 50px; 
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .left-box {
+    background: rgb(255,214,112);
+    background: radial-gradient(circle, rgba(255,214,112,1) 0%, rgba(255,226,112,1) 51%, rgba(255,183,112,0.9906337535014006) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 70px 40px 70px;
+    border-radius: 40px;
+    border: 5px solid #ffbe7e;
+    box-shadow: 0px 0px 10px var(--mediumorange);
+  }
+
+  .user-info-text {
+    padding: 20px 20px 10px 20px;
+    background-color: rgba(235, 233, 233, 0.445);
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-align: center;
+
+    .username {
+      color: black;
+      font-size: 32px;
+      font-weight: 600;
+      background-color: var(--neonyellow);
+      border-radius: 20px;
+
+    }
+    .location {
+      color:rgb(66, 66, 66);
+      font-size: 20px;
+      font-style: italic;
+      background-color: lighten(#E9FF70, 15%);
+      border-radius: 20px;
+    }
+    .joined {
+      color:rgb(109, 109, 109);
+      font-size: 18px;
+      text-align: left;
+      
+    } 
+    .since {
+      color:rgb(109, 109, 109);
+      font-size: 18px;
+      text-align: left;
+      
+    }   
+  }
+  img {
+    clip-path: polygon(50% 14%, 9% 85%, 91% 85%);
+  }
+  .edit-button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    
+  }
+}
+// Holds all current user's posts on right-side
+.right-user-posts {
+  padding: 40px 60px 10px 20px;
+  background-color: white;
+  overflow: auto;
+  height: 100vh;
+
+  img {
+    margin: 20px 10px 5px 15px;
+    width:260px;
+    height: 260px;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
+  }
+}
+// border for each post-card
+.post-border {
+  border: 10px groove var(--pink);
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px rgb(93, 92, 92);
+}
+// Holds each post information
+#post-cards {
+  border: 15px groove var(--blue);
+  border-radius: 0;
+}
