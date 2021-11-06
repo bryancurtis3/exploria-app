@@ -3,18 +3,24 @@
   overflow: hidden;
   object-position: center; }
 
+#gallery-button {
+  position: absolute;
+  margin-top: 225px;
+  z-index: 2; }
+
 #gallery-container {
   height: 50vh; }
   #gallery-container #gallery-image {
     height: inherit;
     width: 100vw;
-    object-fit: cover; }
+    object-fit: cover;
+    object-position: center bottom; }
 
 body {
   background-color: var(--mediumorange); }
 
 #home-title {
-  margin: 2em 0;
+  margin: 1em 0;
   text-align: center; }
 
 #about-topics-container {
@@ -22,6 +28,8 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   margin: 0 24px 24px 24px;
   gap: 24px; }
+  #about-topics-container h3 {
+    font-size: larger; }
   #about-topics-container a {
     text-decoration: none;
     background-color: var(--pink);
