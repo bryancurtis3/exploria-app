@@ -49,8 +49,8 @@
     </div>          
     {% else %} 
     <div class="navbar-two">
-      <button type="button" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-      <button type="button" data-bs-toggle="modal" data-bs-target="#signUpModal">Sign Up</button>
+      <button type="button" class="nav-button" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+      <button type="button" class="nav-button" data-bs-toggle="modal" data-bs-target="#signUpModal">Sign Up</button>
 
       {% comment %} <a class="navbar-item" href="{% url 'login' %}">Login</a>
       <a class="navbar-item" href="{% url 'signup' %}">Signup</a> {% endcomment %}
@@ -96,10 +96,6 @@
             <input type="hidden" name="next" value="{{ next }}" />
           </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
       </div>
     </div>
   </div>
@@ -116,19 +112,11 @@
         <form method="post" action="{% url 'signup' %}">
           {% csrf_token %} {{ signup_form.as_p }}
           <p class="location">
-            Current City: <input type="text" name="location" value="location" class="location" required>
+            Current City: <input type="text" name="location" class="location" required>
           </p>
-          <p class="email">
-            Email: <input type="email" name="email" value="email" class="email" required>
-          </p>
-          
           <input type="submit" class="btn" value="Sign Up" />
           <input type="hidden" name="next" value="{{ next }}" />
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
