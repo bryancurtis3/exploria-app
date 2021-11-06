@@ -45,12 +45,15 @@
     {% if user.is_authenticated %}
     <div class="">
       <span class="navbar-item">Welcome: {{ user.username }} </span>
-      <a class="navbar-item" href="" >Logout</a>   
+      <a class="navbar-item" href="{% url 'logout' %}" >Logout</a>   
     </div>          
     {% else %} 
     <div class="navbar-two">
-      <a class="navbar-item" href="{% url 'login' %}">Login</a>
-      <a class="navbar-item" href="{% url 'signup' %}">Signup</a>
+      <button type="button" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+      <button type="button" data-bs-toggle="modal" data-bs-target="#signUpModal">Sign Up</button>
+
+      {% comment %} <a class="navbar-item" href="{% url 'login' %}">Login</a>
+      <a class="navbar-item" href="{% url 'signup' %}">Signup</a> {% endcomment %}
     </div>
     {% endif %}  
   </nav>    
@@ -71,5 +74,60 @@
 <!-- below is added in case it might be useful for presentation-->
 <p class="footer-copyright">copyright</p>
 </footer>
+
+{% comment %} MODALS {% endcomment %}
+
+  {% comment %} Login {% endcomment %}
+  <div class="modal" id="loginModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form method="post" action="{% url 'login' %}">
+            {% csrf_token %} {{ login_form.as_p }}
+            <input type="submit" class="btn" value="login" />
+            <input type="hidden" name="next" value="{{ next }}" />
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% comment %} Sign up {% endcomment %}
+  <div class="modal" id="signUpModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sign Up</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="{% url 'signup' %}">
+          {% csrf_token %} {{ signup_form.as_p }}
+          <p class="location">
+            Current City: <input type="text" name="location" value="location" class="location" required>
+          </p>
+          <p class="email">
+            Email: <input type="email" name="email" value="email" class="email" required>
+          </p>
+          
+          <input type="submit" class="btn" value="Sign Up" />
+          <input type="hidden" name="next" value="{{ next }}" />
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
