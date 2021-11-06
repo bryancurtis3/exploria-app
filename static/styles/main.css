@@ -65,6 +65,9 @@ footer {
   align-items: center;
   gap: 5px; }
 
+#footer-date {
+  margin-bottom: 0px; }
+
 /* Login/Signup button styling */
 .nav-button {
   vertical-align: center;
