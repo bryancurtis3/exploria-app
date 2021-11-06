@@ -1,11 +1,10 @@
 #carousel-holder {
-  height: 300px;
+  height: 50vh;
   overflow: hidden;
   object-position: center; }
 
 #gallery-button {
   position: absolute;
-  margin-top: 225px;
   z-index: 2; }
 
 #gallery-container {
@@ -34,5 +33,12 @@ body {
     text-decoration: none;
     background-color: var(--pink);
     color: var(--blue); }
+
+.slide, .carousel-inner, .carousel-item {
+  height: inherit; }
+
+.carousel-item img {
+  height: inherit;
+  object-fit: cover; }
 
 /*# sourceMappingURL=home.css.map */

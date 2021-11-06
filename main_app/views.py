@@ -39,9 +39,9 @@ class Signup(TemplateView):
   template_name = "signup.html"
 
   def get(self, request):
-        form = UserCreationForm()
-        context = {"form": form}
-        return render(request, "registration/signup.html", context)
+    form = UserCreationForm()
+    context = {"form": form}
+    return render(request, "registration/signup.html", context)
     
   def post(self, request):
       form = UserCreationForm(request.POST)
