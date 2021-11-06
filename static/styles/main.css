@@ -38,17 +38,6 @@ body {
     font-family: Poppins;
     color: var(--pink); }
 
-/* Login/Signup button styling */
-.nav-button {
-  vertical-align: center;
-  margin: 10px;
-  border-radius: 5px;
-  padding: 10px 20px;
-  background-color: var(--pink);
-  font-size: 16px; }
-
-:hover .nav-button {
-  background-color: var(--pink darken 20%); }
 footer {
   position: absolute;
   margin-bottom: 0px;
@@ -61,12 +50,20 @@ footer {
   justify-content: space-between;
   align-items: center;
   background-color: var(--lightorange);
-  
   /* Footer height */ }
 
 .footer-div {
   display: flex;
   align-items: center;
   gap: 5px; }
+
+/* Login/Signup button styling */
+.nav-button {
+  vertical-align: center;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: var(--pink);
+  font-size: 16px; }
 
 /*# sourceMappingURL=main.css.map */

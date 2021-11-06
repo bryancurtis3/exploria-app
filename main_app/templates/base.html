@@ -110,20 +110,10 @@
       </div>
       <div class="modal-body">
         <form method="post" action="{% url 'signup' %}">
-            <p class="firstName label">
-              First Name: <input type="text" required class="firstName input">
-            </p>
-            <p class="lastName label">
-              Last Name: <input type="text" class="lastName input">
-            </p>
           {% csrf_token %} {{ signup_form.as_p }}
           <p class="location">
-            Current City: <input type="text" name="location" value="location" class="location" required>
+            Current City: <input type="text" name="location" class="location" required>
           </p>
-          <p class="email">
-            Email: <input type="email" name="email" value="email" class="email" required>
-          </p>
-          
           <input type="submit" class="btn" value="Sign Up" />
           <input type="hidden" name="next" value="{{ next }}" />
         </form>

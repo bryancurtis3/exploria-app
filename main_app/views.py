@@ -47,8 +47,8 @@ class Signup(TemplateView):
           user = form.save()
           Profile.objects.create(location=request.POST.get('location'), user=user)
           # Profile.objects.create(email=request.POST.get('email'), user=user)
-          Profile.objects.create(first_name=request.POST.get('first_name'), user=user)
-          Profile.objects.create(last_name=request.POST.get('last_name'), user=user)
+          # Profile.objects.create(first_name=request.POST.get('first_name'), user=user)
+          # Profile.objects.create(last_name=request.POST.get('last_name'), user=user)
           login(request, user)
           return redirect("profile_redirect")
       else:
