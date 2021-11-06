@@ -54,6 +54,13 @@ body {
 }
 
 
+/* Login/Signup button styling */
 
-    
-
+.nav-button {
+  vertical-align: center;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: var(--pink);
+  font-size: 16px;
+}
