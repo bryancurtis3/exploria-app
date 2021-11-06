@@ -16,11 +16,8 @@ from django.forms import ModelForm
 
 # Auth imports
 from django.contrib.auth import login
-from django.contrib.auth.forms import UserChangeForm, UserCreationForm, AuthenticationForm
-""" from django.views.generic import UpdateView, ListView
-from django.http import HttpResponse
-from django.template.loader import render_to_string
-from main_app.forms import ItemForm """
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+
 
 # Create your views here.
 
@@ -32,21 +29,7 @@ class Home(TemplateView):
     context["signup_form"] = UserCreationForm()
     context["login_form"] = AuthenticationForm()
     return context
-""" 
-  def get(self, request):
-        form = UserCreationForm()
-        context = {"form": form}
-        return render(request, "home.html", context)
-    
-  def post(self, request):
-      form = UserCreationForm(request.POST)
-      if form.is_valid():
-          user = form.save()
-          login(request, user)
-          return redirect("/")
-      else:
-          context = {"form": form}
-          return render(request, "home.html", context) """
+
 
 class PostDetail(DetailView):
   model = Post
@@ -65,11 +48,14 @@ class Signup(TemplateView):
       if form.is_valid():
           user = form.save()
           Profile.objects.create(location=request.POST.get('location'), user=user)
+          # Profile.objects.create(email=request.POST.get('email'), user=user)
+          # Profile.objects.create(first_name=request.POST.get('first_name'), user=user)
+          # Profile.objects.create(last_name=request.POST.get('last_name'), user=user)
           login(request, user)
           return redirect("profile_redirect")
       else:
           context = {"form": form}
-          return render(request, "registration/signup.html", context)
+          return render(request, "registration/signup.html", context) # FIXME - if invalid form input, how to redirect back to modal form? Currently redirecting to unused signup page
 
 class ProfileForm(ModelForm):
   class Meta:
