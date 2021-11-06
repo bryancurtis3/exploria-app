@@ -22,19 +22,12 @@
       </div>
     </div>
 
-    <img id="post-show-image" src="https://i.imgur.com/lGf1aIv.jpg" alt="">
+    <div class="post-img-cont">
+      <img id="post-show-image" src="{{ post.img }}" alt="">
+    </div>
 
-    {% comment %} <img src="{{ post.img }}" alt=""> {% endcomment %}
-    <!-- {{ post.description }} -->
     <p>{{ post.description }}</p>
 
-
-    {% comment %} {% for post in user.posts.all %}
-      <p>{{ forloop.counter }}</p>
-      <h2>
-        Testing
-      </h2>
-    {% endfor %} {% endcomment %}
 
     {% comment %} <img src="https://www.happysocks.com/icons/jazzburger.svg" alt=""> {% endcomment %}
 
