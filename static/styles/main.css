@@ -54,6 +54,7 @@ footer {
 
 .footer-div {
   display: flex;
+  vertical-align: center;
   align-items: center;
   gap: 5px; }
 
