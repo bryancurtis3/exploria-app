@@ -13,11 +13,13 @@
   margin-top: 225px;
   z-index: 2; }
 
-#gallery-image {
-  height: inherit;
-  width: 100vw;
-  object-fit: none;
-  object-position: center bottom; }
+#gallery-container {
+  height: 50vh; }
+  #gallery-container #gallery-image {
+    height: inherit;
+    width: 100vw;
+    object-fit: cover;
+    object-position: center bottom; }
 
 body {
   background-color: var(--mediumorange); }
