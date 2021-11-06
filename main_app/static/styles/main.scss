@@ -31,12 +31,20 @@ body {
 
 
 }
+.navbar-item {
+    text-decoration: none;
+    font-family: Poppins;
+    font-size: 18px;
+    color: var(--pink);
+
+}
 
 .navbar-one {
   display: flex;
   align-items: center;
     h1 {
       font-family: Poppins;
+      color: var(--pink);
     };
 
 }

@@ -24,11 +24,18 @@ body {
   padding-right: 20px;
   background-color: var(--neonyellow); }
 
+.navbar-item {
+  text-decoration: none;
+  font-family: Poppins;
+  font-size: 18px;
+  color: var(--pink); }
+
 .navbar-one {
   display: flex;
   align-items: center; }
   .navbar-one h1 {
-    font-family: Poppins; }
+    font-family: Poppins;
+    color: var(--pink); }
 
 @keyframes pulseOne {
   0% {
