@@ -54,20 +54,20 @@ class Signup(TemplateView):
   template_name = "signup.html"
 
   def get(self, request):
-        form = UserCreationForm()
-        context = {"form": form}
-        return render(request, "registration/signup.html", context)
+    form = UserCreationForm()
+    context = {"form": form}
+    return render(request, "registration/signup.html", context)
     
   def post(self, request):
-      form = UserCreationForm(request.POST)
-      if form.is_valid():
-          user = form.save()
-          Profile.objects.create(location=request.POST.get('location'), user=user)
-          login(request, user)
-          return redirect("profile_redirect")
-      else:
-          context = {"form": form}
-          return render(request, "registration/signup.html", context)
+    form = UserCreationForm(request.POST)
+    if form.is_valid():
+      user = form.save()
+      Profile.objects.create(location=request.POST.get('location'), user=user)
+      login(request, user)
+      return redirect("profile_redirect")
+    else:
+      context = {"form": form}
+      return render(request, "registration/signup.html", context)
 
 class UserProfile(DetailView):
   model = Profile
@@ -83,9 +83,9 @@ class ProfileUpdate(UpdateView):
   template_name = "profile.html"
 
   def get_context_data(self, **kwargs):
-      context = super(ProfileUpdate, self).get_context_data(**kwargs)
-      context['User'] = User.objects.get(pk=self.object.pk)
-      return context
+    context = super(ProfileUpdate, self).get_context_data(**kwargs)
+    context['User'] = User.objects.get(pk=self.object.pk)
+    return context
 
   fields = [User.username, User.first_name, User.last_name, 'location', 'image']
   

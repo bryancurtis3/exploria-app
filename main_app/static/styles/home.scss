@@ -1,13 +1,12 @@
 #carousel-holder {
-  height: 300px;  // width: 100vw;
+  height: 50vh;
   overflow: hidden;
   object-position: center;
-
 }
 
 #gallery-button {
     position: absolute;
-    margin-top: 225px;
+    // margin-top: 225px;
     z-index: 2;
 }
 #gallery-container {
@@ -47,3 +46,13 @@ body {
 
 
 
+.slide, .carousel-inner, .carousel-item {
+    height: inherit;
+}
+
+.carousel-item {
+    img {
+        height: inherit;
+        object-fit: cover;
+    }
+}
