@@ -40,6 +40,13 @@ class PostDelete(DeleteView):
   # idk where to send this right now, so it's just going home for now
   success_url = "/"
 
+class PostEdit(UpdateView):
+  model = Post
+  fields = ['img', 'description', 'location']
+  template_name = "post_edit.html"
+  success_url = "/users/<int:pk>/" # temporary redirect just to make sure edit post works
+
+
 
 class Signup(TemplateView):
   template_name = "signup.html"
