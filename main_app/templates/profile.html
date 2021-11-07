@@ -63,12 +63,14 @@
               <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary">See post</a>
             </div>
           </div>
+          <!-- For anyone wondering, I just put this here to test post deletion, but I'm leaving it for now in case we want that on the profile page too later -Bryan -->
+          <a href="{% url 'post_delete' post.pk %}" class="delete-btn btn btn-danger">Delete Post</a>
         </div>
-       </div> 
-       <br>
-       {% empty %}
-       <p class="display-6">{{profile.user.username|capfirst}} has no posts.</p>
-       {% endfor %}
+      </div> 
+      <br>
+      {% empty %}
+      <p class="display-6">{{profile.user.username|capfirst}} has no posts.</p>
+      {% endfor %}
     </section>
     </div>
 
