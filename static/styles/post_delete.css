@@ -1,0 +1,30 @@
+.delete {
+  height: calc(100vh - 80px - 54px);
+  padding: 40px;
+  background-color: var(--mediumorange); }
+  .delete h1 {
+    padding-top: 0 !important; }
+
+.post-image {
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+  width: 50vw;
+  max-width: calc(80vh - 250px);
+  min-width: 220px;
+  aspect-ratio: 1; }
+  .post-image .img {
+    width: inherit;
+    max-width: inherit;
+    min-width: inherit;
+    object-fit: cover;
+    aspect-ratio: 1;
+    clip-path: polygon(0 0, 0 0, 10% 50%, 0 100%, 0 100%, 50% 90%, 100% 100%, 100% 100%, 90% 50%, 100% 0, 100% 0, 50% 10%);
+    transition-duration: 1s; }
+
+.post-image:hover .img {
+  clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+  cursor: pointer;
+  border: 5px solid transparent; }
+
+/*# sourceMappingURL=post_delete.css.map */

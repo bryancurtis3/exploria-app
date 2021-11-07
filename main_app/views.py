@@ -7,7 +7,7 @@ from django.urls import reverse
 
 
 from django.views.generic.base import TemplateView
-from django.views.generic.edit import UpdateView, FormView
+from django.views.generic.edit import DeleteView, UpdateView, FormView
 from django.views.generic.detail import DetailView
 
 from main_app.models import Post, User, Profile
@@ -32,6 +32,14 @@ class Home(TemplateView):
 class PostDetail(DetailView):
   model = Post
   template_name = "post_detail.html"
+
+
+class PostDelete(DeleteView):
+  model = Post
+  template_name = "post_delete_confirmation.html"
+  # idk where to send this right now, so it's just going home for now
+  success_url = "/"
+
 
 class Signup(TemplateView):
   template_name = "signup.html"
