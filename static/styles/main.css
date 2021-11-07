@@ -57,6 +57,13 @@ body {
   .navbar-one #top-left-exploria:hover .dn {
     bottom: 0px; }
 
+.auth-session {
+  margin: 0px 10px; }
+  .auth-session .navbar-item {
+    margin-left: 15px; }
+  .auth-session .user-profile-link {
+    margin-left: 5px; }
+
 #footer-logo {
   font-size: 32px;
   font-weight: 500;
@@ -125,6 +132,9 @@ footer {
   vertical-align: center;
   align-items: center;
   gap: 5px; }
+
+#footer-date {
+  margin-bottom: 0px; }
 
 /* Login/Signup button styling */
 .nav-button {

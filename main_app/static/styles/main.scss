@@ -77,6 +77,17 @@ body {
     }
 }
 
+.auth-session {
+  margin: 0px 10px;
+
+  .navbar-item {
+    margin-left: 15px;
+  };
+  .user-profile-link {
+    margin-left: 5px;
+  }
+}
+
 #footer-logo {
   font-size: 32px;
   font-weight: 500;
@@ -152,6 +163,9 @@ footer {
   gap: 5px;
 }
 
+#footer-date {
+  margin-bottom: 0px;
+}
 
 
 
