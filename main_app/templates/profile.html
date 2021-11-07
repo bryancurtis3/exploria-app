@@ -62,12 +62,27 @@
               <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary">See post</a>
             </div>
           </div>
+
+          {% comment %} Placing Edit button here with Brian's Delete button for consistency - Gail {% endcomment %}
+          <div class="buttons">
+          <a href="{% url 'post_edit' post.pk %}" class="edit-bt btn btn-info">
+            <span class="icon">
+              <i class="fas fa-edit"></i>
+            </span>
+          </a>
+          <a href="{% url 'post_delete' post.pk %}" class="delete-btn btn btn-danger">
+            <span class="icon">
+              <i class="fas fa-trash-alt"></i>
+            </span>
+          </a>
         </div>
-       </div> 
-       <br>
-       {% empty %}
-       <p class="display-6">{{profile.user.username|capfirst}} has no posts.</p>
-       {% endfor %}
+          <!-- For anyone wondering, I just put this here to test post deletion, but I'm leaving it for now in case we want that on the profile page too later -Bryan -->
+        </div>
+      </div> 
+      <br>
+      {% empty %}
+      <p class="display-6">{{profile.user.username|capfirst}} has no posts.</p>
+      {% endfor %}
     </section>
     </div>
 
