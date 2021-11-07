@@ -82,7 +82,7 @@ class ProfileUpdate(UpdateView):
 
   def form_valid(self, form):
 
-    user_id = Profile.objects.get(pk=self.object.pk).user.pk
+    user_id = Profile.objects.get(pk=self.object.pk).user.pk # Is this what's creating conflict between user/profile ID??
     User.objects.filter(pk=user_id).update(username=self.request.POST.get('username'))
 
     return super(ProfileUpdate, self).form_valid(form)
