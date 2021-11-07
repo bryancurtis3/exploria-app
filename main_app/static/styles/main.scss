@@ -42,11 +42,21 @@ body {
 .navbar-one {
   display: flex;
   align-items: center;
-    h1 {
+    a {
+      font-size: 40px;
+      font-weight: 500;
       font-family: Poppins;
-      color: var(--pink);
+      text-decoration: none;
+      color: var(--pink)
     };
+}
 
+#footer-logo {
+  font-size: 32px;
+  font-weight: 500;
+  font-family: Poppins;
+  text-decoration: none;
+  color: var(--pink)
 }
 
 @keyframes pulseOne {
