@@ -14,11 +14,14 @@ class Profile(Model):
   user = models.OneToOneField(User, on_delete=models.CASCADE)
   location = models.CharField(max_length=100)
   image = models.CharField(max_length=300, default="https://media.istockphoto.com/vectors/all-seeing-eye-icon-eye-in-triangle-illuminati-mason-symbol-vector-vector-id1265037182?k=20&m=1265037182&s=170667a&w=0&h=lZ4GKha5J9UNqLsIilcKSzQgrn8cm_teitVKYXlxW_w=")
+<<<<<<< HEAD
 
 
 class City(Model):
   name = CharField(max_length=100)
   img = CharField(max_length=300)
+=======
+>>>>>>> 0b490343c8e5c66b7d9f4d028b0c91d19894948f
 
 
 class Post(Model):
