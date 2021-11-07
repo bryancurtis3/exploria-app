@@ -44,8 +44,9 @@ class PostEdit(UpdateView):
   model = Post
   fields = ['img', 'description', 'location']
   template_name = "post_edit.html"
-  success_url = "/users/<int:pk>/" # temporary redirect just to make sure edit post works
 
+  def get_success_url(self):
+    return reverse('post_detail', kwargs={'pk': self.object.pk})
 
 
 class Signup(TemplateView):
