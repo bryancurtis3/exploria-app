@@ -24,15 +24,22 @@ body {
   padding-right: 20px;
   background-color: var(--neonyellow); }
 
+.navbar-item {
+  text-decoration: none;
+  font-family: Poppins;
+  font-size: 18px;
+  color: var(--pink); }
+
 .navbar-one {
   display: flex;
   align-items: center; }
-  .navbar-one a {
-    font-size: 40px;
-    font-weight: 500;
-    font-family: Poppins;
-    text-decoration: none;
-    color: var(--pink); }
+
+.navbar-one a {
+  font-size: 40px;
+  font-weight: 500;
+  font-family: Poppins;
+  text-decoration: none;
+  color: var(--pink); }
 
 #footer-logo {
   font-size: 32px;
@@ -41,11 +48,45 @@ body {
   text-decoration: none;
   color: var(--pink); }
 
+@keyframes pulseOne {
+  0% {
+    font-size: 16px; }
+  100% {
+    font-size: 18px; }
+  0% {
+    font-weight: 500; }
+  100% {
+    font-weight: 700; } }
+
+.login-btn-animation {
+  animation-name: pulseOne;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite; }
+
+@keyframes pulseTwo {
+  0% {
+    font-size: 18px; }
+  100% {
+    font-size: 16px; }
+  0% {
+    font-weight: 700; }
+  100% {
+    font-weight: 500; } }
+
+.signup-btn-animation {
+  animation-name: pulseTwo;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite; }
+
 .navbar-two {
   display: flex;
   justify-content: space-between;
-  gap: 20px; }
+  margin-right: 25px;
+  gap: 40px; }
   .navbar-two a {
+    text-decoration: none;
     font-family: Poppins;
     color: var(--pink); }
 
@@ -65,6 +106,7 @@ footer {
 
 .footer-div {
   display: flex;
+  vertical-align: center;
   align-items: center;
   gap: 5px; }
 
