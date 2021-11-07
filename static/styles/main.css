@@ -33,13 +33,19 @@ body {
 .navbar-one {
   display: flex;
   align-items: center; }
+  .navbar-one a {
+    font-size: 40px;
+    font-weight: 500;
+    font-family: Poppins;
+    text-decoration: none;
+    color: var(--pink); }
 
-.navbar-one a {
-  font-size: 40px;
-  font-weight: 500;
-  font-family: Poppins;
-  text-decoration: none;
-  color: var(--pink); }
+.auth-session {
+  margin: 0px 10px; }
+  .auth-session .navbar-item {
+    margin-left: 15px; }
+  .auth-session .user-profile-link {
+    margin-left: 5px; }
 
 #footer-logo {
   font-size: 32px;
@@ -79,13 +85,6 @@ body {
   animation-duration: 1s;
   animation-direction: alternate;
   animation-iteration-count: infinite; }
-
-.auth-session {
-  margin: 0px 10px; }
-  .auth-session .navbar-item {
-    margin-left: 15px; }
-  .auth-session .user-profile-link {
-    margin-left: 5px; }
 
 .navbar-two {
   display: flex;
