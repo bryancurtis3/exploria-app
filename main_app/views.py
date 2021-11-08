@@ -12,9 +12,11 @@ from django.views.generic.detail import DetailView
 
 from main_app.models import City, Post, User, Profile
 
+from django.forms import ModelForm
+
 # Auth imports
 from django.contrib.auth import login
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import UserChangeForm, UserCreationForm, AuthenticationForm
 
 
 # Create your views here.
@@ -29,12 +31,12 @@ class Home(TemplateView):
     return context
 
 class CityPost(TemplateView):
-  model = Post
+  model = City
   template_name = "city_posts.html"
   
   def get_context_data(self, **kwargs):
-    context = Post.objects.filter(location=City.object.name)
-    return context
+    context = super().get_context_data(self, **kwargs)
+    context["posts"] = Post.objects.filter(location=self.name)
 
 class PostDetail(DetailView):
   model = Post
@@ -75,6 +77,12 @@ class Signup(TemplateView):
           context = {"form": form}
           return render(request, "registration/signup.html", context) # FIXME - if invalid form input, how to redirect back to modal form? Currently redirecting to unused signup page
 
+
+class ProfileUpdateForm(ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['location', 'image']
+
 class UserProfile(DetailView):
   model = Profile
   template_name = "profile.html"
@@ -82,31 +90,33 @@ class UserProfile(DetailView):
   def get_context_data(self, **kwargs):
     context = super().get_context_data(**kwargs)
     context["posts"] = Post.objects.filter(user=self.object.pk)
+    form = ProfileUpdateForm(instance=self.object)
+    context["form"] = form
     return context
-
-class ProfileUpdate(UpdateView):
-  model = Profile
-  template_name = "profile.html"
-
-  def get_context_data(self, **kwargs):
-    context = super(ProfileUpdate, self).get_context_data(**kwargs)
-    context['User'] = User.objects.get(pk=self.object.pk)
-    return context
-
-  fields = [User.username, User.first_name, User.last_name, 'location', 'image']
   
-  # Not sure if this is how the success url is supposed to be looking
-  def get_success_url(self):
-    return reverse('profile', kwargs={'pk': self.object.pk})
-
-  def form_valid(self, form):
-
-    user_id = Profile.objects.get(pk=self.object.pk).user.pk # Is this what's creating conflict between user/profile ID??
-    User.objects.filter(pk=user_id).update(username=self.request.POST.get('username'))
-
-    return super(ProfileUpdate, self).form_valid(form)
+class ProfileUpdate(TemplateView):
+  template_name = "user_update.html"
+  
+  def post(self, request, pk):
+    form = ProfileUpdateForm(request.POST)
+    if form.is_valid():
+      Profile.objects.update(location=request.POST.get('location'), image=request.POST.get('image'), user=pk)
+      return redirect("profile", pk=pk)
+    else:
+     context = {"form": form, "pk": pk}
+     return render(request, "user_update.html", context)
 
 
 class ProfileRedirect(View):
   def get(self, request):
     return redirect('profile', request.user.profile.pk)
+
+class City(DetailView):
+  model = City
+  template_name = "city.html"
+
+  def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    context["posts"] = Post.objects.filter(city=self.object.pk)
+
+    return context

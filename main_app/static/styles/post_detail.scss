@@ -1,9 +1,11 @@
-/* Post Detail Page */
+body {
+    background-color: var(--blue);
+}
+
 .post-show-content {
     margin: 24px auto;
     padding: 0 24px;
     width: 100%;
-    // background-color: var(--pink);
 }
 
 .post-show-main {
@@ -27,6 +29,9 @@
         // This cuts off bottom corners atm
         border-radius: 15px;   
     }
+    #post-show-profile-pic:hover {
+        transform: scale(1.1);
+    }
 
     .post-show-profile {
         display: grid;
@@ -38,10 +43,16 @@
             line-height: .6em;
             font-weight: 600;
             font-size: 14px;
+
             a {
                 text-decoration: none;
                 color: #292929;
             }
+            a:hover {
+                color: var(--pink);
+                font-weight: 700;
+            }
+
             p {
                 font-size: 14px;
                 margin: 0 0 0 5px;
