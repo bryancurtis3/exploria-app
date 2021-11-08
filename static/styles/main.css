@@ -39,6 +39,23 @@ body {
     font-family: Poppins;
     text-decoration: none;
     color: var(--pink); }
+  .navbar-one #top-left-exploria {
+    transition: all .2s ease-in-out;
+    letter-spacing: -4px; }
+    .navbar-one #top-left-exploria span {
+      margin: 0;
+      padding: 0;
+      transition: inherit; }
+    .navbar-one #top-left-exploria .up {
+      position: relative;
+      top: -10px; }
+    .navbar-one #top-left-exploria .dn {
+      position: relative;
+      bottom: -10px; }
+  .navbar-one #top-left-exploria:hover .up {
+    top: 0px; }
+  .navbar-one #top-left-exploria:hover .dn {
+    bottom: 0px; }
 
 .auth-session {
   margin: 0px 10px; }
