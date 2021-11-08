@@ -1,7 +1,7 @@
 .city-main {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  margin-top: 20px; }
+  gap: 20px; }
 
 .user-posts {
   width: 60vw; }
@@ -103,7 +103,8 @@
   object-fit: contain;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  margin-top: 20px; }
   .city-data h1 {
     font-weight: 800;
     font-size: 32px;
@@ -118,5 +119,76 @@
     aspect-ratio: 1;
     object-fit: cover;
     clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%); }
+
+.city-list {
+  display: inline-grid;
+  grid-template-columns: 6fr, 4fr; }
+
+.city-list-container {
+  display: grid;
+  grid-column: 1;
+  background-color: var(--pink);
+  display: flex;
+  flex-direction: column;
+  padding: 10px; }
+
+.city-heading {
+  background-color: var(--neonyellow);
+  padding: 15px;
+  border-radius: 4px; }
+
+.city-name-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-self: center;
+  height: 100px;
+  width: 100%;
+  margin: 10px 15px;
+  background-color: var(--lightorange);
+  border-radius: 4px;
+  place-items: center;
+  text-decoration: none;
+  color: #212529;
+  padding-left: 10px;
+  clip-path: polygon(88% 0, 100% 50%, 88% 100%, 0% 100%, 0 50%, 0% 0%); }
+  .city-name-container h3 {
+    align-self: center;
+    margin: 0; }
+  .city-name-container img {
+    height: 80px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%); }
+
+.city-name-container:hover {
+  color: #212529;
+  cursor: pointer; }
+
+.city-post-container {
+  grid-column: 2; }
+
+.bg {
+  animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, var(--lightorange) 50%, var(--blue) 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: .5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1; }
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s; }
+
+.bg3 {
+  animation-duration: 5s; }
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%); }
+  100% {
+    transform: translateX(25%); } }
 
 /*# sourceMappingURL=city.css.map */

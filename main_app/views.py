@@ -121,5 +121,6 @@ class City(DetailView):
   def get_context_data(self, **kwargs):
     context = super().get_context_data(**kwargs)
     context["posts"] = Post.objects.filter(city=self.object.pk)
+    context["cities"] = CityModel.objects.all()
 
     return context

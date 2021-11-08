@@ -6,10 +6,23 @@
 
 {% block content %}
 
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
 <main class="city-main">
 
   <section class="city-list">
-    <p>Why isnt it moving</p>
+    <div class="city-list-container">
+      <h2 class="city-heading modal-header">Cities</h2>
+        {% for city in cities %} 
+        <a class="city-name-container" href="{% url 'city' city.pk %}">
+          <img src="{{ city.img }}" alt="">
+          <h3>{{city.name}}</h3>
+        </a>
+        {% endfor %}
+        </div>
+    </div>  
   </section>
   
   <section class="city-data">
