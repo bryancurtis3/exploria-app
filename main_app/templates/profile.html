@@ -32,15 +32,16 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancel"></button>
               </div>
               <div class="modal-body">
-                <form action="{% url 'profile_update' profile.user.pk %}" method="POST">
+                <form action="{% url 'profile_update' profile.pk %}" method="POST">
                   {% csrf_token %}
-                  {{ form.as_p }}
-
-                  
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                  <input type="submit" class="btn btn-primary" value="Save Changes" />
-                </div>
+                  <label for="locationInput">Location</label> 
+                  <input type="text" class="location input" name="locationInput" required />
+                  <label for="imageInput">Profile Picture</label> 
+                  <input type="text" class="image input" name="imageInput" required />
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <input type="submit" class="btn btn-primary" value="Save Changes" />
+                  </div>
                 </form>
               </div>
             </div>

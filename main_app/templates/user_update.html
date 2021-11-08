@@ -1,10 +1,13 @@
+{% extends 'base.html' %}
+
 {% block content %}
 
   <form action="{% url 'profile_update' profile.pk %}" method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button>Submit</button>
+    <input type="text" class="location input" required />
+    <input type="text" class="image input" required />
+    <input type="submit" class="btn" value="Save Changes" />
   </form>
-{% endblock content %}
+{% endblock %}
 
 

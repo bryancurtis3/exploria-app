@@ -74,31 +74,34 @@ class Signup(TemplateView):
           return render(request, "registration/signup.html", context) # FIXME - if invalid form input, how to redirect back to modal form? Currently redirecting to unused signup page
 
 
+class ProfileUpdateForm(ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['location', 'image']
+
 class UserProfile(DetailView):
-  #model = User
   model = Profile
   template_name = "profile.html"
 
   def get_context_data(self, **kwargs):
     context = super().get_context_data(**kwargs)
-    # context["profile"] = Profile.objects.filter(user_id=self.object.pk)
     context["posts"] = Post.objects.filter(user=self.object.pk)
-    context["update_form"] = UserChangeForm()
+    context["update_form"] = ProfileUpdateForm()
     return context
 
 class ProfileUpdate(TemplateView):
   template_name = "user_update.html"
 
   def get(self, request):
-    form = UserChangeForm()
+    form = ProfileUpdateForm()
     context = {"form" : form}
     return render(request, "user_update.html", context)
   
-  def post(self, request):
-    form = UserChangeForm(request.POST)
+  def post(self, request, pk):
+    form = ProfileUpdateForm(request.POST)
     if form.is_valid():
-      user = form.save()
-      Profile.objects.update()
+      Profile.objects.save(location=request.POST.get('location'), image=request.POST.get('image'), user=pk)
+      #user=request.user.profile.pk)
       return redirect("profile")
     else:
       context = {"form": form}
