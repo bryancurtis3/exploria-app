@@ -10,7 +10,8 @@ from django.views.generic.base import TemplateView
 from django.views.generic.edit import DeleteView, UpdateView, FormView
 from django.views.generic.detail import DetailView
 
-from main_app.models import City, Post, User, Profile
+from main_app.models import Post, User, Profile
+from main_app.models import City as CityModel
 
 from django.forms import ModelForm
 
@@ -103,8 +104,18 @@ class ProfileRedirect(View):
   def get(self, request):
     return redirect('profile', request.user.profile.pk)
 
+class CityList(TemplateView):
+  model = CityModel
+  template_name = "city_list.html"
+
+  def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    context["cities"] = CityModel.objects.all()
+    
+    return context
+
 class City(DetailView):
-  model = City
+  model = CityModel
   template_name = "city.html"
 
   def get_context_data(self, **kwargs):
