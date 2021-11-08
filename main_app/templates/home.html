@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load sass_tags %}
 
 {% block styles %}<link rel="stylesheet" href="{% sass_src 'styles/home.scss' %}">{% endblock styles %}
+
+{% block scripts %} <script src="{% static 'scripts/carousel.js' %}"></script> {% endblock scripts %}
 
 {% block title%}
 Home 
@@ -34,7 +37,12 @@ Home
     </section>
   </div>
 <div id="home-about-section">
-  <h2 id="home-title">Exploria is <span class="ellipsis"></span></h2>
+  {% comment %} <span class="ellipsis"></span> {% endcomment %}
+  <!-- Text Carousel borrowed from Gregory Schier -->
+  <h2 id="home-title">Exploria is... <span
+     class="txt-rotate"
+     data-period="2000"
+     data-rotate='[ "wacky", "simple", "exciting!", "empowering", "social", "dynamic", "artsy", "nostalgic", "hypnotizing", "inspiring", "online", "zany", "3,000+ lines of code!", "exotic", "communal", "inviting", "free!", "functional", "enigmatic", "eclectic", "vibrant", "pythonic", "relational", "structured", "winning you over", "over the top", "yours to share", "a team effort", "interactive", "inclusive", "organic" ]'></span></h2>
   <section id="about-topics-container">
     <div>
       <h3>Vision and Goal</h3>

@@ -104,12 +104,10 @@ class ProfileRedirect(View):
   def get(self, request):
     return redirect('profile', request.user.profile.pk)
 
-<<<<<<< HEAD
 class PostCreateForm(ModelForm):
     class Meta:
         model = Post
         fields = ['title', 'img', 'description']
-=======
 class CityList(TemplateView):
   model = CityModel
   template_name = "city_list.html"
@@ -119,7 +117,6 @@ class CityList(TemplateView):
     context["cities"] = CityModel.objects.all()
     
     return context
->>>>>>> dev
 
 class City(DetailView):
   model = CityModel
@@ -128,6 +125,7 @@ class City(DetailView):
   def get_context_data(self, **kwargs):
     context = super().get_context_data(**kwargs)
     context["posts"] = Post.objects.filter(city=self.object.pk)
+    context["cities"] = CityModel.objects.all()
     form = PostCreateForm()
     context["form"] = form
     return context
