@@ -81,6 +81,7 @@ body {
     p {
         font-size: 18px;
         line-height: 28px;
+        padding: 0px 10px;
         // color: var(--neonyellow);
     }
     // #post-show-profile-container {
@@ -89,3 +90,25 @@ body {
     // }
     // background-color: red;
 }
+
+// Edit/Delete buttons
+.edit-delete-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icon {
+    color: white;
+    font-size: 24px;
+}
+
+.fas {
+    font-weight: 400;
+}
+
+.neon:hover {
+    color: #fff;
+    text-shadow:
+      0 0 10px #fff,
+      0 0 20px #fff;
+  }
