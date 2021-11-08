@@ -20,6 +20,9 @@ class City(Model):
   name = CharField(max_length=100)
   img = CharField(max_length=300)
 
+  def __str__(self):
+    return self.title
+
 
 class Post(Model):
   title = CharField(max_length=100)
