@@ -55,24 +55,10 @@
           <div class="card-body d-flex">
             <span><img src="{{post.img}}" class="card-img-top" alt="Picture of {{post.title}}"></span>
             <div class="card-body">
-              <h4 class="card-title text-body">{{ post.location }}</h4>
+              <a href="{% url 'city' post.city.pk %}" class="text-decoration-none text-dark"<h4 class="card-title text-body">{{ post.location }}</h4></a>
               <p class="card-text text-muted lead">{{post.description|truncatechars:"254"}}</p>
               <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary">See post</a>
             </div>
-          </div>
-
-          {% comment %} Placing Edit button here with Brian's Delete button for consistency - Gail {% endcomment %}
-          <div class="buttons">
-            <a href="{% url 'post_edit' post.pk %}" class="edit-bt btn btn-info">
-              <span class="icon">
-                <i class="fas fa-edit"></i>
-              </span>
-            </a>
-            <a href="{% url 'post_delete' post.pk %}" class="delete-btn btn btn-danger">
-              <span class="icon">
-                <i class="fas fa-trash-alt"></i>
-              </span>
-            </a>
           </div>
         </div>
       </div> 
