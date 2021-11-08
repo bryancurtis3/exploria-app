@@ -37,7 +37,7 @@ body {
         color: #292929; }
       .post-show-main .post-show-profile .post-show-user-text a:hover {
         color: var(--pink);
-        transform: scale(1.1); }
+        font-weight: 700; }
       .post-show-main .post-show-profile .post-show-user-text p {
         font-size: 14px;
         margin: 0 0 0 5px;

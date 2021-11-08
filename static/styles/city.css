@@ -46,4 +46,18 @@
   object-position: 50% 50%;
   border-radius: 15px; }
 
+.new-post {
+  background-color: var(--blue);
+  transition: all .2s ease-in-out;
+  margin-bottom: 40px;
+  font-family: 'Poppins'; }
+
+.new-post:hover {
+  box-shadow: 2px 2px #53a7ea, 4px 4px #53a7ea, 6px 6px #53a7ea;
+  transform: translateX(-6px); }
+
+.display-6 {
+  margin: 4px 0;
+  font-weight: 500; }
+
 /*# sourceMappingURL=city.css.map */
