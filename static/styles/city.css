@@ -1,0 +1,49 @@
+.city-main {
+  font-family: 'Poppins', sans-serif;
+  width: 750px;
+  object-fit: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .city-main h1 {
+    font-weight: 800;
+    font-size: 54px;
+    align-self: flex-start; }
+  .city-main .image {
+    width: 750px;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%); }
+  .city-main .post-image {
+    margin: 20px 10px 5px 15px;
+    width: 220px;
+    height: 200px;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%); }
+
+.user-posts .title-card {
+  background-color: var(--neonyellow); }
+
+.post-user .post-user-text {
+  width: 200px;
+  margin: 10px 25px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 70px 130px;
+  grid-template-rows: 1fr;
+  border-radius: 20px; }
+  .post-user .post-user-text a {
+    text-decoration: none;
+    color: dimgray; }
+  .post-user .post-user-text .location {
+    grid-column-start: 3;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr; }
+
+.post-user #profile-pic {
+  height: 60px;
+  width: 60px;
+  clip-path: polygon(50% 14%, 9% 85%, 91% 85%);
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: 15px; }
+
+/*# sourceMappingURL=city.css.map */

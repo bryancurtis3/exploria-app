@@ -86,4 +86,13 @@
 .card-img-top {
   object-fit: cover; }
 
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  form label {
+    margin: 10px;
+    font-weight: 600; }
+
 /*# sourceMappingURL=profile2.css.map */
