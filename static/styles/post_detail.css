@@ -56,6 +56,23 @@ body {
     clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%); }
   .post-show-main p {
     font-size: 18px;
-    line-height: 28px; }
+    line-height: 28px;
+    padding: 0px 10px; }
+
+.edit-delete-buttons {
+  display: flex;
+  justify-content: flex-end; }
+
+.icon {
+  color: white;
+  font-size: 24px; }
+
+.fas {
+  font-weight: 400; }
+
+.neon:hover {
+  color: #fff;
+  transition-duration: .5s;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff; }
 
 /*# sourceMappingURL=post_detail.css.map */
