@@ -34,8 +34,10 @@ body {
     font-size: larger; }
   #about-topics-container a {
     text-decoration: none;
-    background-color: var(--pink);
-    color: var(--blue); }
+    background-color: #ff6f39;
+    color: #7edaff;
+    border-radius: 3px;
+    padding: 0 2px; }
 
 .slide, .carousel-inner, .carousel-item {
   height: inherit; }

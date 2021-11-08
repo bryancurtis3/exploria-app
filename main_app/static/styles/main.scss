@@ -48,7 +48,33 @@ body {
       font-family: Poppins;
       text-decoration: none;
       color: var(--pink)
-    };
+    }
+
+    #top-left-exploria {
+      transition: all .2s ease-in-out;
+      letter-spacing: -4px;
+      span {
+        margin: 0;
+        padding: 0;
+        transition: inherit;
+      }
+      .up {
+        position: relative;
+        top: -10px;
+      }
+      .dn {
+        position: relative;
+        bottom: -10px;
+      }
+    }
+    #top-left-exploria:hover {
+      .up {
+        top: 0px;
+      }
+      .dn {
+        bottom: 0px;
+      }
+    }
 }
 
 .auth-session {

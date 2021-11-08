@@ -44,8 +44,10 @@ body {
     }
     a {
         text-decoration: none;
-        background-color: var(--pink);
-        color: var(--blue)
+        background-color: scale-color(#FF9770, $lightness: -15%);
+        color: scale-color(#70D6FF, $lightness: +10%);
+        border-radius: 3px;
+        padding: 0 2px;
     }
 }
 

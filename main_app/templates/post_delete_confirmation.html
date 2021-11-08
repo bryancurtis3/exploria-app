@@ -5,19 +5,19 @@
 
 {% block content %}
 <section class="delete">
-    <h1 class="title pt-5">Are you sure you want to delete the post titled {{ post.title }}?</h1>
+    <h1 class="title">Are you sure you want to delete the post titled {{ post.title }}?</h1>
 
     <form method="post" name="form">
         {% csrf_token %}
         <div class="buttons">
-            <input class="btn btn-outline-danger" type="submit" value="Confirm" />
             <!-- Redirect back on cancel using fancy (trashy) JS thingy -->
-            <a class="btn btn-primary" href="/" role="button" onclick="javascript:window.history.back(-1);return false;"
-            >Cancel</a
-            >
+            <a class="btn btn-primary" href="/" role="button" onclick="javascript:window.history.back(-1);return false;">Cancel</a>
+
+            <input class="btn btn-outline-danger" type="submit" value="Confirm" />
         </div>
     
         <div class="post-image">
+            <p class="delete-text">DELETE?</p>
             <input class="img" src="{{ post.img }}" alt="" type="image">
         </div>
     </form>
