@@ -96,7 +96,7 @@ class ProfileUpdate(TemplateView):
   def post(self, request, pk):
     form = ProfileUpdateForm(request.POST)
     if form.is_valid():
-      Profile.objects.update(location=request.POST.get('location'), image=request.POST.get('image'), user=pk)
+      Profile.objects.filter(user=pk).update(location=request.POST.get('location'), image=request.POST.get('image'))
       return redirect("profile", pk=pk)
     else:
      context = {"form": form, "pk": pk}
