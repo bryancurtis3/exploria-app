@@ -11,5 +11,6 @@ urlpatterns = [
     path('profile_redirect', views.ProfileRedirect.as_view(), name="profile_redirect"),
     path('posts/<int:pk>/delete/', views.PostDelete.as_view(), name="post_delete"),
     path('posts/<int:pk>/edit/', views.PostEdit.as_view(), name="post_edit"),
+    path('posts/new/', views.PostCreate.as_view(), name="post_create"),
     path('city/<int:pk>/', views.City.as_view(), name="city"),
 ]
