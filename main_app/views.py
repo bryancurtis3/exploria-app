@@ -29,12 +29,12 @@ class Home(TemplateView):
     return context
 
 class CityPost(TemplateView):
-  model = Post
+  model = City
   template_name = "city_posts.html"
   
   def get_context_data(self, **kwargs):
-    context = Post.objects.filter(location=City.object.name)
-    return context
+    context = super().get_context_data(self, **kwargs)
+    context["posts"] = Post.objects.filter(location=self.name)
 
 class PostDetail(DetailView):
   model = Post
