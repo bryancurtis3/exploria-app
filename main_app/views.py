@@ -10,7 +10,7 @@ from django.views.generic.base import TemplateView
 from django.views.generic.edit import DeleteView, UpdateView, FormView
 from django.views.generic.detail import DetailView
 
-from main_app.models import Post, User, Profile
+from main_app.models import City, Post, User, Profile
 
 # Auth imports
 from django.contrib.auth import login
@@ -28,6 +28,13 @@ class Home(TemplateView):
     context["login_form"] = AuthenticationForm()
     return context
 
+class CityPost(TemplateView):
+  model = Post
+  template_name = "city_posts.html"
+  
+  def get_context_data(self, **kwargs):
+    context = Post.objects.filter(location=City.object.name)
+    return context
 
 class PostDetail(DetailView):
   model = Post
