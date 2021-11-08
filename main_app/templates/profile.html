@@ -65,18 +65,20 @@
           </div>
 
           {% comment %} Placing Edit button here with Brian's Delete button for consistency - Gail {% endcomment %}
-          <div class="buttons">
-          <a href="{% url 'post_edit' post.pk %}" class="edit-bt btn btn-info">
-            <span class="icon">
-              <i class="fas fa-edit"></i>
-            </span>
-          </a>
-          <a href="{% url 'post_delete' post.pk %}" class="delete-btn btn btn-danger">
-            <span class="icon">
-              <i class="fas fa-trash-alt"></i>
-            </span>
-          </a>
-        </div>
+          <div class="post-update-btns">
+            <div class="btn-align end-0"
+              <a href="{% url 'post_edit' post.pk %}" class="edit-btn btn bt-outline-info">
+                <span class="icon">
+                  <i class="fas fa-edit"></i>
+                </span>
+              </a>
+              <a href="{% url 'post_delete' post.pk %}" class="delete-btn btn btn-outline-danger">
+                <span class="icon">
+                  <i class="fas fa-trash-alt"></i>
+                </span>
+              </a>
+            </div>
+          </div>
           <!-- For anyone wondering, I just put this here to test post deletion, but I'm leaving it for now in case we want that on the profile page too later -Bryan -->
         </div>
       </div> 
