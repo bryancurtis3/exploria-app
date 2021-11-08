@@ -17,7 +17,7 @@
   </div> {% endcomment %}
 
   <div class="new-post-container">
-    <button class="new-post btn" data-bs-toggle="modal" data-bs-target="#newPost"><i class="fas fa-plus"></i></button>
+    <img class="new-post btn addbutton" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAQlBMVEX///8AAAClpaWioqKqqqpoaGhVVVVKSkp9fX13d3dsbGxiYmKurq6ampp6enpPT09DQ0OQkJAXFxcdHR0iIiIqKioQE0n0AAABtElEQVR4nO3cwVrbMBCF0dRxCnUgoYW+/6t232qhMgOeMeff67s6Wy10+nb0Tntf4MMj7B9h/wj7R9g/wv4R9o+wf4T9I+zfULitS8fWy7Tw6dSzZVq47n3Vd3YmJCwfIWH9CAnrR0hYP0LC+hES1o+QsH6EhPUjJKwfIWH9CAnrR0hYP0LCSM+3x7+7ndNX9hTeByvX9JU9hd8HK5f0FULCSIQ5ERJGIsyJkDASYU6EhJEIcyIkjESYEyFhJMKcCAkjEeZESBiJMCdCwkiEORF+tnBLX/kA4c+Xh6nuvwYrr/e5wy/POwp/jE6n90hI+G+EhMkREg4iJEyOkHAQIWFyhISDiglvOwrP18tU29tg5fc2d/i67Cicru1b23Rf872U8P8jJIxEmBMhYSTCnAgJIxHmREgYiTAnQsJIhDkREkYizImQMBJhToSEkQhzIiSMdHzh8f8RPv5f0J8TIWH9CAnrR0hYP0LC+hES1o+QsH6EhPUjJKwfIWH9CAnrR0hYP0LC+hF+JeHT3ld9Z8u0cFuXjq2XaeGhIuwfYf8I+0fYP8L+EfaPsH+E/SPs3/GFfwB8WGBp+hy/+QAAAABJRU5ErkJggg==" data-bs-toggle="modal" data-bs-target="#newPost">
   </div>
 
   <section class="col user-posts">
@@ -69,7 +69,7 @@
         <div class="modal fade" id="newPost" tabindex="-1" aria-labelledby="newPostModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
-              <div class="modal-header bg-warning">
+              <div class="modal-header">
                 <h5 class="modal-title" id="newPostModalLabel">Add a New Post</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancel"></button>
               </div>
@@ -77,9 +77,9 @@
                 <form action="{% url 'post_create' city.pk %}" method="POST">
                   {% csrf_token %}
                   {{form.as_p}}
-                  <div class="modal-footer bg-warning rounded">
+                  <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <input type="submit" class="btn btn-primary" value="Save Changes" />
+                    <input type="submit" class="btn btn-primary post-submit" value="Create Post" />
                   </div>
                 </form>
               </div>
