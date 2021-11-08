@@ -44,10 +44,9 @@ class PostEdit(UpdateView):
   model = Post
   fields = ['img', 'description', 'location']
   template_name = "post_edit.html"
-  success_url = "/users/<int:pk>/" # temporary redirect just to make sure edit post works
-
-  # def get_success_url(self):
-  #   return reverse('post_detail', kwargs={'pk': self.object.pk})
+  
+  def get_success_url(self):
+    return reverse('post_detail', kwargs={'pk': self.object.pk})
 
 
 class Signup(TemplateView):
@@ -64,9 +63,6 @@ class Signup(TemplateView):
       if form.is_valid():
           user = form.save()
           Profile.objects.create(location=request.POST.get('location'), user=user)
-          # Profile.objects.create(email=request.POST.get('email'), user=user)
-          # Profile.objects.create(first_name=request.POST.get('first_name'), user=user)
-          # Profile.objects.create(last_name=request.POST.get('last_name'), user=user)
           login(request, user)
           return redirect("profile_redirect")
       else:
