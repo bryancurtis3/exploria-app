@@ -28,7 +28,18 @@
 
     <p>{{ post.description }}</p>
 
-
+    <div class="buttons">
+      <a href="{% url 'post_edit' post.pk %}" class="edit-bt btn btn-info">
+        <span class="icon">
+          <i class="fas fa-edit"></i>
+        </span>
+      </a>
+      <a href="{% url 'post_delete' post.pk %}" class="delete-btn btn btn-danger">
+        <span class="icon">
+          <i class="fas fa-trash-alt"></i>
+        </span>
+      </a>
+    </div>
     {% comment %} <img src="https://www.happysocks.com/icons/jazzburger.svg" alt=""> {% endcomment %}
 
   </main>
