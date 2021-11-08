@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-* {
-  box-sizing: border-box; }
-
 :root {
   --blue: #70D6FF;
   --pink: #FF70A6;
   --mediumorange: #FF9770;
   --lightorange: #FFD670;
   --neonyellow: #E9FF70; }
+
+* {
+  box-sizing: border-box; }
 
 body {
   padding: 0;
@@ -28,9 +28,7 @@ body {
   text-decoration: none;
   font-family: Poppins;
   font-size: 18px;
-  color: var(--pink);
-  padding: 0 5px;
-  border-radius: 5px; }
+  color: var(--pink); }
 
 .navbar-one {
   display: flex;
@@ -72,8 +70,7 @@ body {
     color: var(--pink); }
   .auth-session .user-profile-link:hover {
     font-weight: 600;
-    color: #00aaef;
-    box-shadow: 1px 1px 8px 1px #e60000; }
+    color: #00aaef; }
   .auth-session .logout-nav:hover {
     font-weight: 600;
     color: #00aaef; }

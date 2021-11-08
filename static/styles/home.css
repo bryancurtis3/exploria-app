@@ -41,6 +41,7 @@ body {
     padding: 0 2px; }
   #about-topics-container a:hover {
     font-weight: 600;
+    padding: 0 0px 0 2px;
     box-shadow: 1px 1px 10px 1px #ff7c4b; }
 
 .slide, .carousel-inner, .carousel-item {

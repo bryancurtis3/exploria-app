@@ -21,6 +21,8 @@ body {
     object-fit: cover;
     object-position: 50% 50%;
     border-radius: 15px; }
+  .post-show-main #post-show-profile-pic:hover {
+    transform: scale(1.1); }
   .post-show-main .post-show-profile {
     display: grid;
     grid-template-columns: 70px 1fr;
@@ -33,6 +35,9 @@ body {
       .post-show-main .post-show-profile .post-show-user-text a {
         text-decoration: none;
         color: #292929; }
+      .post-show-main .post-show-profile .post-show-user-text a:hover {
+        color: var(--pink);
+        transform: scale(1.1); }
       .post-show-main .post-show-profile .post-show-user-text p {
         font-size: 14px;
         margin: 0 0 0 5px;
