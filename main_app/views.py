@@ -7,10 +7,10 @@ from django.urls import reverse
 
 
 from django.views.generic.base import TemplateView
-from django.views.generic.edit import UpdateView, FormView
+from django.views.generic.edit import DeleteView, UpdateView, FormView
 from django.views.generic.detail import DetailView
 
-from main_app.models import Post, User, Profile
+from main_app.models import City, Post, User, Profile
 
 # Auth imports
 from django.contrib.auth import login
@@ -28,10 +28,32 @@ class Home(TemplateView):
     context["login_form"] = AuthenticationForm()
     return context
 
+class CityPost(TemplateView):
+  model = Post
+  template_name = "city_posts.html"
+  
+  def get_context_data(self, **kwargs):
+    context = Post.objects.filter(location=City.object.name)
+    return context
 
 class PostDetail(DetailView):
   model = Post
   template_name = "post_detail.html"
+
+
+class PostDelete(DeleteView):
+  model = Post
+  template_name = "post_delete_confirmation.html"
+  # idk where to send this right now, so it's just going home for now
+  success_url = "/"
+
+class PostEdit(UpdateView):
+  model = Post
+  fields = ['img', 'description', 'location']
+  template_name = "post_edit.html"
+  success_url = "/users/<int:pk>/" # temporary redirect just to make sure edit post works
+
+
 
 class Signup(TemplateView):
   template_name = "signup.html"
@@ -82,7 +104,7 @@ class ProfileUpdate(UpdateView):
 
   def form_valid(self, form):
 
-    user_id = Profile.objects.get(pk=self.object.pk).user.pk
+    user_id = Profile.objects.get(pk=self.object.pk).user.pk # Is this what's creating conflict between user/profile ID??
     User.objects.filter(pk=user_id).update(username=self.request.POST.get('username'))
 
     return super(ProfileUpdate, self).form_valid(form)

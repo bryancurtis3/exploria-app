@@ -27,12 +27,12 @@
   
       <script src="{% static 'scripts/app.js' %}" defer></script>
   
-      <title>Exploria - {% block title %}{% endblock %}</title>
+      <title>{{post.city}}</title>
   </head>
 <body>
   {% block content %}
   <section class="col right-user-posts">
-    {% for post.city in posts%}
+    {% for post in posts%}
     <div class="post-border">
       <div class="card" id="post-cards">
         <div class="card-header">
@@ -50,7 +50,7 @@
      </div> 
      <br>
      {% empty %}
-     <p class="display-6">{{profile.user.username|capfirst}} has no posts.</p>
+     <p class="display-6"> This location currently has no posts.</p>
      {% endfor %}
   </section>
 
