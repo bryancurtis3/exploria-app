@@ -37,7 +37,8 @@ form {
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.35);
   -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.35);
   -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.35);
-  padding: 0px 40px; }
+  padding: 0px 40px;
+  margin: 30px 0; }
   form h1 {
     margin-bottom: 10px; }
   form label {

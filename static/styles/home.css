@@ -23,8 +23,7 @@ body {
 
 #home-title {
   margin: 1em auto;
-  text-align: left;
-  width: 170px; }
+  text-align: center; }
 
 #about-topics-container {
   display: grid;
