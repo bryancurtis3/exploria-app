@@ -1,11 +1,13 @@
-{% block content %}
-<h1>it works!</h1>
+{% extends 'base.html' %}
 
-<form action="{% url 'profile_update' profile.pk %}" method="POST">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <p><label for="username">Username: </label>
-  <input type="text" placeholder="username" name="username" value="{{ user.username }}"></p>
-  <button>Submit</button>
-</form>
-{% endblock content %}
+{% block content %}
+
+  <form action="{% url 'profile_update' profile.pk %}" method="POST">
+    {% csrf_token %}
+    <input type="text" class="location input" required />
+    <input type="text" class="image input" required />
+    <input type="submit" class="btn" value="Save Changes" />
+  </form>
+{% endblock %}
+
+

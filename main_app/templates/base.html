@@ -60,9 +60,9 @@
     </div>
     {% if user.is_authenticated %}
     <div class="auth-session">
-      <span class="navbar-item">Welcome: <a class="user-profile-link" href="{% url 'profile' user.pk %}">{{ user.username }}</a></span>
-      <a class="navbar-item" href="{% url 'logout' %}" >Logout</a>   
-    </div>          
+      <span class="navbar-item"><a class="user-profile-link" href="{% url 'profile' user.pk %}">My Account</a></span>
+      <a class="navbar-item logout-nav" href="{% url 'logout' %}" >Logout</a>   
+    </div>
     {% else %} 
     <div class="navbar-two">
       <a class="login-btn-animation" type="button" class="nav-button" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
