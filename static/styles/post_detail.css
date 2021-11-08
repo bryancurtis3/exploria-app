@@ -72,6 +72,7 @@ body {
 
 .neon:hover {
   color: #fff;
+  transition-duration: .5s;
   text-shadow: 0 0 10px #fff, 0 0 20px #fff; }
 
 /*# sourceMappingURL=post_detail.css.map */

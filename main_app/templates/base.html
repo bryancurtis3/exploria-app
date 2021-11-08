@@ -108,8 +108,10 @@
         <div class="modal-body">
           <form method="post" action="{% url 'login' %}">
             {% csrf_token %} {{ login_form.as_p }}
-            <input type="submit" class="btn" value="login" />
-            <input type="hidden" name="next" value="{{ next }}" />
+            <div class="modal-footer">
+              <input type="submit" class="btn login-submit" value="login" />
+              <input type="hidden" name="next" value="{{ next }}" />
+            </div>
           </form>
         </div>
       </div>
@@ -130,8 +132,10 @@
           <p class="location">
             Current City: <input type="text" name="location" class="location" required>
           </p>
-          <input type="submit" class="btn" value="Sign Up" />
-          <input type="hidden" name="next" value="{{ next }}" />
+          <div class="modal-footer">
+            <button type="submit" class="btn signUp-submit">Sign Up</button>
+            <input type="hidden" name="next" value="{{ next }}" />
+          </div>
         </form>
       </div>
     </div>

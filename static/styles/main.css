@@ -80,7 +80,7 @@ body {
   font-weight: 500;
   font-family: Poppins;
   text-decoration: none;
-  color: var(--pink);
+  color: var(--neonyellow);
   transition: all .2s ease-in-out; }
 
 #footer-logo:hover {
@@ -141,8 +141,8 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--lightorange);
-  /* Footer height */ }
+  background-color: var(--blue);
+  color: var(--neonyellow); }
 
 .footer-div {
   display: flex;
@@ -161,5 +161,55 @@ footer {
   padding: 10px 20px;
   background-color: var(--pink);
   font-size: 16px; }
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  form label {
+    margin: 10px;
+    font-weight: 600; }
+
+.modal-header {
+  background-color: var(--neonyellow); }
+  .modal-header h5 {
+    font-size: 24px;
+    font-weight: 500; }
+
+.modal-body {
+  padding: 16px 0 0 0; }
+  .modal-body p {
+    font-size: 18px;
+    width: 100%;
+    padding: 0 14px;
+    display: flex;
+    justify-content: space-between; }
+    .modal-body p .location {
+      margin: 10px;
+      font-weight: 600; }
+    .modal-body p input {
+      width: 70%; }
+
+.modal-footer {
+  width: 100%;
+  padding: 8px 16px;
+  justify-content: center; }
+
+.signUp-submit, .login-submit {
+  background-color: var(--blue);
+  transition: all .1s ease-in-out; }
+
+.signUp-submit:hover, .login-submit:hover {
+  background-color: #27c1ff; }
+
+span.helptext {
+  font-size: 10px;
+  font-style: oblique; }
+
+ul {
+  padding: 0 2.5rem;
+  font-size: 12px;
+  line-height: 1.3; }
 
 /*# sourceMappingURL=main.css.map */
