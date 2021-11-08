@@ -1,10 +1,16 @@
-{% extends 'base.html' %} {% block content %}
-<h1 class="pt-3">Update {{post.name}}</h1>
+{% extends 'base.html' %} 
+{% load sass_tags %}
+
+{% block title %} Edit Post {% endblock %}
+
+{% block styles %} <link rel="stylesheet" href={% sass_src 'styles/post_edit.scss' %} {% endblock %}
+{% block content %}
+<h1 class="pt-3">Update {{post.title}}</h1>
 
 <form action="" method="post">
   {% csrf_token %} 
   {{form.as_p}}
-  <input type="submit" value="Submit"/>
+  <button type="submit">Submit</button>
 </form>
 
 {% endblock %}
