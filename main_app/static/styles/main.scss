@@ -225,7 +225,7 @@ form {
   justify-content: center;
 
   label {
-    margin: 10px;
+    margin: 0px 0px;
     font-weight: 600;
   }
 }
@@ -241,29 +241,29 @@ form {
 }
 
 .modal-body {
-  padding: 16px 0 0 0;
+  padding: 16px 50px 0 50px;
 
   p {
     font-size: 18px;
     width: 100%;
-    padding: 0 14px;
-    display: flex;
+    padding-top: .5px;
+    display: grid inline;
     justify-content: space-between;
 
-    .location {
-      margin: 10px;
-      font-weight: 600;
-    }
+    // .location {
+    //   margin: 10px;
+    //   font-weight: 600;
+    // }
 
     input {
-      width: 70%;
+      width: 95%;
     }
   }
 }
 
 .modal-footer {
   width: 100%;
-  padding: 8px 16px;
+  padding: 12px 16px;
   justify-content: center;
 }
 
@@ -280,10 +280,12 @@ form {
 span.helptext {
   font-size: 10px;
   font-style: oblique;
+  padding-left: 7px;
 }
 
 ul {
-  padding: 0 2.5rem;
+  margin-bottom: 0;
+  padding: 0 1rem 0 2rem;
   font-size: 12px;
   line-height: 1.3;
 }
