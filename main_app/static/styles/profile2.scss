@@ -132,3 +132,44 @@ form {
   }
 
 }
+
+// Bryan's efforts
+.modal-header {
+  background-color: var(--neonyellow);
+
+  h5 {
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
+
+.modal-body {
+  padding: 16px 0 0 0;
+
+  p {
+    font-size: 18px;
+    width: 100%;
+    padding: 0 14px;
+    display: flex;
+    justify-content: space-between;
+
+    input {
+      width: 70%;
+    }
+  }
+}
+
+.modal-footer {
+  width: 100%;
+  padding: 8px 16px;
+  justify-content: space-between;
+}
+
+.edit-submit {
+  background-color: var(--blue);
+  transition: all .1s ease-in-out;
+}
+
+.edit-submit:hover {
+  background-color: scale-color(#70D6FF, $lightness: -20%);
+}
