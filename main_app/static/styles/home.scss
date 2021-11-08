@@ -29,8 +29,9 @@ body {
 }
 
 #home-title {
-    margin: 1em 0;
-    text-align: center;
+    margin: 1em auto;
+    text-align: left;
+    width: 162px;
 }
 
 #about-topics-container {
@@ -38,16 +39,23 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     margin: 0 24px 24px 24px;
     gap: 24px;
+
     h3 {
         font-size:larger;
 
     }
+
     a {
         text-decoration: none;
         background-color: scale-color(#FF9770, $lightness: -15%);
         color: scale-color(#70D6FF, $lightness: +10%);
         border-radius: 3px;
         padding: 0 2px;
+    }
+
+    a:hover {
+        font-weight: 600;
+        box-shadow: 1px 1px 10px 1px scale-color(#FF9770, $lightness: -10%);
     }
 }
 
@@ -61,5 +69,22 @@ body {
     img {
         height: inherit;
         object-fit: cover;
+    }
+}
+
+
+.ellipsis:after {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    animation: ellipsis steps(4,end) 2000ms infinite;
+    content: "\2026";
+    width: 0px;
+  }
+  
+
+@keyframes ellipsis {
+    to {
+        width: 25px;    
     }
 }

@@ -1,16 +1,17 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-// Resets CSS 
-* {
-  box-sizing: border-box;
-}
 :root{
   --blue: #70D6FF;
   --pink: #FF70A6;
   --mediumorange: #FF9770;
   --lightorange: #FFD670;
   --neonyellow: #E9FF70;
+}
+
+// Resets browser CSS 
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -29,52 +30,70 @@ body {
   padding-right: 20px;
   background-color: var(--neonyellow);
 
-
 }
+
 .navbar-item {
-    text-decoration: none;
-    font-family: Poppins;
-    font-size: 18px;
-    color: var(--pink);
-
+  text-decoration: none;
+  font-family: Poppins;
+  font-size: 18px;
+  color: var(--pink);
 }
 
+// Nav at the top of the page
 .navbar-one {
   display: flex;
   align-items: center;
-    a {
-      font-size: 40px;
-      font-weight: 500;
-      font-family: Poppins;
-      text-decoration: none;
-      color: var(--pink)
+
+  // Broad changes to Exploria link
+  a {
+    font-size: 40px;
+    font-weight: 500;
+    font-family: Poppins;
+    text-decoration: none;
+    color: var(--pink)
+  }
+
+  // Exploria text container
+  #top-left-exploria {
+    transition: all .2s ease-in-out;
+    letter-spacing: -4px;
+
+    // individual letters of Exploria
+    span {
+      margin: 0;
+      padding: 0 4px 0 0;
+      transition: inherit;
     }
 
-    #top-left-exploria {
-      transition: all .2s ease-in-out;
-      letter-spacing: -4px;
-      span {
-        margin: 0;
-        padding: 0;
-        transition: inherit;
-      }
-      .up {
-        position: relative;
-        top: -10px;
-      }
-      .dn {
-        position: relative;
-        bottom: -10px;
-      }
+    // Changes individual letter color on hover
+    span:hover {
+      transition: all .1s ease-in-out;
+      color: scale-color(#70D6FF, $lightness: -35%);
     }
-    #top-left-exploria:hover {
-      .up {
-        top: 0px;
-      }
-      .dn {
-        bottom: 0px;
-      }
+
+    // Half the letters start up
+    .up {
+      position: relative;
+      top: -10px;
     }
+
+    // Half the letters start down
+    .dn {
+      position: relative;
+      bottom: -10px;
+    }
+  }
+
+  // Brings the letters together on hover
+  #top-left-exploria:hover {
+    .up {
+      top: 0px;
+    }
+
+    .dn {
+      bottom: 0px;
+    }
+  }
 }
 
 .auth-session {
@@ -85,6 +104,16 @@ body {
   };
   .user-profile-link {
     margin-left: 5px;
+    text-decoration: none;
+    color: var(--pink);
+  }
+  .user-profile-link:hover {
+    font-weight: 600;
+    color: scale-color(#70D6FF, $lightness: -35%);
+  }
+  .logout-nav:hover {
+    font-weight: 600;
+    color: scale-color(#70D6FF, $lightness: -35%);
   }
 }
 
@@ -93,7 +122,12 @@ body {
   font-weight: 500;
   font-family: Poppins;
   text-decoration: none;
-  color: var(--pink)
+  color: var(--pink);
+  transition: all .2s ease-in-out;
+}
+
+#footer-logo:hover {
+  transform: rotateZ(-5deg);
 }
 
 @keyframes pulseOne {
@@ -123,19 +157,22 @@ body {
   animation-iteration-count: infinite;
 }
 
+// Right side of nav when logged out
 .navbar-two {
-  
   display: flex;
   justify-content: space-between;
   margin-right: 25px;
   gap: 40px;
+
   a {
     text-decoration: none;
     font-family: Poppins;
     color: var(--pink);
-  };
-  
+  }
 
+  a:hover {
+    color: scale-color(#70D6FF, $lightness: -35%);
+  }
 }
 
 footer {
@@ -150,9 +187,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   background-color: var(--lightorange);
-   
   
-         /* Footer height */
+  /* Footer height */
          
 }
 

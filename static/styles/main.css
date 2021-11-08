@@ -28,7 +28,9 @@ body {
   text-decoration: none;
   font-family: Poppins;
   font-size: 18px;
-  color: var(--pink); }
+  color: var(--pink);
+  padding: 0 5px;
+  border-radius: 5px; }
 
 .navbar-one {
   display: flex;
@@ -44,8 +46,11 @@ body {
     letter-spacing: -4px; }
     .navbar-one #top-left-exploria span {
       margin: 0;
-      padding: 0;
+      padding: 0 4px 0 0;
       transition: inherit; }
+    .navbar-one #top-left-exploria span:hover {
+      transition: all .1s ease-in-out;
+      color: #00aaef; }
     .navbar-one #top-left-exploria .up {
       position: relative;
       top: -10px; }
@@ -62,14 +67,27 @@ body {
   .auth-session .navbar-item {
     margin-left: 15px; }
   .auth-session .user-profile-link {
-    margin-left: 5px; }
+    margin-left: 5px;
+    text-decoration: none;
+    color: var(--pink); }
+  .auth-session .user-profile-link:hover {
+    font-weight: 600;
+    color: #00aaef;
+    box-shadow: 1px 1px 8px 1px #e60000; }
+  .auth-session .logout-nav:hover {
+    font-weight: 600;
+    color: #00aaef; }
 
 #footer-logo {
   font-size: 32px;
   font-weight: 500;
   font-family: Poppins;
   text-decoration: none;
-  color: var(--pink); }
+  color: var(--pink);
+  transition: all .2s ease-in-out; }
+
+#footer-logo:hover {
+  transform: rotateZ(-5deg); }
 
 @keyframes pulseOne {
   0% {
@@ -112,6 +130,8 @@ body {
     text-decoration: none;
     font-family: Poppins;
     color: var(--pink); }
+  .navbar-two a:hover {
+    color: #00aaef; }
 
 footer {
   position: absolute;

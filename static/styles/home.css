@@ -22,8 +22,9 @@ body {
   background-color: var(--mediumorange); }
 
 #home-title {
-  margin: 1em 0;
-  text-align: center; }
+  margin: 1em auto;
+  text-align: left;
+  width: 162px; }
 
 #about-topics-container {
   display: grid;
@@ -38,6 +39,9 @@ body {
     color: #7edaff;
     border-radius: 3px;
     padding: 0 2px; }
+  #about-topics-container a:hover {
+    font-weight: 600;
+    box-shadow: 1px 1px 10px 1px #ff7c4b; }
 
 .slide, .carousel-inner, .carousel-item {
   height: inherit; }
@@ -45,5 +49,17 @@ body {
 .carousel-item img {
   height: inherit;
   object-fit: cover; }
+
+.ellipsis:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  animation: ellipsis steps(4, end) 2000ms infinite;
+  content: "\2026";
+  width: 0px; }
+
+@keyframes ellipsis {
+  to {
+    width: 25px; } }
 
 /*# sourceMappingURL=home.css.map */

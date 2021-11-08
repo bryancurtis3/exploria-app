@@ -1,9 +1,11 @@
-/* Post Detail Page */
+body {
+    background-color: var(--blue);
+}
+
 .post-show-content {
     margin: 24px auto;
     padding: 0 24px;
     width: 100%;
-    // background-color: var(--pink);
 }
 
 .post-show-main {
