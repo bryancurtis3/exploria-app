@@ -30,14 +30,6 @@ class Home(TemplateView):
     context["login_form"] = AuthenticationForm()
     return context
 
-class CityPost(TemplateView):
-  model = City
-  template_name = "city_posts.html"
-  
-  def get_context_data(self, **kwargs):
-    context = super().get_context_data(self, **kwargs)
-    context["posts"] = Post.objects.filter(location=self.name)
-
 class PostDetail(DetailView):
   model = Post
   template_name = "post_detail.html"
@@ -104,7 +96,7 @@ class ProfileUpdate(TemplateView):
   def post(self, request, pk):
     form = ProfileUpdateForm(request.POST)
     if form.is_valid():
-      Profile.objects.update(location=request.POST.get('location'), image=request.POST.get('image'), user=pk)
+      Profile.objects.filter(user=pk).update(location=request.POST.get('location'), image=request.POST.get('image'))
       return redirect("profile", pk=pk)
     else:
      context = {"form": form, "pk": pk}
