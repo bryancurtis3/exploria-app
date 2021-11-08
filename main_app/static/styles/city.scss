@@ -68,3 +68,23 @@
     border-radius: 15px; 
   }
 }
+
+// Bryan's Button and stuff
+
+.new-post {
+  background-color: var(--blue);
+  transition: all .2s ease-in-out;
+  margin-bottom: 40px;
+  font-family: 'Poppins';
+  // clip-path: polygon(8% 0, 92% 0, 100% 50%, 92% 100%, 8% 100%, 0% 50%);
+}
+
+.new-post:hover {
+  box-shadow: 2px 2px #53a7ea, 4px 4px #53a7ea, 6px 6px #53a7ea;
+  transform: translateX(-6px);
+}
+
+.display-6 {
+  margin: 4px 0;
+  font-weight: 500;
+}
