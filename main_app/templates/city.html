@@ -83,6 +83,26 @@
       <p class="display-6"> This location currently has no posts.</p>
       {% endfor %}
     </section>
-  </section>
+
+    <!-- Modal -->
+        <div class="modal fade" id="newPost" tabindex="-1" aria-labelledby="newPostModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="newPostModalLabel">Add a New Post</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancel"></button>
+              </div>
+              <div class="modal-body bg-light">
+                <form action="{% url 'post_create' city.pk %}" method="POST">
+                  {% csrf_token %}
+                  {{form.as_p}}
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <input type="submit" class="btn btn-primary post-submit" value="Create Post" />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
 </main>
 {% endblock %}

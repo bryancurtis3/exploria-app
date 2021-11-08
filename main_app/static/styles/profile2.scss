@@ -11,28 +11,30 @@
   padding-right: 0;
   height: 100vh;
   $visualheight: 100vh;
+  background-color: transparent;
 }
 // Holds all user information on left
 .left-user-info {
   border-width: 50px; 
-  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
 
+  // Box containing the profile
   .left-box {
-    background: rgb(255,214,112);
-    background: radial-gradient(circle, rgba(255,214,112,1) 0%, rgba(255,226,112,1) 51%, rgba(255,183,112,0.9906337535014006) 100%);
+    background: radial-gradient(circle, rgba(247, 203, 92, 0.8) 0%, rgba(255, 230, 130, 0.8) 51%, rgba(255,183,112,0.8) 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0px 70px 40px 70px;
-    border-radius: 40px;
-    border: 5px solid #ffbe7e;
-    box-shadow: 0px 0px 10px var(--mediumorange);
+    border-radius: 5px;
+    border: 10px ridge #ff972f2d;
+    box-shadow: 0px 0px 10px rgb(184, 183, 183);
   }
 
+  // Info card text
   .user-info-text {
     padding: 20px 20px 10px 20px;
     background-color: rgba(235, 233, 233, 0.445);
@@ -74,32 +76,55 @@
   .edit-button {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    
+
+    span {
+      display: none; 
+    }
+  }
+  .edit-button:hover {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+
+    span {
+      display: inline;
+    }
   }
 }
 // Holds all current user's posts on right-side
 .right-user-posts {
+  margin-left: 20px;
   padding: 40px 60px 10px 20px;
-  background-color: white;
+  background-color: transparent;
   overflow: auto;
   height: 100vh;
 
   img {
     margin: 20px 10px 5px 15px;
-    width:260px;
-    height: 260px;
+    width:220px;
+    height:220px;
     clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
   }
+  .see-post {
+    span {
+      display: none;
+    }
+  }
+  .see-post:hover {
+    span {
+      display: inline;
+    }
+  }
 }
-// border for each post-card
+// Post card container with border
 .post-border {
-  border: 10px groove var(--pink);
+  border: 8px groove #f64e8ebe;
   border-radius: 5px;
   box-shadow: 2px 2px 10px rgb(93, 92, 92);
+  width: 700px;
 }
 // Holds each post information
 #post-cards {
-  border: 15px groove var(--blue);
+  border: 8px groove #32c1fa98;
   border-radius: 0;
 }
 
@@ -173,3 +198,35 @@ form {
 .edit-submit:hover {
   background-color: scale-color(#70D6FF, $lightness: -20%);
 }
+
+// animated background - Gail
+  .bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: 
+      linear-gradient(-60deg, var(--lightorange) 50%, var(--blue) 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+  
+  .bg3 {
+    animation-duration:5s;
+  }
+
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }

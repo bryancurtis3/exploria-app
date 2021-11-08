@@ -117,7 +117,15 @@
   border-radius: 15px; 
 }
 
-// Bryan's Button and stuff
+// Bryan and Kathy's Button for adding posts
+
+.addbutton {
+  background-color: #7d7d7d;
+  background-image: url("https://cdn11.bigcommerce.com/s-kga9jf/product_images/uploaded_images/liquid-gold-antique-gold-150x150-2x.jpg");
+  padding: 10px;
+  box-shadow:  0 6px 10px 0px rgba(0, 0, 0, 0.19);
+  border: 5px ridge rgba(204, 167, 4, 0.685);
+  }
 
 .new-post {
   background-color: var(--blue);
@@ -126,12 +134,17 @@
   font-family: 'Poppins';
   width: 250px;
   margin-left: auto;
+  font-size: 28px;
+  width: 70px;
+  height: 70px;
+  
   // clip-path: polygon(8% 0, 92% 0, 100% 50%, 92% 100%, 8% 100%, 0% 50%);
 }
 
 .new-post:hover {
   box-shadow: 2px 2px #53a7ea, 4px 4px #53a7ea, 6px 6px #53a7ea;
   transform: translateX(-6px);
+  color:white;
 }
 
 .display-6 {
@@ -272,4 +285,58 @@
   100% {
     transform:translateX(25%);
   }
+}
+// CREATE POST modal
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  label {
+    margin: 10px;
+    font-weight: 600;
+  }
+
+}
+
+// Form styling
+.modal-header {
+  background-color: var(--neonyellow);
+
+  h5 {
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
+
+.modal-body {
+  padding: 16px 0 0 0;
+
+  p {
+    font-size: 18px;
+    width: 100%;
+    padding: 0 14px;
+    display: flex;
+    justify-content: space-between;
+
+    input {
+      width: 70%;
+    }
+  }
+}
+
+.modal-footer {
+  width: 100%;
+  padding: 8px 16px;
+  justify-content: space-around;
+}
+
+.post-submit {
+  background-color: var(--blue);
+  transition: all .1s ease-in-out;
+}
+
+.post-submit:hover {
+  background-color: scale-color(#70D6FF, $lightness: -20%);
 }
