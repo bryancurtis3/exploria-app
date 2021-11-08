@@ -2,7 +2,9 @@
 <h1 class="pt-3">Update {{post.name}}</h1>
 
 <form action="" method="post">
-  {% csrf_token %} {{form.as_p}} <input type="submit" value="Submit" />
+  {% csrf_token %} 
+  {{form.as_p}}
+  <input type="submit" value="Submit"/>
 </form>
 
 {% endblock %}

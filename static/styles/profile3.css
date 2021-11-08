@@ -4,7 +4,11 @@
   font-size: 24px;
   padding-left: 0;
   padding-right: 0;
-  height: 100vh; }
+  display: grid; }
+
+.page {
+  display: grid;
+  grid-template-columns: 1fr 30fr; }
 
 .left-user-info {
   border-width: 50px;
@@ -75,15 +79,4 @@
   border: 15px groove var(--blue);
   border-radius: 0; }
 
-.profile-image {
-  height: 300px;
-  aspect-ratio: 1; }
-  .profile-image img {
-    height: inherit;
-    object-fit: cover;
-    aspect-ratio: 1; }
-
-.card-img-top {
-  object-fit: cover; }
-
-/*# sourceMappingURL=profile2.css.map */
+/*# sourceMappingURL=profile3.css.map */
