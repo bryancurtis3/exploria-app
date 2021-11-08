@@ -6,64 +6,70 @@
 
 {% block content %}
 
-<main class="container city-main">
+<main class="city-main">
+
+  <section class="city-list">
+    <p>Why isnt it moving</p>
+  </section>
   
-  <h1 class="mt-4 mb-3"> {{city.name}}</h1>
+  <section class="city-data">
 
-  <img src="{{ city.img }}" class="image mb-5">
+    <div class="top-section">
+      <h1 class="mt-4 mb-3"> {{city.name}}</h1>
 
-  {% comment %} <div class="post-img-cont">
-    <img id="post-show-image" src="{{ city.img }}" alt="">
-  </div> {% endcomment %}
+      <img src="{{ city.img }}" class="image mb-5">
 
-  <div class="new-post-container">
-    <button class="new-post btn" data-bs-toggle="modal" data-bs-target="#newPost">Post About {{ city.name }}</button>
-  </div>
+      <h2>Posts</h2>
+      
+      <button class="new-post btn" data-bs-toggle="modal" data-bs-target="#newPost">Post About {{ city.name }}</button>
+    </div>
 
-  <section class="col user-posts">
-    {% for post in posts%}
-    <div class="post-border">
-      <div class="card" id="post-cards">
-        <div class="card-header title-card">
-          <a href="{% url 'post_detail' post.pk %}" class="text-decoration-none text-dark"><p class="display-6">{{post.title}}</p></a>
-        </div>
-        <div class="card-body d-flex">
-          <div class="post-user d-flex flex-column align-items-center">
-            <span><img src="{{post.img}}" class="post-image" alt="Picture of {{post.title}}"></span>
-            <div class="post-user-text bg-light">
-            <a id="profile-link" href="{% url 'profile' post.user.pk %}">
-              <img id="profile-pic" src="{{ post.user.profile.image }}" alt="Picture of {{post.user.username}}">
-            </a>
-            <a id="profile-link" href="{% url 'profile' post.user.pk %}">
-              <span class="username">{{ post.user.username }}
-              </span>
-              <span class="location">{{ post.user.profile.location }}</span>
-            </a>
+    <section class="col user-posts">
+      {% for post in posts%}
+      <div class="post-border">
+        <div class="card" id="post-cards">
+          <div class="card-header title-card">
+            <a href="{% url 'post_detail' post.pk %}" class="text-decoration-none text-dark"><p class="display-6">{{post.title}}</p></a>
+          </div>
+          <div class="card-body">
+            <div class="post-user">
+              <span><img src="{{post.img}}" class="post-image" alt="Picture of {{post.title}}"></span>
+            </div>
+
+            <div class="post-text-content">
+              <div class="post-user-text bg-light">
+                <a id="profile-link" href="{% url 'profile' post.user.pk %}">
+                  <img id="profile-pic" src="{{ post.user.profile.image }}" alt="Picture of {{post.user.username}}">
+                </a>
+                <a id="profile-link" href="{% url 'profile' post.user.pk %}">
+                  <span class="username">{{ post.user.username }}
+                  </span>
+                  <span class="location">{{ post.user.profile.location }}</span>
+                </a>
+              </div>
+                <div class="post-buttons">
+                  <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary">See post</a>
+                  <a href="{% url 'post_edit' post.pk %}" class="small-btn edit-bt btn btn-info">
+                    <span class="icon text-white">
+                      <i class="fas fa-edit"></i>
+                    </span>
+                  </a>
+                  <a href="{% url 'post_delete' post.pk %}" class="small-btn delete-btn btn btn-danger">
+                    <span class="icon">
+                      <i class="fas fa-trash-alt"></i>
+                    </span>
+                  </a>
+                </div>
+              <p class="card-text text-muted lead">{{post.description|truncatechars:"150"}}</p>
             </div>
           </div>
-
-          <div class="card-body">
-            <h4 class="card-title text-body">{{post.city.name}}</h4>
-            <p class="card-text text-muted lead">{{post.description|truncatechars:"320"}}</p>
-            <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary">See post</a>
-            <a href="{% url 'post_edit' post.pk %}" class="edit-bt btn btn-info">
-              <span class="icon text-white">
-                <i class="fas fa-edit"></i>
-              </span>
-            </a>
-            <a href="{% url 'post_delete' post.pk %}" class="delete-btn btn btn-danger">
-              <span class="icon">
-                <i class="fas fa-trash-alt"></i>
-              </span>
-            </a>
-          </div>
         </div>
-      </div>
-    </div> 
-    <br>
-    {% empty %}
-    <p class="display-6"> This location currently has no posts.</p>
-    {% endfor %}
+      </div> 
+      <br>
+      {% empty %}
+      <p class="display-6"> This location currently has no posts.</p>
+      {% endfor %}
+    </section>
   </section>
 </main>
 {% endblock %}
