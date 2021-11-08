@@ -94,46 +94,21 @@ class UserProfile(DetailView):
   def get_context_data(self, **kwargs):
     context = super().get_context_data(**kwargs)
     context["posts"] = Post.objects.filter(user=self.object.pk)
-    context["update_form"] = ProfileUpdateForm()
+    form = ProfileUpdateForm(instance=self.object)
+    context["form"] = form
     return context
-
+  
 class ProfileUpdate(TemplateView):
   template_name = "user_update.html"
-
-  def get(self, request):
-    form = ProfileUpdateForm()
-    context = {"form" : form}
-    return render(request, "user_update.html", context)
   
   def post(self, request, pk):
     form = ProfileUpdateForm(request.POST)
     if form.is_valid():
-      Profile.objects.save(location=request.POST.get('location'), image=request.POST.get('image'), user=pk)
-      #user=request.user.profile.pk)
-      return redirect("profile")
+      Profile.objects.update(location=request.POST.get('location'), image=request.POST.get('image'), user=pk)
+      return redirect("profile", pk=pk)
     else:
-      context = {"form": form}
-      return render(request, "user_update.html", context)
-
-# class ProfileUpdate(TemplateView):
-#   template_name = "profile.html"
-#   fields = ['location', 'image']
-
-#   def get_context_data(self, **kwargs):
-#       context = super(ProfileUpdate, self).get_context_data(**kwargs)
-#       context['User'] = User.objects.get(pk=self.object.pk)
-#       return context
-  
-#   # Not sure if this is how the success url is supposed to be looking
-#   def get_success_url(self):
-#     return reverse('profile', kwargs={'pk': self.object.pk})
-
-#   def form_valid(self, form):
-
-#     user_id = Profile.objects.get(pk=self.object.pk).user.pk
-#     User.objects.filter(pk=user_id).update(username=self.request.POST.get('username'))
-
-#     return super(ProfileUpdate, self).form_valid(form)
+     context = {"form": form, "pk": pk}
+     return render(request, "user_update.html", context)
 
 
 class ProfileRedirect(View):
