@@ -102,3 +102,19 @@
   border: 15px groove var(--blue);
   border-radius: 0;
 }
+
+// Bryan's additions
+.profile-image {
+  height: 300px;
+  aspect-ratio: 1;
+
+  img {
+    height: inherit;
+    object-fit: cover;
+    aspect-ratio: 1;
+  }
+}
+
+.card-img-top {
+  object-fit: cover;
+}
