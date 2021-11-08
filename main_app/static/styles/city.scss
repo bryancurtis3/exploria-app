@@ -76,12 +76,17 @@
   transition: all .2s ease-in-out;
   margin-bottom: 40px;
   font-family: 'Poppins';
+  font-size: 28px;
+  width: 60px;
+  height: 60px;
+  
   // clip-path: polygon(8% 0, 92% 0, 100% 50%, 92% 100%, 8% 100%, 0% 50%);
 }
 
 .new-post:hover {
   box-shadow: 2px 2px #53a7ea, 4px 4px #53a7ea, 6px 6px #53a7ea;
   transform: translateX(-6px);
+  color:white;
 }
 
 .display-6 {

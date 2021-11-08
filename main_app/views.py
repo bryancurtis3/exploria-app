@@ -10,7 +10,8 @@ from django.views.generic.base import TemplateView
 from django.views.generic.edit import DeleteView, UpdateView, FormView, CreateView
 from django.views.generic.detail import DetailView
 
-from main_app.models import City, Post, User, Profile
+from main_app.models import Post, User, Profile
+from main_app.models import City as CityModel
 
 from django.forms import ModelForm
 
@@ -110,10 +111,10 @@ class ProfileRedirect(View):
 class PostCreateForm(ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'img', 'description', 'location']
+        fields = ['title', 'img', 'description']
 
 class City(DetailView):
-  model = City
+  model = CityModel
   template_name = "city.html"
 
   def get_context_data(self, **kwargs):
@@ -123,23 +124,13 @@ class City(DetailView):
     context["form"] = form
     return context
 
-class PostCreate(CreateView): 
-  model = Post
-  fields = ['title','img','description', 'location']
-  template_name = "city.html"
-  
-  def get_success_url(self): 
-    return reverse('city', kwargs={'pk': self.object.city.pk})
-
-  def form_valid(self, form):
-    form.instance.user = self.request.user
-    return super(PostCreate, self).form_valid(form)
-  
-  # def post(self, request, pk):
-  #   form = PostCreateForm(request.POST)
-  #   if form.is_valid():
-  #     Post.objects.create(title=request.POST.get('title'),img=request.POST.get('img'), description=request.POST.get('description'),location=request.POST.get('location'))
-  #     return redirect("city", pk=pk)
-  #   else:
-  #     context = {"form": form, "pk": pk}
-  #     return render(request, "city", pk=pk)
+class PostCreate(View):
+  def post(self, request, pk):
+    title = request.POST.get("title")
+    img = request.POST.get("img")
+    description = request.POST.get('description')
+    city = CityModel.objects.get(pk=pk)
+    location = city.name
+    
+    Post.objects.create(title=title, img=img, description=description, location=location, city=city, user=request.user)
+    return redirect("city", pk=pk) 
