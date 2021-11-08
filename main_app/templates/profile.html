@@ -21,13 +21,13 @@
               <p class="since"><i class="fas fa-user-clock"></i> Explorian for {{profile.user.date_joined|timesince}}</p>
             </div>
           </article>
-          <a href="" class="btn btn-info btn-lg mt-4 text-white fw-bold edit-button" data-bs-toggle="modal" data-bs-target="#editUser"><i class="fas fa-edit"></i> Edit Profile</a>
+          <a class="btn btn-info btn-lg mt-4 text-white fw-bold edit-button" data-bs-toggle="modal" data-bs-target="#editUser"><i class="fas fa-edit"></i>Edit Profile</a>
         </div>
         <!-- Modal -->
         <div class="modal fade" id="editUser" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
-              <div class="modal-header bg-warning">
+              <div class="modal-header">
                 <h5 class="modal-title" id="editUserModalLabel">Edit Profile Information</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancel"></button>
               </div>
@@ -35,9 +35,9 @@
                 <form action="{% url 'profile_update' profile.pk %}" method="POST">
                   {% csrf_token %}
                   {{form.as_p}}
-                  <div class="modal-footer bg-warning rounded">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <input type="submit" class="btn btn-primary" value="Save Changes" />
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <input type="submit" class="btn edit-submit" value="Save Changes" />
                   </div>
                 </form>
               </div>
