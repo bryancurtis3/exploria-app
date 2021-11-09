@@ -133,7 +133,7 @@ form {
 
 .edit-submit {
   background-color: var(--blue);
-  transition: all .1s ease-in-out; }
+  transition: all .7s ease-in-out; }
 
 .edit-submit:hover {
   background-color: #27c1ff; }
