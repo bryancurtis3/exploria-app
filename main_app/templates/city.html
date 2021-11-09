@@ -14,7 +14,7 @@
 
   <section class="city-list">
     <div class="city-list-container">
-      <h2 class="city-heading modal-header">Cities</h2>
+      <h2 class="city-heading">Cities</h2>
         {% for city in cities %} 
         <a class="city-name-container" href="{% url 'city' city.pk %}">
           <img src="{{ city.img }}" alt="">
@@ -28,7 +28,7 @@
   <section class="city-data">
 
     <div class="top-section">
-      <h1 class="mt-4 mb-3"> {{city.name}}</h1>
+      <h1 class=""> {{city.name}}</h1>
 
       <img src="{{ city.img }}" class="image mb-5">
 
@@ -43,6 +43,19 @@
         <div class="card" id="post-cards">
           <div class="card-header title-card">
             <a href="{% url 'post_detail' post.pk %}" class="text-decoration-none text-dark"><p class="display-6">{{post.title}}</p></a>
+            <div class="post-buttons">
+              <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary">See post</a>
+              <a href="{% url 'post_edit' post.pk %}" class="small-btn edit-bt btn btn-info">
+                <span class="icon text-white">
+                  <i class="fas fa-edit"></i>
+                </span>
+              </a>
+              <a href="{% url 'post_delete' post.pk %}" class="small-btn delete-btn btn btn-danger">
+                <span class="icon">
+                  <i class="fas fa-trash-alt"></i>
+                </span>
+              </a>
+            </div>
           </div>
           <div class="card-body">
             <div class="post-user">
@@ -60,20 +73,7 @@
                   <span class="location">{{ post.user.profile.location }}</span>
                 </a>
               </div>
-                <div class="post-buttons">
-                  <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary">See post</a>
-                  <a href="{% url 'post_edit' post.pk %}" class="small-btn edit-bt btn btn-info">
-                    <span class="icon text-white">
-                      <i class="fas fa-edit"></i>
-                    </span>
-                  </a>
-                  <a href="{% url 'post_delete' post.pk %}" class="small-btn delete-btn btn btn-danger">
-                    <span class="icon">
-                      <i class="fas fa-trash-alt"></i>
-                    </span>
-                  </a>
-                </div>
-              <p class="card-text text-muted lead">{{post.description|truncatechars:"150"}}</p>
+              <p class="card-text text-muted lead">{{post.description|truncatechars:"140"}}</p>
             </div>
           </div>
         </div>

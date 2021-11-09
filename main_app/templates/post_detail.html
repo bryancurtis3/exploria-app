@@ -18,7 +18,7 @@
 
       <div class="post-show-user-text">
         <a href="{% url 'profile' post.user.pk %}">{{ post.user.username }}</a>
-        <p>{{ post.user.profile.location }}</p>
+        <a id="city-link" href="{% url "city" post.city.pk %}">{{ post.user.profile.location }}</a>
       </div>
     </div>
 

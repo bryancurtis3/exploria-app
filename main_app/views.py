@@ -39,14 +39,16 @@ class PostDetail(DetailView):
 class PostDelete(DeleteView):
   model = Post
   template_name = "post_delete_confirmation.html"
-  # idk where to send this right now, so it's just going home for now
-  success_url = "/"
+
+  def get_success_url(self):
+    return reverse('city', kwargs={'pk': self.object.city.pk})
 
 
 class PostEdit(UpdateView):
   model = Post
   fields = ['img', 'description', 'location']
   template_name = "post_edit.html"
+
   def get_success_url(self):
     return reverse('post_detail', kwargs={'pk': self.object.pk})
 
