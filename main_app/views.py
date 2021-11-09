@@ -15,9 +15,13 @@ from main_app.models import City as CityModel
 
 from django.forms import ModelForm
 
-# Auth imports
+# Authentication imports
 from django.contrib.auth import login
-from django.contrib.auth.forms import UserChangeForm, UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+
+# Authorization imports
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 
 # Create your views here.
@@ -31,11 +35,12 @@ class Home(TemplateView):
     context["login_form"] = AuthenticationForm()
     return context
 
+@method_decorator(login_required, name='dispatch')
 class PostDetail(DetailView):
   model = Post
   template_name = "post_detail.html"
 
-
+@method_decorator(login_required, name='dispatch')
 class PostDelete(DeleteView):
   model = Post
   template_name = "post_delete_confirmation.html"
@@ -43,7 +48,7 @@ class PostDelete(DeleteView):
   def get_success_url(self):
     return reverse('city', kwargs={'pk': self.object.city.pk})
 
-
+@method_decorator(login_required, name='dispatch')
 class PostEdit(UpdateView):
   model = Post
   fields = ['img', 'description', 'location']
@@ -79,7 +84,7 @@ class ProfileUpdateForm(ModelForm):
         model = Profile
         fields = ['location', 'image']
 
-
+@method_decorator(login_required, name='dispatch')
 class UserProfile(DetailView):
   model = Profile
   template_name = "profile.html"
@@ -91,7 +96,7 @@ class UserProfile(DetailView):
     context["form"] = form
     return context
   
-
+@method_decorator(login_required, name='dispatch')
 class ProfileUpdate(TemplateView):
   template_name = "profile.html"
   
@@ -104,28 +109,17 @@ class ProfileUpdate(TemplateView):
      context = {"form": form, "pk": pk}
      return render(request, "profile.html", context)
 
-
+@method_decorator(login_required, name='dispatch')
 class ProfileRedirect(View):
   def get(self, request):
     return redirect('profile', request.user.profile.pk)
-
 
 class PostCreateForm(ModelForm):
     class Meta:
         model = Post
         fields = ['title', 'img', 'description']
-        
-class CityList(TemplateView):
-  model = CityModel
-  template_name = "city_list.html"
 
-  def get_context_data(self, **kwargs):
-    context = super().get_context_data(**kwargs)
-    context["cities"] = CityModel.objects.all()
-    
-    return context
-
-
+@method_decorator(login_required, name='dispatch')
 class City(DetailView):
   model = CityModel
   template_name = "city.html"
@@ -138,7 +132,7 @@ class City(DetailView):
     context["form"] = form
     return context
 
-
+@method_decorator(login_required, name='dispatch')
 class PostCreate(View):
   def post(self, request, pk):
     title = request.POST.get("title")
