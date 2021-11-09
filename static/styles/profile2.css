@@ -86,7 +86,8 @@
 
 #post-cards {
   border: 8px groove #32c1fa98;
-  border-radius: 0; }
+  border-radius: 0;
+  background-color: rgba(245, 245, 245, 0.84); }
 
 .profile-image {
   height: 300px;
