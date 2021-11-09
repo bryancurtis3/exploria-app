@@ -39,13 +39,16 @@ class PostDetail(DetailView):
 class PostDelete(DeleteView):
   model = Post
   template_name = "post_delete_confirmation.html"
-  # idk where to send this right now, so it's just going home for now
-  success_url = "/"
+
+  def get_success_url(self):
+    return reverse('city', kwargs={'pk': self.object.city.pk})
+
 
 class PostEdit(UpdateView):
   model = Post
   fields = ['img', 'description', 'location']
   template_name = "post_edit.html"
+
   def get_success_url(self):
     return reverse('post_detail', kwargs={'pk': self.object.pk})
 
@@ -76,6 +79,7 @@ class ProfileUpdateForm(ModelForm):
         model = Profile
         fields = ['location', 'image']
 
+
 class UserProfile(DetailView):
   model = Profile
   template_name = "profile.html"
@@ -87,6 +91,7 @@ class UserProfile(DetailView):
     context["form"] = form
     return context
   
+
 class ProfileUpdate(TemplateView):
   template_name = "profile.html"
   
@@ -104,6 +109,7 @@ class ProfileRedirect(View):
   def get(self, request):
     return redirect('profile', request.user.profile.pk)
 
+
 class PostCreateForm(ModelForm):
     class Meta:
         model = Post
@@ -119,6 +125,7 @@ class CityList(TemplateView):
     
     return context
 
+
 class City(DetailView):
   model = CityModel
   template_name = "city.html"
@@ -130,6 +137,7 @@ class City(DetailView):
     form = PostCreateForm()
     context["form"] = form
     return context
+
 
 class PostCreate(View):
   def post(self, request, pk):
