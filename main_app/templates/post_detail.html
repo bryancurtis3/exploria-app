@@ -6,6 +6,11 @@
 {% block title %}Post Detail{% endblock title %}
 
 {% block content %}
+
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
 <div class="post-show-content">
   <main class="post-show-main">
 
@@ -27,7 +32,7 @@
     </div>
 
     <p id="post-description">{{ post.description }}</p>
-
+    {% if request.user == post.user %}
     <div class="edit-delete-buttons">
       <a href="{% url 'post_edit' post.pk %}" class="edit-bt btn neon">
         <span class="icon">
@@ -40,6 +45,7 @@
         </span>
       </a>
     </div>
+    {% endif %}
     {% comment %} <img src="https://www.happysocks.com/icons/jazzburger.svg" alt=""> {% endcomment %}
 
   </main>

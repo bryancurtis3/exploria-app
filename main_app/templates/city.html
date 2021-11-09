@@ -15,7 +15,7 @@
   <section class="city-list">
     <div class="city-list-container">
       <h2 class="city-heading">Cities</h2>
-        {% for city in cities %} 
+        {% for city in cities %}
         <a class="city-name-container" href="{% url 'city' city.pk %}">
           <img src="{{ city.img }}" alt="">
           <h3>{{city.name}}</h3>
@@ -47,6 +47,7 @@
             <a href="{% url 'post_detail' post.pk %}" class="text-decoration-none text-dark"><p class="display-6">{{post.title|truncatechars:"32"}}</p></a>
             <div class="post-buttons">
               <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+              {% if request.user == post.user %}
               <a href="{% url 'post_edit' post.pk %}" class="small-btn edit-bt btn btn-info">
                 <span class="icon text-white">
                   <i class="fas fa-edit"></i>
@@ -57,6 +58,7 @@
                   <i class="fas fa-trash-alt"></i>
                 </span>
               </a>
+              {% endif %}
             </div>
           </div>
           <div class="card-body">

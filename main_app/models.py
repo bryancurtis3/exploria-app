@@ -24,7 +24,7 @@ class City(Model):
     return self.name
 
 class Post(Model):
-  title = CharField(max_length=100)
+  title = CharField(max_length=200)
   img = CharField(max_length=250)
   description = TextField(max_length=4000)
   location = CharField(max_length=50, default="San Francisco")

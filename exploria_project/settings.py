@@ -35,7 +35,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -146,3 +146,7 @@ LOGIN_REDIRECT_URL = 'profile_redirect'
 
 # Directs users to home page upon logout
 LOGOUT_REDIRECT_URL = '/'
+
+# Configure Django App for Heroku.
+# import django_heroku
+# django_heroku.settings(locals())

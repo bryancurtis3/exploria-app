@@ -1,0 +1,99 @@
+#carousel-holder {
+  height: 40vh;
+  overflow: hidden;
+  object-position: center;
+}
+
+#carouselExampleIndicators {
+    height: 300px;
+    overflow: clip;
+    object-fit: center;
+}
+
+#gallery-button {
+    position: absolute;
+    // margin-top: 225px;
+    z-index: 2;
+}
+
+#gallery-image {
+    height: inherit;
+    width: 100vw;
+    object-fit: none;
+    object-position: center bottom;
+    }
+
+
+body {
+    background-color: var(--mediumorange);
+}
+
+#home-title {
+    margin: 1em auto;
+    text-align: center;
+    // width: 170px;
+}
+
+#about-topics-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 24px 24px 24px;
+    gap: 24px;
+
+    h3 {
+        font-size:larger;
+
+    }
+
+    a {
+        text-decoration: none;
+        background-color: scale-color(#FF9770, $lightness: -15%);
+        color: scale-color(#70D6FF, $lightness: +10%);
+        border-radius: 3px;
+        padding: 0 2px;
+    }
+
+    a:hover {
+        font-weight: 600;
+        padding: 0 0px 0 2px;
+        box-shadow: 1px 1px 10px 1px scale-color(#FF9770, $lightness: -10%);
+    }
+}
+
+
+
+.slide, .carousel-inner, .carousel-item {
+    height: inherit;
+}
+
+.carousel-item {
+    img {
+        height: inherit;
+        object-fit: cover;
+    }
+}
+
+
+.paragraph {
+    padding: 10px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, .2);
+    backdrop-filter: blur(5px);
+}
+
+// .ellipsis:after {
+//     overflow: hidden;
+//     display: inline-block;
+//     vertical-align: bottom;
+//     animation: ellipsis steps(4,end) 2000ms infinite;
+//     content: "\2026";
+//     width: 0px;
+//   }
+  
+
+// @keyframes ellipsis {
+//     to {
+//         width: 25px;    
+//     }
+// }
