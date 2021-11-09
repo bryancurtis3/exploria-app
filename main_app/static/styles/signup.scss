@@ -11,6 +11,12 @@ body {
   min-height: 100vh;
 }
 
+.navbar-two {
+  a {
+  display: none;
+  }
+}
+
 #app-navbar {
   position: relative;
   margin-top: 0px;
@@ -103,8 +109,22 @@ ul {
   li {
     color: red;
     font-size: 16px;
+    line-height: 1.2;
     list-style-type: none;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+  }
+}
+
+.signUp-submit-btn {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+
+  a {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 14px;
+
   }
 }
 
