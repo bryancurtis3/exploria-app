@@ -13,7 +13,7 @@ body {
   margin: 0 auto;
   padding: 10px;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(5px); }
   .post-show-main h1 {

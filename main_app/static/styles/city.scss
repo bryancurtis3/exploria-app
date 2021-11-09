@@ -69,7 +69,8 @@
 
   .title-card {
     background-color: rgba(255, 112, 166, .7);
-    display: flex;
+    display: grid;
+    grid-template-columns: 7fr 4fr;
     align-items: center;
     justify-content: space-between;
   }
@@ -144,24 +145,7 @@
     font-size: 16px;
     grid-column-start: span 2;
   }
-  .post-buttons {
-    padding-left: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-radius: 20px;
-    place-items: center;
-    max-width: 110px;
-    
-    .small-btn {
-      max-width: 45px;
-    }
 
-    .btn-primary {
-      max-width: 100px;
-      grid-column-start: span 2;
-      white-space: nowrap;
-    }
-  }
 }
 
 #profile-pic {
