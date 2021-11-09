@@ -3,7 +3,8 @@
 }
 
 body {
-    background-color: var(--blue);
+    // background-color: var(--blue);
+    background: url(https://images.unsplash.com/photo-1544306094-e2dcf9479da3) no-repeat;
 }
 
 .post-show-content {
@@ -18,6 +19,13 @@ body {
     max-width: 680px;
     width: 100%;
     margin: 0 auto;
+    padding: 10px;
+    
+    // Optionally change this to just be on the description below
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .2);
+    backdrop-filter: blur(5px);
 
     h1 {
         font-size: 48px;
@@ -46,26 +54,44 @@ body {
         .post-show-user-text {
             line-height: .6em;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 16px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
 
             a {
                 text-decoration: none;
                 color: #292929;
+                width: 120px;
             }
+
             a:hover {
                 color: var(--pink);
                 font-weight: 700;
             }
 
-            p {
+            #city-link {
                 font-size: 14px;
                 margin: 0 0 0 5px;
                 color: #757575;
                 font-weight: 400;
-                // line-height: 3em;
+                width: 120px;
+            }
+
+            #city-link:hover {
+                color: var(--lightorange);
+                font-weight: 700;
             }
         }
+
     }
+
+    // #post-description {
+    //     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    //     border-radius: 5px;
+    //     background-color: rgba(255, 255, 255, .2);
+    //     backdrop-filter: blur(5px);
+    // }
 
     .post-img-cont {
         width: inherit;

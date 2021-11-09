@@ -39,7 +39,7 @@
     padding: 20px 20px 10px 20px;
     background-color: rgba(235, 233, 233, 0.445);
     padding: 10px 20px;
-    border-radius: 20px;
+    border-radius: 7px;
     text-align: center;
 
     .username {
@@ -47,7 +47,7 @@
       font-size: 32px;
       font-weight: 600;
       background-color: var(--neonyellow);
-      border-radius: 20px;
+      border-radius: 5px;
 
     }
     .location {
@@ -55,7 +55,7 @@
       font-size: 20px;
       font-style: italic;
       background-color: lighten(#E9FF70, 15%);
-      border-radius: 20px;
+      border-radius: 5px;
     }
     .joined {
       color:rgb(109, 109, 109);

@@ -27,20 +27,20 @@
     padding: 20px 20px 10px 20px;
     background-color: rgba(235, 233, 233, 0.445);
     padding: 10px 20px;
-    border-radius: 20px;
+    border-radius: 7px;
     text-align: center; }
     .left-user-info .user-info-text .username {
       color: black;
       font-size: 32px;
       font-weight: 600;
       background-color: var(--neonyellow);
-      border-radius: 20px; }
+      border-radius: 5px; }
     .left-user-info .user-info-text .location {
       color: #424242;
       font-size: 20px;
       font-style: italic;
       background-color: #f5ffbd;
-      border-radius: 20px; }
+      border-radius: 5px; }
     .left-user-info .user-info-text .joined {
       color: #6d6d6d;
       font-size: 18px;
