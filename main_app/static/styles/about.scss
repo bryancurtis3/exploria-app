@@ -6,9 +6,46 @@
     
     .top-text {
         grid-column: span 2;
-    }
 
-    .profile-badge {
-        height: 273px;
+        h1 {
+            font-size: 48px;
+            font-family: "Poppins";
+            margin: 10px 0 0 0;
+        }
     }
 }
+
+
+// animated background - Bryan's Version
+.bg {
+    animation:slide 9s ease-in-out infinite alternate;
+    background-image: 
+      linear-gradient(-60deg, var(--neonyellow) 40%, var(--pink) 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:12s;
+  }
+  
+  .bg3 {
+    animation-duration:15s;
+    background-image: 
+      linear-gradient(-60deg, var(--mediumorange) 40%, var(--blue) 50%);
+  }
+
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
