@@ -102,12 +102,16 @@ class ProfileUpdate(TemplateView):
   
   def post(self, request, pk):
     form = ProfileUpdateForm(request.POST)
-    if form.is_valid():
-      Profile.objects.filter(user=pk).update(location=request.POST.get('location'), image=request.POST.get('image'))
-      return redirect("profile", pk=pk)
+    profile = Profile.objects.get(pk=pk)
+    if request.user == profile.user:
+      if form.is_valid():
+        Profile.objects.filter(user=pk).update(location=request.POST.get('location'), image=request.POST.get('image'))
+        return redirect("profile", pk=pk)
+      else:
+        context = {"form": form, "pk": pk}
+        return render(request, "profile.html", context)
     else:
-     context = {"form": form, "pk": pk}
-     return render(request, "profile.html", context)
+      return redirect("profile", pk=pk)
 
 @method_decorator(login_required, name='dispatch')
 class ProfileRedirect(View):
