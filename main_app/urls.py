@@ -14,5 +14,4 @@ urlpatterns = [
     path('city/<int:pk>/', views.City.as_view(), name="city"),
     path('city/<int:pk>/posts/new/', views.PostCreate.as_view(), name="post_create"),
     path('about/', views.About.as_view(), name="about"),
-    path('city/index/', views.CityList.as_view(), name='city_list')
 ]
