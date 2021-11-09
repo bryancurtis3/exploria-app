@@ -108,6 +108,7 @@ class PostCreateForm(ModelForm):
     class Meta:
         model = Post
         fields = ['title', 'img', 'description']
+        
 class CityList(TemplateView):
   model = CityModel
   template_name = "city_list.html"
