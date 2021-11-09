@@ -7,7 +7,7 @@ section {
 
   // animated background
   .bg {
-    animation:slide 3s ease-in-out infinite alternate;
+    animation:slide 8s ease-in-out infinite alternate;
     background-image: 
       linear-gradient(-60deg, var(--lightorange) 50%, var(--blue) 50%);
     bottom:0;
@@ -21,11 +21,13 @@ section {
 
   .bg2 {
     animation-direction:alternate-reverse;
-    animation-duration:4s;
+    animation-duration:10s;
   }
   
   .bg3 {
-    animation-duration:5s;
+    animation-duration:12s;
+    background-image: 
+      linear-gradient(-60deg, var(--pink) 50%, var(--neonyellow) 50%);
   }
 
   @keyframes slide {
@@ -42,8 +44,8 @@ form {
   display: flex;
   flex-direction: column;
   height: 100%;
-  align-items: left;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: left;
   border-radius: 10px;
   background-color: var(--pink);
   box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.35);
