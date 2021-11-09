@@ -29,6 +29,9 @@
     <!-- Local Scripts -->
     {% block scripts %}{% endblock scripts %}
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/jpg" href="https://i.pinimg.com/originals/b6/3a/c8/b63ac81db002b5678a5df66ba62a4696.png"/>
+
     <script src="{% static 'scripts/app.js' %}" defer></script>
 
     <title>Exploria - {% block title %}{% endblock %}</title>
@@ -37,8 +40,7 @@
 <body>
     <!-- Navbar can go here since it will be on all pages -->
   <nav id="app-navbar" class="navbar">
-       
-    
+
     <div class="navbar-one">
        <!-- **insert img or icon -->
       <img src="" >
@@ -63,6 +65,7 @@
     {% if user.is_authenticated %}
     
     <div class="auth-session">
+      <span class="navbar-item"><a class="user-profile-link" href="{% url 'about' %}">About</a></span>
       <span class="navbar-item"><a class="user-profile-link" href="{% url 'city' 1 %}">Explore Cities</a></span>
       <span class="navbar-item"><a class="user-profile-link" href="{% url 'profile' user.pk %}">My Account</a></span>
       <a class="navbar-item logout-nav" href="{% url 'logout' %}" >Logout</a>   

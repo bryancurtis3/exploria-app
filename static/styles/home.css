@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 #carousel-holder {
-  height: 40vh;
+  height: 50vh;
   overflow: hidden;
   object-position: center; }
 
 #carouselExampleIndicators {
-  height: 300px;
+  height: inherit;
   overflow: clip;
   object-fit: center; }
 
