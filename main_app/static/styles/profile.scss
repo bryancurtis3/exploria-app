@@ -9,52 +9,227 @@
   font-size: 24px;
   padding-left: 0;
   padding-right: 0;
-  height: 1200px;
+  height: 100vh;
+  $visualheight: 100vh;
+  background-color: transparent;
 }
 // Holds all user information on left
 .left-user-info {
   border-width: 50px; 
-  border-color: darken(rgba(255, 119, 70, 0.726), 15%);
-  border-style: dotted none dotted groove;
-  background-color: var(--lightorange);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 1200px;
+  background-color: transparent;
 
+  // Box containing the profile
+  .left-box {
+    background: radial-gradient(circle, rgba(247, 203, 92, 0.8) 0%, rgba(255, 230, 130, 0.8) 51%, rgba(255,183,112,0.8) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 70px 40px 70px;
+    border-radius: 5px;
+    border: 10px ridge #ff972f2d;
+    box-shadow: 1px 1px 10px rgb(93, 92, 92);
+  }
+
+  // Info card text
   .user-info-text {
+    padding: 20px 20px 10px 20px;
+    background-color: rgba(235, 233, 233, 0.445);
+    padding: 10px 20px;
+    border-radius: 7px;
     text-align: center;
+
+    .username {
+      color: black;
+      font-size: 32px;
+      font-weight: 600;
+      background-color: var(--neonyellow);
+      border-radius: 5px;
+
+    }
+    .location {
+      color:rgb(66, 66, 66);
+      font-size: 20px;
+      font-style: italic;
+      background-color: lighten(#E9FF70, 15%);
+      border-radius: 5px;
+    }
+    .joined {
+      color:rgb(109, 109, 109);
+      font-size: 18px;
+      text-align: left;
+      
+    } 
+    .since {
+      color:rgb(109, 109, 109);
+      font-size: 18px;
+      text-align: left;
+      
+    }   
   }
   img {
     clip-path: polygon(50% 14%, 9% 85%, 91% 85%);
   }
+  .edit-button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+
+    span {
+      display: none; 
+    }
+  }
+  .edit-button:hover {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+
+    span {
+      display: inline;
+    }
+  }
 }
 // Holds all current user's posts on right-side
 .right-user-posts {
-  border-width: 20px; 
-  border-color: var(--blue);
-  border-style: dotted dashed groove dotted;
-  padding: 60px;
-  background-color: darken(rgba(255, 119, 70, 0.726), 20%);
+  margin-left: 20px;
+  padding: 40px 60px 10px 20px;
+  background-color: transparent;
   overflow: auto;
-  height: 1200px;
-  
+  height: 100vh;
+
   img {
     margin: 20px 10px 5px 15px;
-    width:280px;
-    height: 280px;
+    width:220px;
+    height:220px;
     clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
   }
+  .see-post {
+    span {
+      display: none;
+    }
+  }
+  .see-post:hover {
+    span {
+      display: inline;
+    }
+  }
 }
-// border for each post-card
+// Post card container with border
 .post-border {
-  border: 10px groove rgb(56, 56, 56);
+  border: 8px groove #f64e8ebe;
   border-radius: 5px;
+  box-shadow: 2px 2px 10px rgb(93, 92, 92);
+  width: 700px;
 }
 // Holds each post information
 #post-cards {
-  border: 15px groove rgb(219, 219, 219);
+  border: 8px groove #32c1fa98;
   border-radius: 0;
+  background-color: rgba(245, 245, 245, 0.84);
 }
 
+// Bryan's additions
+.profile-image {
+  height: 300px;
+  aspect-ratio: 1;
+
+  img {
+    height: inherit;
+    object-fit: cover;
+    aspect-ratio: 1;
+  }
+}
+
+.card-img-top {
+  object-fit: cover;
+}
+
+// EDIT PROFILE modal
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  label {
+    margin: 10px;
+    font-weight: 600;
+  }
+
+}
+
+// Bryan's efforts
+.modal-header {
+  background-color: var(--neonyellow);
+
+  h5 {
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
+
+.modal-body {
+  padding: 16px 0 0 0;
+
+  p {
+    font-size: 18px;
+    width: 100%;
+    padding: 0 14px;
+    display: flex;
+    justify-content: space-between;
+
+    input {
+      width: 70%;
+    }
+  }
+}
+
+.modal-footer {
+  width: 100%;
+  padding: 8px 16px;
+  justify-content: space-between;
+}
+
+.edit-submit {
+  background-color: var(--blue);
+  transition: all .1s ease-in-out;
+}
+
+.edit-submit:hover {
+  background-color: scale-color(#70D6FF, $lightness: -20%);
+}
+
+// animated background - Gail
+  .bg {
+    animation:slide 12s ease-in-out infinite alternate;
+    background-image: 
+      linear-gradient(-60deg, var(--neonyellow) 40%, var(--pink) 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:16s;
+  }
+  
+  .bg3 {
+    animation-duration:20s;
+    background-image: 
+      linear-gradient(-60deg, var(--neonyellow) 40%, var(--pink) 50%);
+  }
+
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
