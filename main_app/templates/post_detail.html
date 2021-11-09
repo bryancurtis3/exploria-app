@@ -26,7 +26,7 @@
       <img id="post-show-image" src="{{ post.img }}" alt="">
     </div>
 
-    <p>{{ post.description }}</p>
+    <p id="post-description">{{ post.description }}</p>
 
     <div class="edit-delete-buttons">
       <a href="{% url 'post_edit' post.pk %}" class="edit-bt btn neon">
