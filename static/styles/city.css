@@ -49,11 +49,18 @@
   width: 60vw; }
   .user-posts .title-card {
     background-color: rgba(255, 112, 166, 0.7);
-    display: grid;
-    gap: 10px;
-    grid-template-columns: 1fr 140px;
-    align-items: center;
-    justify-content: space-between; }
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; }
+    .user-posts .title-card .post-buttons {
+      width: 92px;
+      display: grid;
+      gap: 8px;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: minmax(38px, 38px);
+      place-content: center; }
+      .user-posts .title-card .post-buttons .small-btn {
+        width: 42px; }
 
 .post-border {
   margin: 0 auto;
