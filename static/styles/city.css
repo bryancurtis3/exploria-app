@@ -26,9 +26,8 @@
       margin: 10px 0; }
     .city-data .top-section img {
       max-width: 500px;
-      margin-left: auto;
       grid-column: span 2;
-      align-self: center; }
+      justify-self: center; }
     .city-data .top-section h2 {
       align-self: end;
       font-size: 42px; }
@@ -51,7 +50,8 @@
   .user-posts .title-card {
     background-color: rgba(255, 112, 166, 0.7);
     display: grid;
-    grid-template-columns: 7fr 4fr;
+    gap: 10px;
+    grid-template-columns: 1fr 140px;
     align-items: center;
     justify-content: space-between; }
 

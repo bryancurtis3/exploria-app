@@ -34,8 +34,8 @@
   
     img {
       max-width: 500px;
-      margin-left: auto;
       grid-column: span 2;
+      justify-self: center;
     }
   
     h2 {
@@ -70,7 +70,8 @@
   .title-card {
     background-color: rgba(255, 112, 166, .7);
     display: grid;
-    grid-template-columns: 7fr 4fr;
+    gap: 10px;
+    grid-template-columns: 1fr 140px;
     align-items: center;
     justify-content: space-between;
   }
