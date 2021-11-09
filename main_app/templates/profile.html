@@ -23,10 +23,11 @@
               <p class="since"><i class="fas fa-user-clock"></i> Explorian for {{profile.user.date_joined|timesince}}</p>
             </div>
           </article>
+          {% if request.user == profile.user %}
           <a class="btn btn-info btn-lg mt-4 text-white edit-button" data-bs-toggle="modal" data-bs-target="#editUser"><i class="fas fa-edit"></i><span> Edit </span></a>
+          {% endif %}
         </div>
-        <a class="btn btn-info btn-lg mt-4 text-white edit-button" data-bs-toggle="modal" data-bs-target="#editUser"><i class="fas fa-edit"></i><span> Edit </span></a>
-        </div>
+      
         <!-- Modal -->
         <div class="modal fade" id="editUser" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
           <div class="modal-dialog">
