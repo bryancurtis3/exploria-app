@@ -1,0 +1,44 @@
+:root {
+  --blue: #70D6FF;
+  --pink: #FF70A6;
+  --mediumorange: #FF9770;
+  --lightorange: #FFD670;
+  --neonyellow: #E9FF70; }
+
+.page-contents-container {
+  display: inline-grid;
+  grid-template-columns: 6fr, 4fr;
+  margin-top: 6px;
+  gap: 6px; }
+
+.city-list-container {
+  display: grid;
+  grid-column: 1;
+  background-color: var(--blue);
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px; }
+
+.city-heading {
+  padding: 15px;
+  margin-left: 10px; }
+
+.city-name-container {
+  display: grid;
+  align-self: center;
+  height: 70px;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 15px;
+  background-color: var(--lightorange);
+  border: 1px solid black;
+  border-radius: 4px; }
+  .city-name-container h3 {
+    display: inherit;
+    align-self: center; }
+
+.city-post-container {
+  grid-column: 2; }
+
+/*# sourceMappingURL=city_list.css.map */

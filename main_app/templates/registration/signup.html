@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1 class="title">Sign Up</h1>
+<form method="POST" action="{% url 'signup' %}">
+{% comment %}   <p class="firstName label">
+    First Name: <input type="text" required class="firstName input">
+  </p>
+  <p class="lastName label">
+    Last Name: <input type="text" class="lastName input">
+  </p> {% endcomment %}
+  {% csrf_token %} {{ form.as_p }}
+  <p class="location label">
+    Current City: <input type="text" class="location input" required>
+  </p>
+{% comment %}   <p class="email label">
+    Email: <input type="email" class="email input" required>
+  </p> {% endcomment %}
+  
+  <input type="submit" class="btn" value="Sign Up" />
+  <input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+{% endblock %}

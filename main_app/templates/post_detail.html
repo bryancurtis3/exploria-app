@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load sass_tags %}
+
+{% block styles %}<link rel="stylesheet" href="{% sass_src 'styles/post_detail.scss' %}">{% endblock styles %}
+
+{% block title %}Post Detail{% endblock title %}
+
+{% block content %}
+<div class="post-show-content">
+  <main class="post-show-main">
+
+    <h1 class="post-detail-title">{{ post.title }}</h1>
+
+    <div class="post-show-profile">
+      <a id="post-show-profile-container" href="{% url 'profile' post.user.pk %}">
+        <img id="post-show-profile-pic" src="{{ post.user.profile.image }}" alt="">
+      </a>
+
+      <div class="post-show-user-text">
+        <a href="{% url 'profile' post.user.pk %}">{{ post.user.username }}</a>
+        <a id="city-link" href="{% url "city" post.city.pk %}">{{ post.user.profile.location }}</a>
+      </div>
+    </div>
+
+    <div class="post-img-cont">
+      <img id="post-show-image" src="{{ post.img }}" alt="">
+    </div>
+
+    <p id="post-description">{{ post.description }}</p>
+
+    <div class="edit-delete-buttons">
+      <a href="{% url 'post_edit' post.pk %}" class="edit-bt btn neon">
+        <span class="icon">
+          <i class="fas fa-edit"></i>
+        </span>
+      </a>
+      <a href="{% url 'post_delete' post.pk %}" class="delete-btn btn neon">
+        <span class="icon">
+          <i class="fas fa-trash-alt"></i>
+        </span>
+      </a>
+    </div>
+    {% comment %} <img src="https://www.happysocks.com/icons/jazzburger.svg" alt=""> {% endcomment %}
+
+  </main>
+</div>
+
+{% endblock content %}

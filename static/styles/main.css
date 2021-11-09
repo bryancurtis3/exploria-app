@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+:root {
+  --blue: #70D6FF;
+  --pink: #FF70A6;
+  --mediumorange: #FF9770;
+  --lightorange: #FFD670;
+  --neonyellow: #E9FF70; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  min-height: 100vh; }
+
+#app-navbar {
+  position: relative;
+  margin-top: 0px;
+  height: 80px;
+  width: 100vw;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: var(--neonyellow); }
+
+.navbar-item {
+  text-decoration: none;
+  font-family: Poppins;
+  font-size: 18px;
+  color: var(--pink); }
+
+.navbar-one {
+  display: flex;
+  align-items: center; }
+  .navbar-one a {
+    font-size: 40px;
+    font-weight: 500;
+    font-family: Poppins;
+    text-decoration: none;
+    color: var(--pink); }
+  .navbar-one #top-left-exploria {
+    transition: all .2s ease-in-out;
+    letter-spacing: -4px; }
+    .navbar-one #top-left-exploria span {
+      margin: 0;
+      padding: 0 4px 0 0;
+      transition: inherit; }
+    .navbar-one #top-left-exploria span:hover {
+      transition: all .1s ease-in-out;
+      color: #00aaef; }
+    .navbar-one #top-left-exploria .up {
+      position: relative;
+      top: -10px; }
+    .navbar-one #top-left-exploria .dn {
+      position: relative;
+      bottom: -10px; }
+  .navbar-one #top-left-exploria:hover .up {
+    top: 0px; }
+  .navbar-one #top-left-exploria:hover .dn {
+    bottom: 0px; }
+
+.auth-session {
+  margin: 0px 10px; }
+  .auth-session .navbar-item {
+    margin-left: 15px; }
+  .auth-session .user-profile-link {
+    margin-left: 5px;
+    text-decoration: none;
+    color: var(--pink); }
+  .auth-session .user-profile-link:hover {
+    font-weight: 600;
+    color: #00aaef; }
+  .auth-session .logout-nav:hover {
+    font-weight: 600;
+    color: #00aaef; }
+
+#footer-logo {
+  font-size: 32px;
+  font-weight: 500;
+  font-family: Poppins;
+  text-decoration: none;
+  color: var(--neonyellow);
+  transition: all .2s ease-in-out; }
+
+#footer-logo:hover {
+  transform: rotateZ(-5deg); }
+
+@keyframes pulseOne {
+  0% {
+    font-size: 16px; }
+  100% {
+    font-size: 18px; }
+  0% {
+    font-weight: 500; }
+  100% {
+    font-weight: 700; } }
+
+.login-btn-animation {
+  animation-name: pulseOne;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite; }
+
+@keyframes pulseTwo {
+  0% {
+    font-size: 18px; }
+  100% {
+    font-size: 16px; }
+  0% {
+    font-weight: 700; }
+  100% {
+    font-weight: 500; } }
+
+.signup-btn-animation {
+  animation-name: pulseTwo;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite; }
+
+.navbar-two {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 25px;
+  gap: 40px; }
+  .navbar-two a {
+    text-decoration: none;
+    font-family: Poppins;
+    color: var(--pink); }
+  .navbar-two a:hover {
+    color: #00aaef; }
+
+footer {
+  position: absolute;
+  margin-bottom: 0px;
+  width: 100vw;
+  height: 3.5em;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--blue);
+  color: var(--neonyellow); }
+
+.footer-div {
+  display: flex;
+  vertical-align: center;
+  align-items: center;
+  gap: 5px; }
+
+#footer-date {
+  margin-bottom: 0px; }
+
+/* Login/Signup button styling */
+.nav-button {
+  vertical-align: center;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: var(--pink);
+  font-size: 16px; }
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  form label {
+    margin: 0px 0px;
+    font-weight: 600; }
+
+.modal-header {
+  background-color: var(--neonyellow); }
+  .modal-header h5 {
+    font-size: 24px;
+    font-weight: 500; }
+
+.modal-body {
+  padding: 16px 50px 0 50px; }
+  .modal-body p {
+    font-size: 18px;
+    width: 100%;
+    padding-top: .5px;
+    display: grid inline;
+    justify-content: space-between; }
+    .modal-body p input {
+      width: 95%; }
+
+.modal-footer {
+  width: 100%;
+  padding: 12px 16px;
+  justify-content: center; }
+
+.signUp-submit, .login-submit {
+  background-color: var(--blue);
+  transition: all .1s ease-in-out; }
+
+.signUp-submit:hover, .login-submit:hover {
+  background-color: #27c1ff; }
+
+span.helptext {
+  font-size: 10px;
+  font-style: oblique;
+  padding-left: 7px; }
+
+ul {
+  margin-bottom: 0;
+  padding: 0 1rem 0 2rem;
+  font-size: 12px;
+  line-height: 1.3; }
+
+/*# sourceMappingURL=main.css.map */
