@@ -124,18 +124,28 @@
   border-radius: 15px; 
 }
 
-// Bryan and Kathy's Button for adding posts
+// Kathy's part of the button for adding posts
 
 .addbutton {
-  background-color: #7d7d7d;
-  background-image: url("https://cdn11.bigcommerce.com/s-kga9jf/product_images/uploaded_images/liquid-gold-antique-gold-150x150-2x.jpg");
+  font-size: 15px;
   padding: 10px;
   box-shadow:  0 6px 10px 0px rgba(0, 0, 0, 0.19);
-  border: 5px ridge rgba(204, 167, 4, 0.685);
-  }
 
+  .addbutton-icons {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 100%;
+
+    span {
+      font-size: 15px;
+    }
+  }
+}
+
+// Bryan's part of the button
 .new-post {
-  background-color: var(--blue);
+  background-color: var(--pink);
+  border-radius: 35px;
   transition: all .2s ease-in-out;
   margin-bottom: 40px;
   font-family: 'Poppins';
