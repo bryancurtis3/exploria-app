@@ -31,7 +31,7 @@
     padding: 0px 70px 40px 70px;
     border-radius: 5px;
     border: 10px ridge #ff972f2d;
-    box-shadow: 0px 0px 10px rgb(184, 183, 183);
+    box-shadow: 1px 1px 10px rgb(93, 92, 92);
   }
 
   // Info card text
@@ -204,7 +204,7 @@ form {
   .bg {
     animation:slide 12s ease-in-out infinite alternate;
     background-image: 
-      linear-gradient(-60deg, var(--neonyellow) 50%, var(--pink) 50%);
+      linear-gradient(-60deg, var(--neonyellow) 40%, var(--pink) 50%);
     bottom:0;
     left:-50%;
     opacity:.5;
@@ -221,6 +221,8 @@ form {
   
   .bg3 {
     animation-duration:20s;
+    background-image: 
+      linear-gradient(-60deg, var(--neonyellow) 40%, var(--pink) 50%);
   }
 
   @keyframes slide {
