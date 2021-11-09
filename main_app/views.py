@@ -7,10 +7,11 @@ from django.urls import reverse
 
 
 from django.views.generic.base import TemplateView
-from django.views.generic.edit import DeleteView, UpdateView, FormView
+from django.views.generic.edit import DeleteView, UpdateView, FormView, CreateView
 from django.views.generic.detail import DetailView
 
-from main_app.models import City, Post, User, Profile
+from main_app.models import Post, User, Profile
+from main_app.models import City as CityModel
 
 from django.forms import ModelForm
 
@@ -87,7 +88,7 @@ class UserProfile(DetailView):
     return context
   
 class ProfileUpdate(TemplateView):
-  template_name = "user_update.html"
+  template_name = "profile.html"
   
   def post(self, request, pk):
     form = ProfileUpdateForm(request.POST)
@@ -96,19 +97,47 @@ class ProfileUpdate(TemplateView):
       return redirect("profile", pk=pk)
     else:
      context = {"form": form, "pk": pk}
-     return render(request, "user_update.html", context)
+     return render(request, "profile.html", context)
 
 
 class ProfileRedirect(View):
   def get(self, request):
     return redirect('profile', request.user.profile.pk)
 
+class PostCreateForm(ModelForm):
+    class Meta:
+        model = Post
+        fields = ['title', 'img', 'description']
+        
+class CityList(TemplateView):
+  model = CityModel
+  template_name = "city_list.html"
+
+  def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    context["cities"] = CityModel.objects.all()
+    
+    return context
+
 class City(DetailView):
-  model = City
+  model = CityModel
   template_name = "city.html"
 
   def get_context_data(self, **kwargs):
     context = super().get_context_data(**kwargs)
     context["posts"] = Post.objects.filter(city=self.object.pk)
-
+    context["cities"] = CityModel.objects.all()
+    form = PostCreateForm()
+    context["form"] = form
     return context
+
+class PostCreate(View):
+  def post(self, request, pk):
+    title = request.POST.get("title")
+    img = request.POST.get("img")
+    description = request.POST.get('description')
+    city = CityModel.objects.get(pk=pk)
+    location = city.name
+    
+    Post.objects.create(title=title, img=img, description=description, location=location, city=city, user=request.user)
+    return redirect("city", pk=pk) 

@@ -5,7 +5,9 @@
 {% block styles %}<link rel="stylesheet" href="{% sass_src 'styles/profile2.scss' %}">{% endblock %}
 
 {% block content %}
-
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
   <main class="container-fluid profile-show-main">
     <div class="row m-auto justify-content-evenly">
       <section class="col-5 left-user-info">
@@ -21,7 +23,7 @@
               <p class="since"><i class="fas fa-user-clock"></i> Explorian for {{profile.user.date_joined|timesince}}</p>
             </div>
           </article>
-          <a class="btn btn-info btn-lg mt-4 text-white fw-bold edit-button" data-bs-toggle="modal" data-bs-target="#editUser"><i class="fas fa-edit"></i>Edit Profile</a>
+          <a class="btn btn-info btn-lg mt-4 text-white edit-button" data-bs-toggle="modal" data-bs-target="#editUser"><i class="fas fa-edit"></i><span> Edit </span></a>
         </div>
         <!-- Modal -->
         <div class="modal fade" id="editUser" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
@@ -56,12 +58,13 @@
             <span><img src="{{post.img}}" class="card-img-top" alt="Picture of {{post.title}}"></span>
             <div class="card-body">
               <a href="{% url 'city' post.city.pk %}" class="text-decoration-none text-dark"<h4 class="card-title text-body">{{ post.location }}</h4></a>
-              <p class="card-text text-muted lead">{{post.description|truncatechars:"254"}}</p>
-              <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary">See post</a>
+              <p class="card-text text-muted lead">{{post.description|truncatechars:"150"}}</p>
+              <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary see-post"><i class="fas fa-eye text-white"></i><span> View</span></a>
             </div>
           </div>
         </div>
       </div> 
+      <br>
       <br>
       {% empty %}
       <p class="display-6">{{profile.user.username|capfirst}} has no posts.</p>
