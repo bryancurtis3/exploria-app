@@ -23,11 +23,6 @@
     object-position: center bottom;
     }
 
-
-body {
-    background-color: var(--mediumorange);
-}
-
 #home-title {
     margin: 1em auto;
     text-align: center;
@@ -47,8 +42,8 @@ body {
 
     a {
         text-decoration: none;
-        background-color: scale-color(#FF9770, $lightness: -15%);
-        color: scale-color(#70D6FF, $lightness: +10%);
+        // background-color: scale-color(, $lightness: -15%);
+        color: scale-color(#70D6FF, $lightness: -10%);
         border-radius: 3px;
         padding: 0 2px;
     }
@@ -56,7 +51,11 @@ body {
     a:hover {
         font-weight: 600;
         padding: 0 0px 0 2px;
-        box-shadow: 1px 1px 10px 1px scale-color(#FF9770, $lightness: -10%);
+        // box-shadow: 1px 1px 10px 1px scale-color(#70D6FF, $lightness: -10%);
+        transition-duration: .2s;
+        text-shadow:
+          0 0 3px scale-color(#70D6FF, $lightness: 10%),
+          0 0 6px scale-color(#70D6FF, $lightness: 10%);
     }
 }
 
@@ -78,22 +77,41 @@ body {
     padding: 10px;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, .2);
-    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, .4);
+    backdrop-filter: blur(7px);
 }
 
-// .ellipsis:after {
-//     overflow: hidden;
-//     display: inline-block;
-//     vertical-align: bottom;
-//     animation: ellipsis steps(4,end) 2000ms infinite;
-//     content: "\2026";
-//     width: 0px;
-//   }
-  
 
-// @keyframes ellipsis {
-//     to {
-//         width: 25px;    
-//     }
-// }
+// Background animation - Bryan's Version
+.bg {
+    animation:slide 9s ease-in-out infinite alternate;
+    background-image: 
+      linear-gradient(-60deg, var(--neonyellow) 40%, var(--pink) 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+}
+
+.bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:12s;
+}
+  
+.bg3 {
+    animation-duration:15s;
+    background-image: 
+      linear-gradient(-60deg, var(--mediumorange) 40%, var(--blue) 50%);
+}
+
+@keyframes slide {
+    0% {
+        transform:translateX(-25%);
+    }
+    100% {
+        transform:translateX(25%);
+    }
+}

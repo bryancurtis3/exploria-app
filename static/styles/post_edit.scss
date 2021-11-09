@@ -1,0 +1,120 @@
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 83vh;
+  align-content: center;
+
+  // animated background
+  .bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: 
+      linear-gradient(-60deg, var(--lightorange) 50%, var(--blue) 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+  
+  .bg3 {
+    animation-duration:5s;
+  }
+
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: left;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: var(--pink);
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.35);
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.35);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.35);
+  padding: 0px 40px;
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  input {
+    border-radius: 2px;
+  }
+
+  p {
+    margin: 10px 40px;
+    // border: 3px solid yellowgreen;
+    font-size: 20px;
+
+    #id_img {
+      margin-left: 10px;
+      padding-left: 6px;
+      box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.5) inset;
+      -webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.5) inset;
+      -moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.5) inset;
+      // border: 3px solid white;
+    }
+
+    #id_description {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+      // border: 3px solid skyblue;
+      border-radius: 2px;
+      box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.5) inset;
+      -webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.5) inset;
+      -moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.5) inset;
+      padding: 4px 8px;
+    }
+
+    #id_location {
+      margin-bottom: 0px;
+      margin-left: 10px;
+      padding-left: 6px;
+      box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.5) inset;
+      -webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.5) inset;
+      -moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.5) inset;
+      // border: 3px solid yellow;
+    }
+  }
+
+  button {
+    align-self: flex-end;
+    padding: 15px;
+    min-width: 125px;
+    max-width: 150px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    background-color: var(--neonyellow);
+    color: var(--pink);
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  button:hover {
+    background-color: var(--blue);
+    color: var(--neonyellow);
+  }
+}

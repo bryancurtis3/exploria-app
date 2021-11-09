@@ -15,7 +15,7 @@
   <section class="city-list">
     <div class="city-list-container">
       <h2 class="city-heading">Cities</h2>
-        {% for city in cities %} 
+        {% for city in cities %}
         <a class="city-name-container" href="{% url 'city' city.pk %}">
           <img src="{{ city.img }}" alt="">
           <h3>{{city.name}}</h3>
