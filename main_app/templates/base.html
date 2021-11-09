@@ -63,7 +63,7 @@
     {% if user.is_authenticated %}
     
     <div class="auth-session">
-      <span class="navbar-item"><a class="user-profile-link" href="{% url 'city' 1 %}">View Cities</a></span>
+      <span class="navbar-item"><a class="user-profile-link" href="{% url 'city' 1 %}">Explore Cities</a></span>
       <span class="navbar-item"><a class="user-profile-link" href="{% url 'profile' user.pk %}">My Account</a></span>
       <a class="navbar-item logout-nav" href="{% url 'logout' %}" >Logout</a>   
     </div>

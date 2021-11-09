@@ -97,21 +97,16 @@ class UserProfile(DetailView):
     return context
   
 @method_decorator(login_required, name='dispatch')
-class ProfileUpdate(TemplateView):
-  template_name = "profile.html"
+class ProfileUpdate(View):
   
   def post(self, request, pk):
     form = ProfileUpdateForm(request.POST)
-    profile = Profile.objects.get(pk=pk)
-    if request.user == profile.user:
-      if form.is_valid():
-        Profile.objects.filter(user=pk).update(location=request.POST.get('location'), image=request.POST.get('image'))
-        return redirect("profile", pk=pk)
-      else:
-        context = {"form": form, "pk": pk}
-        return render(request, "profile.html", context)
-    else:
+    if form.is_valid():
+      Profile.objects.filter(user=pk).update(location=request.POST.get('location'), image=request.POST.get('image'))
       return redirect("profile", pk=pk)
+    else:
+      context = {"form": form, "pk": pk}
+      return render(request, "profile.html", context)
 
 @method_decorator(login_required, name='dispatch')
 class ProfileRedirect(View):
