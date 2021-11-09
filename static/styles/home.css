@@ -29,8 +29,8 @@
 #about-topics-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin: 0 24px 24px 24px;
-  gap: 24px; }
+  margin: 0 30px 30px 30px;
+  gap: 30px; }
   #about-topics-container .paragraph {
     padding: 30px 30px 20px 30px;
     color: dimgray;
