@@ -36,56 +36,58 @@
     background-color: rgba(246, 209, 64, 0.466);
     backdrop-filter: blur(7px);
   }
-
+}
   // Info card text
-  .user-info-text {
-    padding: 20px 20px 10px 20px;
-    background-color: rgba(235, 233, 233, 0.445);
-    padding: 10px 20px;
-    border-radius: 7px;
-    text-align: center;
+.user-info-text {
+  padding: 20px 20px 10px 20px;
+  background-color: rgba(235, 233, 233, 0.445);
+  padding: 10px 20px;
+  border-radius: 7px;
+  text-align: center;
 
-    .username {
-      color: black;
-      font-size: 32px;
-      font-weight: 600;
-      background-color: var(--neonyellow);
-      border-radius: 5px;
+  .username {
+    color: black;
+    font-size: 32px;
+    font-weight: 600;
+    background-color: var(--neonyellow);
+    border-radius: 5px;
 
-    }
-    .location {
-      color:rgb(66, 66, 66);
-      font-size: 20px;
-      font-style: italic;
-      background-color: lighten(#E9FF70, 15%);
-      border-radius: 5px;
-    }
-    .joined {
-      color:rgb(109, 109, 109);
-      font-size: 18px;
-      text-align: left;
-      
-    } 
-    .since {
-      color:rgb(109, 109, 109);
-      font-size: 18px;
-      text-align: left;
-      
-    }   
   }
-  img {
-    clip-path: polygon(50% 14%, 9% 85%, 91% 85%);
+  .location {
+    color:rgb(66, 66, 66);
+    font-size: 20px;
+    font-style: italic;
+    background-color: lighten(#E9FF70, 15%);
+    border-radius: 5px;
   }
-  .edit-button {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-size: 24px;
-    color: white;
+  .joined {
+    color:rgb(109, 109, 109);
+    font-size: 18px;
+    text-align: left;
+    
+  } 
+  .since {
+    color:rgb(109, 109, 109);
+    font-size: 18px;
+    text-align: left;
+    
+  }   
+}
 
-    span {
-      display: none; 
-    }
+img {
+  clip-path: polygon(50% 14%, 9% 85%, 91% 85%);
+}
+
+.edit-button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: white;
+
+  span {
+    display: none; 
   }
+}
   .edit-button:hover {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -100,7 +102,7 @@
       display: inline;
     }
   }
-}
+
 // Holds all current user's posts on right-side
 .right-user-posts {
   padding: 40px 60px 10px 100px;

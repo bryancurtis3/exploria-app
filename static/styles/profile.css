@@ -26,50 +26,54 @@
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
     background-color: rgba(246, 209, 64, 0.466);
     backdrop-filter: blur(7px); }
-  .left-user-info .user-info-text {
-    padding: 20px 20px 10px 20px;
-    background-color: rgba(235, 233, 233, 0.445);
-    padding: 10px 20px;
-    border-radius: 7px;
-    text-align: center; }
-    .left-user-info .user-info-text .username {
-      color: black;
-      font-size: 32px;
-      font-weight: 600;
-      background-color: var(--neonyellow);
-      border-radius: 5px; }
-    .left-user-info .user-info-text .location {
-      color: #424242;
-      font-size: 20px;
-      font-style: italic;
-      background-color: #f5ffbd;
-      border-radius: 5px; }
-    .left-user-info .user-info-text .joined {
-      color: #6d6d6d;
-      font-size: 18px;
-      text-align: left; }
-    .left-user-info .user-info-text .since {
-      color: #6d6d6d;
-      font-size: 18px;
-      text-align: left; }
-  .left-user-info img {
-    clip-path: polygon(50% 14%, 9% 85%, 91% 85%); }
-  .left-user-info .edit-button {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-size: 24px;
-    color: white; }
-    .left-user-info .edit-button span {
-      display: none; }
-  .left-user-info .edit-button:hover {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-size: 24px;
-    color: #fff;
-    transition-duration: .5s;
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff; }
-    .left-user-info .edit-button:hover span {
-      display: inline; }
+
+.user-info-text {
+  padding: 20px 20px 10px 20px;
+  background-color: rgba(235, 233, 233, 0.445);
+  padding: 10px 20px;
+  border-radius: 7px;
+  text-align: center; }
+  .user-info-text .username {
+    color: black;
+    font-size: 32px;
+    font-weight: 600;
+    background-color: var(--neonyellow);
+    border-radius: 5px; }
+  .user-info-text .location {
+    color: #424242;
+    font-size: 20px;
+    font-style: italic;
+    background-color: #f5ffbd;
+    border-radius: 5px; }
+  .user-info-text .joined {
+    color: #6d6d6d;
+    font-size: 18px;
+    text-align: left; }
+  .user-info-text .since {
+    color: #6d6d6d;
+    font-size: 18px;
+    text-align: left; }
+
+img {
+  clip-path: polygon(50% 14%, 9% 85%, 91% 85%); }
+
+.edit-button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: white; }
+  .edit-button span {
+    display: none; }
+
+.edit-button:hover {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #fff;
+  transition-duration: .5s;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff; }
+  .edit-button:hover span {
+    display: inline; }
 
 .right-user-posts {
   padding: 40px 60px 10px 100px;

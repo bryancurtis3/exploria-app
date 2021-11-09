@@ -27,28 +27,6 @@
           <a class="btn mt-4 edit-button neon" data-bs-toggle="modal" data-bs-target="#editUser"><i class="fas fa-edit"></i><span> Edit </span></a>
           {% endif %}
         </div>
-      
-        <!-- Modal -->
-        <div class="modal fade" id="editUser" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="editUserModalLabel">Edit Profile Information</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancel"></button>
-              </div>
-              <div class="modal-body bg-light">
-                <form action="{% url 'profile_update' profile.pk %}" method="POST">
-                  {% csrf_token %}
-                  {{form.as_p}}
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <input type="submit" class="btn edit-submit" value="Save Changes" />
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
       <section class="col right-user-posts">
       {% for post in posts%}
@@ -75,7 +53,27 @@
     </section>
     </div>
 
-
-  </main>
+  <!-- Modal -->
+  <div class="modal fade" id="editUser" tabindex="1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editUserModalLabel">Edit Profile Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancel"></button>
+        </div>
+        <div class="modal-body bg-light">
+          <form action="{% url 'profile_update' profile.pk %}" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+              <input type="submit" class="btn edit-submit" value="Save Changes" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
 
 {% endblock %}
