@@ -1,10 +1,10 @@
 #carousel-holder {
-  height: 40vh;
+  height: 50vh;
   overflow: hidden;
   object-position: center; }
 
 #carouselExampleIndicators {
-  height: 300px;
+  height: inherit;
   overflow: clip;
   object-fit: center; }
 

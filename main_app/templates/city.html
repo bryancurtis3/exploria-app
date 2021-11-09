@@ -46,7 +46,6 @@
           <div class="card-header title-card">
             <a href="{% url 'post_detail' post.pk %}" class="text-decoration-none text-dark"><p class="display-6">{{post.title|truncatechars:"32"}}</p></a>
             <div class="post-buttons">
-              <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
               {% if request.user == post.user %}
               <a href="{% url 'post_edit' post.pk %}" class="small-btn edit-bt btn btn-info">
                 <span class="icon text-white">
