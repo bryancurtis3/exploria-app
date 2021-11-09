@@ -1,56 +1,74 @@
 // CITY Page main container
 .city-main {
-  font-family: 'Poppins', sans-serif;
-  width: 750px;
-  object-fit: contain;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  h1 {
-    font-weight: 800;
-    font-size: 54px;
-    align-self: flex-start;
-  }
-
-  .image {
-    width: 750px;
-    clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
-  }
-  .post-image {
-    margin: 20px 10px 5px 15px;
-    width:220px;
-    height: 200px;
-    clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
-  }
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
 }
 // POST section, holds each post
 .user-posts {
+  width: 60vw;
+
   .title-card {
     background-color: var(--neonyellow);
   }
 }
 
+.top-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  min-width: 570px;
+  max-width: 600px;
+
+  img {
+    max-width: 350px;
+    margin-left: auto;
+  }
+}
+
+.post-border {
+  margin: 0 auto;
+  max-width: 600px;
+
+  .card {
+    max-width: 600px;
+    min-width: 570px;
+  }
+}
+
+
+.card-body {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  // width: 300px;
+}
+
 // Profile section of post
 .post-user {
+  display: grid;
+  grid-auto-rows: minmax(220px, 220px);
+  justify-items: center;
+}
 
-  .post-user-text {
-    width: 200px;
-    margin: 10px 25px;
-    padding: 10px;
-    
-    display: grid;
-    grid-template-columns: 70px 130px;
-    grid-template-rows: 1fr;
-    border-radius: 20px;
-    
+.post-user-text {
+  width: 200px;
+  max-height: 82px;
+  // max-width: 200px;
+  // min-width: none;
+  margin: 10px 0;
+  padding: 5px 0;
+  
+  display: grid;
+  grid-template-columns: 70px 130px;
+  grid-template-rows: 1fr;
+  border-radius: 20px;
+  align-items: center;
+  
+  a {
+    text-decoration: none;
+    color: dimgray;
+  }
 
-    a {
-      text-decoration: none;
-      color: dimgray;
-    }
-
-   .location {
+ .location {
     grid-column-start: 3;
     display: grid;
     grid-template-columns: 1fr;
@@ -58,15 +76,45 @@
   }
 }
 
-  #profile-pic {
-    height: 60px;
-    width: 60px;
-    clip-path: polygon(50% 14%, 9% 85%, 91% 85%);
-    object-fit: cover;
-    object-position: 50% 50%;
-    // This cuts off bottom corners atm
-    border-radius: 15px; 
+.post-text-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(90px, 90px);
+  align-content: center;
+  // justify-items: center;
+
+  .card-text {
+    font-size: 16px;
+    grid-column-start: span 2;
   }
+  .post-buttons {
+    padding-left: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 20px;
+    place-items: center;
+    max-width: 110px;
+    
+    .small-btn {
+      max-width: 45px;
+    }
+
+    .btn-primary {
+      max-width: 100px;
+      grid-column-start: span 2;
+      white-space: nowrap;
+    }
+  }
+}
+
+#profile-pic {
+  height: 60px;
+  width: 60px;
+  clip-path: polygon(50% 14%, 9% 85%, 91% 85%);
+  object-fit: cover;
+  object-position: 50% 50%;
+  // This cuts off bottom corners atm
+  border-radius: 15px; 
 }
 
 // Bryan and Kathy's Button for adding posts
@@ -84,6 +132,8 @@
   transition: all .2s ease-in-out;
   margin-bottom: 40px;
   font-family: 'Poppins';
+  width: 250px;
+  margin-left: auto;
   font-size: 28px;
   width: 70px;
   height: 70px;
@@ -102,6 +152,140 @@
   font-weight: 500;
 }
 
+.city-data {
+  font-family: 'Poppins', sans-serif;
+  // width: 60vw;
+  object-fit: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+
+  h1 {
+    font-weight: 800;
+    font-size: 32px;
+    align-self: flex-start;
+  }
+
+  .image {
+    width: 60vw;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
+  }
+  .post-image {
+    margin: 20px 10px 5px 15px;
+    width: 30%;
+    min-width: 200px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
+  }
+}
+
+// @media only screen and (max-width: 700px) {
+//   .card-body {
+//     gri
+//   }
+// }
+
+
+// Elliot's code
+
+.city-list{
+  display: inline-grid;
+  grid-template-columns: 6fr, 4fr;
+  // margin-top: 6px;
+  // gap: 6px;
+}
+
+.city-list-container{
+  display: grid;
+  grid-column: 1;
+  background-color: var(--pink);
+  // margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  
+
+}
+
+.city-heading {
+  background-color: var(--neonyellow);
+  padding: 15px;
+  border-radius: 4px;
+  // margin-left: 10px;
+  
+}
+
+.city-name-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-self: center;
+  height: 100px;
+  width: 100%;
+  margin: 10px 15px;
+  background-color: var(--lightorange);
+  // border: 1px solid black;
+  border-radius: 4px;
+  place-items: center;
+  text-decoration: none;
+  color: #212529;
+  padding-left: 10px;
+  clip-path: polygon(88% 0, 100% 50%, 88% 100%, 0% 100%, 0 50%, 0% 0%);
+
+  h3 {
+    align-self: center;
+    margin: 0;
+  }
+
+  img {
+    height: 80px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
+  }
+}
+
+.city-name-container:hover {
+  color: #212529;
+  cursor: pointer;
+}
+
+.city-post-container {
+  grid-column: 2;
+}
+
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: 
+    linear-gradient(-60deg, var(--lightorange) 50%, var(--blue) 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
 // CREATE POST modal
 form {
   display: flex;
