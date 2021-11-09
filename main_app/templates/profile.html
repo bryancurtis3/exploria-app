@@ -61,8 +61,8 @@
             <span><img src="{{post.img}}" class="card-img-top" alt="Picture of {{post.title}}"></span>
             <div class="card-body">
               <a href="{% url 'city' post.city.pk %}" class="text-decoration-none text-dark"<h4 class="card-title text-body">{{ post.location }}</h4></a>
-              <p class="card-text text-muted lead">{{post.description|truncatechars:"150"}}</p>
-              <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary see-post"><i class="fas fa-eye text-white"></i><span> View</span></a>
+              <p class="card-text text-muted lead">{{post.description|truncatechars:"220"}} <a href="{% url 'post_detail' post.pk %}" class="text-dark">See more</a></p>
+              
             </div>
           </div>
         </div>

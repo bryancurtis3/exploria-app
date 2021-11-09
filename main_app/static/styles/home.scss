@@ -1,3 +1,8 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+// GALLERY carousel
 #carousel-holder {
   height: 50vh;
   overflow: hidden;
@@ -11,107 +16,119 @@
 }
 
 #gallery-button {
-    position: absolute;
-    // margin-top: 225px;
-    z-index: 2;
+  position: absolute;
+  // margin-top: 225px;
+  z-index: 2;
 }
 
 #gallery-image {
-    height: inherit;
-    width: 100vw;
-    object-fit: none;
-    object-position: center bottom;
-    }
+  height: inherit;
+  width: 100vw;
+  object-fit: none;
+  object-position: center bottom;
+}
+
+// ABOUT section
+#home-about-section {
+  font-family: Poppins;
+}
 
 #home-title {
-    margin: 1em auto;
-    text-align: center;
-    // width: 170px;
+  margin: 1em auto;
+  text-align: center;
+  // width: 170px;
 }
 
 #about-topics-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 0 24px 24px 24px;
-    gap: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0 24px 24px 24px;
+  gap: 24px;
 
-    h3 {
-        font-size:larger;
+  .paragraph {
+		padding: 30px 30px 20px 30px;
+		color: dimgray;
+		text-indent: 1em;
+		box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+		border-radius: 5px;
+		background-color: rgba(255, 255, 255, .4);
+		backdrop-filter: blur(7px);
+  }
 
-    }
+	h3 {
+		font-size: 24px;
+		color: var(--pink);
+		text-indent: 0;
+	}
 
-    a {
-        text-decoration: none;
-        // background-color: scale-color(, $lightness: -15%);
-        color: scale-color(#70D6FF, $lightness: -10%);
-        border-radius: 3px;
-        padding: 0 2px;
-    }
+	p {
+		background-color: rgba(255, 255, 255, 0.267);
+		border-radius: 30px;
+		padding: 20px 20px;
+		margin-top: 20px;
+	}
 
-    a:hover {
-        font-weight: 600;
-        padding: 0 0px 0 2px;
-        // box-shadow: 1px 1px 10px 1px scale-color(#70D6FF, $lightness: -10%);
-        transition-duration: .2s;
-        text-shadow:
-          0 0 3px scale-color(#70D6FF, $lightness: 10%),
-          0 0 6px scale-color(#70D6FF, $lightness: 10%);
-    }
+	a {
+			text-decoration: none;
+			// background-color: scale-color(, $lightness: -15%);
+			color: scale-color(#70D6FF, $lightness: -10%);
+			border-radius: 3px;
+			padding: 0 2px;
+	}
+
+	a:hover {
+			font-weight: 600;
+			padding: 0 0px 0 2px;
+			// box-shadow: 1px 1px 10px 1px scale-color(#70D6FF, $lightness: -10%);
+			transition-duration: .2s;
+			text-shadow:
+				0 0 3px scale-color(#70D6FF, $lightness: 10%),
+				0 0 6px scale-color(#70D6FF, $lightness: 10%);
+	}
 }
 
-
-
 .slide, .carousel-inner, .carousel-item {
-    height: inherit;
+  height: inherit;
 }
 
 .carousel-item {
-    img {
-        height: inherit;
-        object-fit: cover;
-    }
-}
-
-
-.paragraph {
-    padding: 10px;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, .4);
-    backdrop-filter: blur(7px);
+  img {
+		height: inherit;
+		object-fit: cover;
+  }
 }
 
 
 // Background animation - Bryan's Version
 .bg {
-    animation:slide 9s ease-in-out infinite alternate;
-    background-image: 
-      linear-gradient(-60deg, var(--neonyellow) 40%, var(--pink) 50%);
-    bottom:0;
-    left:-50%;
-    opacity:.5;
-    position:fixed;
-    right:-50%;
-    top:0;
-    z-index:-1;
+	animation:slide 9s ease-in-out infinite alternate;
+	background-image: 
+		linear-gradient(-60deg, var(--neonyellow) 40%, var(--pink) 50%);
+	bottom:0;
+	left:-50%;
+	opacity:.5;
+	position:fixed;
+	right:-50%;
+	top:0;
+	z-index:-1;
 }
 
 .bg2 {
-    animation-direction:alternate-reverse;
-    animation-duration:12s;
+	animation-direction:alternate-reverse;
+	animation-duration:12s;
 }
   
 .bg3 {
-    animation-duration:15s;
-    background-image: 
-      linear-gradient(-60deg, var(--mediumorange) 40%, var(--blue) 50%);
+	animation-duration:15s;
+	background-image: 
+		linear-gradient(-60deg, var(--mediumorange) 40%, var(--blue) 50%);
 }
 
 @keyframes slide {
-    0% {
-        transform:translateX(-25%);
-    }
-    100% {
-        transform:translateX(25%);
-    }
+	0% {
+			transform:translateX(-25%);
+	}
+	100% {
+			transform:translateX(25%);
+	}
 }
