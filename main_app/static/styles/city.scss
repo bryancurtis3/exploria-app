@@ -9,7 +9,7 @@
   width: 60vw;
 
   .title-card {
-    background-color: var(--neonyellow);
+    background-color: rgba(255, 112, 166, .7)
   }
 }
 
@@ -18,6 +18,7 @@
   grid-template-columns: 1fr 2fr;
   min-width: 570px;
   max-width: 600px;
+  padding: 10px;
 
   img {
     max-width: 350px;
@@ -28,10 +29,14 @@
 .post-border {
   margin: 0 auto;
   max-width: 600px;
+  min-width: 570px;
+  border-radius: 8px;
+  overflow: hidden;
 
   .card {
     max-width: 600px;
     min-width: 570px;
+    background-color: rgba(255, 255, 255, .7);
   }
 }
 
@@ -39,6 +44,7 @@
 .card-body {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  background-color: rgba(250, 250, 250, .7)
   // width: 300px;
 }
 
@@ -62,6 +68,7 @@
   grid-template-rows: 1fr;
   border-radius: 20px;
   align-items: center;
+  background-color: #ececec;
   
   a {
     text-decoration: none;
@@ -200,7 +207,7 @@
 .city-list-container{
   display: grid;
   grid-column: 1;
-  background-color: var(--pink);
+  background-color: rgba(255, 112, 166, .5);
   // margin-left: 10px;
   display: flex;
   flex-direction: column;
@@ -255,9 +262,9 @@
   grid-column: 2;
 }
 
-
+// Background animation
 .bg {
-  animation:slide 3s ease-in-out infinite alternate;
+  animation:slide 6s ease-in-out infinite alternate;
   background-image: 
     linear-gradient(-60deg, var(--lightorange) 50%, var(--blue) 50%);
   bottom:0;
@@ -271,11 +278,11 @@
 
 .bg2 {
   animation-direction:alternate-reverse;
-  animation-duration:4s;
+  animation-duration:8s;
 }
 
 .bg3 {
-  animation-duration:5s;
+  animation-duration:10s;
 }
 
 @keyframes slide {
@@ -286,6 +293,7 @@
     transform:translateX(25%);
   }
 }
+
 // CREATE POST modal
 form {
   display: flex;
