@@ -202,7 +202,7 @@ form {
 
 // animated background - Gail
   .bg {
-    animation:slide 8s ease-in-out infinite alternate;
+    animation:slide 12s ease-in-out infinite alternate;
     background-image: 
       linear-gradient(-60deg, var(--neonyellow) 50%, var(--pink) 50%);
     bottom:0;
@@ -216,11 +216,11 @@ form {
 
   .bg2 {
     animation-direction:alternate-reverse;
-    animation-duration:10s;
+    animation-duration:18s;
   }
   
   .bg3 {
-    animation-duration:15s;
+    animation-duration:20s;
   }
 
   @keyframes slide {
