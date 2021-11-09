@@ -19,7 +19,7 @@
     max-width: 600px;
     padding: 10px; }
     .city-data .top-section h1 {
-      grid-column: span 2;
+      grid-column: 1 / span 2;
       font-weight: 800;
       font-size: 52px;
       align-self: flex-start;
@@ -27,7 +27,8 @@
     .city-data .top-section img {
       max-width: 500px;
       margin-left: auto;
-      grid-column: span 2; }
+      grid-column: span 2;
+      align-self: center; }
     .city-data .top-section h2 {
       align-self: end;
       font-size: 42px; }

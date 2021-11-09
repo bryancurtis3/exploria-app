@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load sass_tags %}
+
+{% block styles %}<link rel="stylesheet" href="{% sass_src 'styles/about.scss' %}">{% endblock styles %}
+
+{% block scripts %}<script src="https://platform.linkedin.com/badges/js/profile.js" async  type="text/javascript" defer></script>{% endblock scripts %}
+
+{% block title%}
+about
+{% endblock %}
+
+<!-- LinkedIn Script -->
+
+{% block content %}
+
+<section class="about-main">
+    
+    <div class="top-text">
+        <h1>Meet The Team</h1>
+        {% comment %} <h2></h2> {% endcomment %}
+    </div>
+
+    <article>
+        {% comment %} <h2>Bryan Curtis</h2> {% endcomment %}
+        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="VERTICAL" data-vanity="bryancurtis3" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/bryancurtis3?trk=profile-badge"></a></div>
+    </article>
+
+
+    <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="VERTICAL" data-vanity="wu-kathy" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/wu-kathy/?trk=profile-badge"></a></div>
+
+    <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="VERTICAL" data-vanity="gail-tyler" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/gail-tyler?trk=profile-badge"></a></div>
+
+    <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="VERTICAL" data-vanity="harrisonelliot" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/harrisonelliot?trk=profile-badge"></a></div>
+
+</section>
+
+
+
+
+{% endblock content %}
+

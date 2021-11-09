@@ -1,0 +1,11 @@
+.about-main {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center; }
+  .about-main .top-text {
+    grid-column: span 2; }
+  .about-main .profile-badge {
+    height: 273px; }
+
+/*# sourceMappingURL=about.css.map */
