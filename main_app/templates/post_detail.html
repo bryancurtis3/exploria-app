@@ -34,7 +34,7 @@
     <p id="post-description">{{ post.description }}</p>
     {% if request.user == post.user %}
     <div class="edit-delete-buttons">
-      <a href="{% url 'post_edit' post.pk %}" class="edit-bt btn neon">
+      <a href="{% url 'post_edit' post.pk %}" class="edit-btn btn neon">
         <span class="icon">
           <i class="fas fa-edit"></i>
         </span>
