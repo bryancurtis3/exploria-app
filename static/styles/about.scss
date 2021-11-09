@@ -1,0 +1,14 @@
+.about-main {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    
+    .top-text {
+        grid-column: span 2;
+    }
+
+    .profile-badge {
+        height: 273px;
+    }
+}
