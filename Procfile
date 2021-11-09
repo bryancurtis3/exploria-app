@@ -1,0 +1,1 @@
+web: gunicorn exploria_project.wsgi
