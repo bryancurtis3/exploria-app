@@ -1,6 +1,6 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Mochiy+Pop+One&family=Rampart+One&family=Vast+Shadow&family=ZCOOL+XiaoWei&display=swap');
+
 
 :root{
   --blue: #70D6FF;
@@ -76,14 +76,12 @@ body {
     .up {
       position: relative;
       top: -10px;
-      font-family: 'Vast Shadow', cursive;
     }
 
     // Half the letters start down
     .dn {
       position: relative;
       bottom: -10px;
-      font-family: 'Vast Shadow', cursive;
     }
   }
 
