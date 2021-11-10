@@ -4,9 +4,14 @@
 {% block styles %}<link rel="stylesheet" href="{% sass_src 'styles/post_delete.scss' %}">{% endblock styles%}
 
 {% block content %}
+
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
 <section class="delete">
 {% if request.user == post.user %}
-    <h1 class="title">Are you sure you want to delete the post titled {{ post.title }}?</h1>
+    <h1 class="title">Are you sure you want to delete {{ post.title }}?</h1>
 
     <form method="post" name="form">
         {% csrf_token %}
