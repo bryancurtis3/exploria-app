@@ -5,12 +5,11 @@ from django.views import View
 
 from django.urls import reverse
 
-
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import DeleteView, UpdateView, FormView, CreateView
 from django.views.generic.detail import DetailView
 
-from main_app.models import Post, User, Profile
+from main_app.models import Post, User, Profile, Comment
 from main_app.models import City as CityModel
 
 from django.forms import ModelForm
@@ -44,10 +43,22 @@ class About(TemplateView):
     context["login_form"] = AuthenticationForm()
     return context
 
+class CommentCreateForm(ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['content']
+
 @method_decorator(login_required, name='dispatch')
 class PostDetail(DetailView):
   model = Post
   template_name = "post_detail.html"
+
+  def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    context["cities"] = CityModel.objects.order_by('name')
+    form = CommentCreateForm()
+    context["form"] = form
+    return context
 
 @method_decorator(login_required, name='dispatch')
 class PostDelete(DeleteView):
@@ -65,7 +76,6 @@ class PostEdit(UpdateView):
 
   def get_success_url(self):
     return reverse('post_detail', kwargs={'pk': self.object.pk})
-
 
 class Signup(TemplateView):
   template_name = "signup.html"
@@ -86,7 +96,6 @@ class Signup(TemplateView):
       else:
           context = {"form": form}
           return render(request, "registration/signup.html", context) # FIXME - if invalid form input, how to redirect back to modal form? Currently redirecting to unused signup page
-
 
 class ProfileUpdateForm(ModelForm):
     class Meta:
@@ -149,3 +158,20 @@ class PostCreate(View):
     
     Post.objects.create(title=title, img=img, description=description, location=location, city=city, user=request.user)
     return redirect("city", pk=pk) 
+
+@method_decorator(login_required, name='dispatch')
+class CommentCreate(View):
+  def post(self, request, pk):
+    content = request.POST.get("content")
+    post = Post.objects.get(pk=pk)
+    
+    Comment.objects.create(content=content, post=post, user=request.user)
+    return redirect("post_detail", pk=pk) 
+
+@method_decorator(login_required, name='dispatch')
+class CommentPostAssoc(View):
+  def get(self, request, pk, comment_pk):
+    assoc = request.GET.get("assoc")
+    if assoc == "remove":
+      Comment.objects.filter(id=comment_pk).delete()
+    return redirect('post_detail', pk)
