@@ -249,7 +249,8 @@ form {
     font-size: 18px;
     width: 100%;
     padding-top: .5px;
-    display: grid inline;
+    display: grid;
+    grid-template-columns: 1fr;
     justify-content: space-between;
 
     // .location {
@@ -257,8 +258,8 @@ form {
     //   font-weight: 600;
     // }
 
-    input {
-      width: 95%;
+    input, label {
+      width: 100%;
     }
   }
 }
@@ -336,4 +337,10 @@ strong {
   .dropdown {
     display: initial;
   }
+}
+
+.modal-dialog {
+  width: 80vw;
+  max-width: none;
+  margin: 1.75rem auto;
 }

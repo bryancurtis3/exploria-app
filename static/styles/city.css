@@ -259,23 +259,6 @@ form {
   font-size: 24px;
   font-weight: 500; }
 
-.modal-body {
-  padding: 16px 0 0 0; }
-  .modal-body p {
-    font-size: 18px;
-    width: 100%;
-    padding: 0 14px 0 0;
-    display: flex;
-    justify-content: space-between; }
-    .modal-body p input {
-      width: 70%;
-      border-radius: 3px;
-      padding: 0 5px; }
-    .modal-body p textarea {
-      width: 70%;
-      border-radius: 3px;
-      padding: 5px; }
-
 .modal-footer {
   width: 100%;
   padding: 16px;

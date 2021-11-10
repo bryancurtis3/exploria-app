@@ -184,10 +184,11 @@ form {
     font-size: 18px;
     width: 100%;
     padding-top: .5px;
-    display: grid inline;
+    display: grid;
+    grid-template-columns: 1fr;
     justify-content: space-between; }
-    .modal-body p input {
-      width: 95%; }
+    .modal-body p input, .modal-body p label {
+      width: 100%; }
 
 .modal-footer {
   width: 100%;
@@ -237,5 +238,10 @@ strong {
     display: none; }
   .dropdown {
     display: initial; } }
+
+.modal-dialog {
+  width: 80vw;
+  max-width: none;
+  margin: 1.75rem auto; }
 
 /*# sourceMappingURL=main.css.map */
