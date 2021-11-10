@@ -19,7 +19,7 @@
   .post-show-main #post-show-profile-pic {
     height: 60px;
     width: 60px;
-    clip-path: polygon(50% 10%, 0 90%, 100% 90%);
+    clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
     object-fit: cover;
     object-position: 50% 50%;
     border-radius: 15px; }
@@ -53,6 +53,8 @@
       .post-show-main .post-show-profile .post-show-user-text #city-link:hover {
         color: var(--lightorange);
         font-weight: 700; }
+  .post-show-main #post-description {
+    font-size: 18px; }
   .post-show-main .post-img-cont {
     width: inherit;
     max-width: 680px;
@@ -86,7 +88,9 @@
   text-shadow: 0 0 10px #fff, 0 0 20px #fff; }
 
 .comment-form-container {
-  margin-top: 40px; }
+  margin: 40px auto 0 auto;
+  width: 100%;
+  max-width: 680px; }
   .comment-form-container #comment-form {
     margin: 0 auto;
     padding: 50px;
@@ -94,7 +98,8 @@
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(7px);
-    width: 680px;
+    width: 100%;
+    max-width: 680px;
     height: 250px;
     display: flex;
     flex-direction: column;
@@ -107,7 +112,7 @@
     .comment-form-container #comment-form .comment-submit {
       align-self: flex-end; }
   .comment-form-container .tox.tox-tinymce {
-    width: 580px; }
+    width: 109%; }
 
 .gradient-border {
   --border-width: 3px;
@@ -116,7 +121,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 680px;
+  width: inherit;
+  max-width: inherit;
   border-radius: 7px;
   background: rgba(214, 214, 214, 0.84); }
   .gradient-border::after {
@@ -139,59 +145,88 @@
 
 .comment-card {
   margin: 40px auto;
-  padding: 20px 20px 10px 50px;
+  padding: 10px 20px;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(7px);
-  width: 680px;
+  width: 100%;
+  max-width: 680px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 100px; }
+  grid-template-rows: 1fr 50px; }
   .comment-card .comment-text {
     color: #474747;
-    padding: 10px 0 10px 20px;
+    padding: 10px 0;
     grid-column: 1 / span 2; }
-  .comment-card .post-user-text {
-    width: 250px;
-    max-height: 82px;
-    margin: 10px 0;
-    padding: 5px 0 5px 10px;
+    .comment-card .comment-text p {
+      font-size: 18px;
+      font-weight: 400; }
+      .comment-card .comment-text p strong {
+        font-weight: 700; }
+
+.post-user-text {
+  min-width: 220px;
+  width: 40%;
+  max-width: 250px;
+  height: 41px;
+  margin: 10px 0;
+  padding: 5px 5px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 30px 130px;
+  grid-template-rows: 1fr;
+  align-items: center;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.267);
+  border-radius: 5px; }
+  .post-user-text a {
+    text-decoration: none;
+    color: #474747;
+    font-size: 18px;
+    font-family: "Poppins"; }
+  .post-user-text a:hover {
+    color: var(--pink);
+    font-weight: 600; }
+  .post-user-text .location {
+    grid-column-start: 3;
     display: grid;
-    grid-template-columns: 70px 130px;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    align-items: center;
-    border-radius: 20px;
-    background-color: #ececec3d; }
-    .comment-card .post-user-text a {
-      text-decoration: none;
-      color: dimgray; }
-    .comment-card .post-user-text .location {
-      grid-column-start: 3;
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
-      font-style: italic;
-      color: #747474; }
-  .comment-card .edit-delete-buttons {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center; }
-  .comment-card .icon {
-    color: white;
-    font-size: 24px;
-    font-weight: 400; }
-  .comment-card .neon:hover {
-    color: #fff;
-    transition-duration: .5s;
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff; }
-  .comment-card #profile-pic {
-    height: 60px;
-    width: 60px;
-    clip-path: polygon(50% 14%, 9% 85%, 91% 85%);
-    object-fit: cover;
-    object-position: 50% 50%;
-    border-radius: 15px; }
+    font-style: italic;
+    color: #747474; }
+
+.edit-delete-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; }
+
+#comment-total {
+  justify-content: space-between;
+  align-items: center; }
+  #comment-total .comment-total {
+    margin: 4px 0 0 0;
+    background-color: rgba(255, 255, 255, 0.267);
+    border-radius: 5px;
+    font-family: "Poppins";
+    font-weight: 500; }
+
+.icon {
+  color: white;
+  font-size: 24px;
+  font-weight: 400; }
+
+.neon:hover {
+  color: #fff;
+  transition-duration: .5s;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff; }
+
+#profile-pic {
+  height: 30px;
+  width: 30px;
+  clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
+  object-fit: cover;
+  object-position: 50% 50%; }
 
 .bg {
   animation: slide 9s ease-in-out infinite alternate;

@@ -32,7 +32,7 @@
   margin: 0 30px 30px 30px;
   gap: 30px; }
   #about-topics-container .paragraph {
-    padding: 30px 30px 20px 30px;
+    padding: 7% 10% 15px 10%;
     color: dimgray;
     text-indent: 1em;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
@@ -42,12 +42,12 @@
   #about-topics-container h3 {
     font-size: 24px;
     color: var(--pink);
-    text-indent: 0; }
+    text-indent: 0;
+    margin-bottom: 15px; }
   #about-topics-container p {
     background-color: rgba(255, 255, 255, 0.267);
     border-radius: 5px;
-    padding: 20px 20px;
-    margin: 20px 10px; }
+    padding: 20px 20px; }
   #about-topics-container a {
     text-decoration: none;
     color: #4bcbff;
@@ -90,5 +90,9 @@
     transform: translateX(-25%); }
   100% {
     transform: translateX(25%); } }
+
+@media only screen and (max-width: 650px) {
+  #about-topics-container {
+    grid-template-columns: 1fr; } }
 
 /*# sourceMappingURL=home.css.map */
