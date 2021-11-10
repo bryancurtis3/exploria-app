@@ -17,12 +17,12 @@
     <h1 class="post-detail-title">{{ post.title }}</h1>
 
     <div class="post-show-profile">
-      <a id="post-show-profile-container" href="{% url 'profile' post.user.pk %}">
+      <a id="post-show-profile-container" href="{% url 'profile' post.user.profile.pk %}">
         <img id="post-show-profile-pic" src="{{ post.user.profile.image }}" alt="">
       </a>
 
       <div class="post-show-user-text">
-        <a href="{% url 'profile' post.user.pk %}">{{ post.user.username }}</a>
+        <a href="{% url 'profile' post.user.profile.pk %}">{{ post.user.username }}</a>
         <a id="city-link" href="{% url "city" post.city.pk %}">{{ post.user.profile.location }}</a>
       </div>
     </div>

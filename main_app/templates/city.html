@@ -40,7 +40,7 @@
     </div>
 
     <section class="col user-posts">
-      {% for post in posts reversed %}
+      {% for post in city.posts.all reversed %}
       <div class="post-border">
         <div class="card" id="post-cards">
           <div class="card-header title-card">
@@ -70,10 +70,10 @@
 
             <div class="post-text-content">
               <div class="post-user-text">
-                <a id="profile-link" href="{% url 'profile' post.user.pk %}">
+                <a id="profile-link" href="{% url 'profile' post.user.profile.pk %}">
                   <img id="profile-pic" src="{{ post.user.profile.image }}" alt="Picture of {{post.user.username}}">
                 </a>
-                <a id="profile-link" href="{% url 'profile' post.user.pk %}">
+                <a id="profile-link" href="{% url 'profile' post.user.profile.pk %}">
                   <span class="username">{{ post.user.username }}
                   </span>
                   <span class="location">{{ post.user.profile.location }}</span>
