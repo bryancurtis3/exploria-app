@@ -1,9 +1,9 @@
 .delete {
   height: calc(100vh - 80px - 54px);
-  padding: 40px;
-  background-color: var(--mediumorange); }
+  padding: 20px 40px 40px 40px; }
   .delete h1 {
-    padding-top: 0 !important; }
+    padding-top: 0 !important;
+    margin-bottom: 10px; }
 
 .title {
   width: 80%;
@@ -12,20 +12,21 @@
   text-align: center; }
 
 .buttons {
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  place-items: center; }
-  .buttons .btn-primary {
+  margin: 25px 0 0 0;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
+  .buttons .btn-secondary {
     opacity: .5;
     transition: all .2s ease-in-out; }
-  .buttons .btn-primary:hover {
+  .buttons .btn-secondary:hover {
     opacity: 1; }
 
 .post-image {
   display: flex;
   justify-content: center;
-  margin: 50px auto;
+  margin: 25px auto;
   width: 50vw;
   max-width: calc(80vh - 250px);
   min-width: 220px;
@@ -56,5 +57,34 @@
 
 .post-image:hover .delete-text {
   opacity: .7; }
+
+.bg {
+  animation: slide 9s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #d3522a, 40%, var(--neonyellow) 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: .5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1; }
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 12s; }
+
+.bg3 {
+  animation-duration: 15s;
+  background-image: linear-gradient(-60deg, var(--mediumorange) 40%, var(--pink) 50%); }
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%); }
+  100% {
+    transform: translateX(25%); } }
+
+@media only screen and (max-width: 420px) {
+  #about-topics-container {
+    grid-template-columns: 1fr; } }
 
 /*# sourceMappingURL=post_delete.css.map */

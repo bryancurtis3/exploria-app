@@ -106,7 +106,7 @@
   grid-template-columns: 1fr 2fr;
   gap: 10px;
   background-color: rgba(250, 250, 250, .7);
-  padding-bottom: 30px;
+  // padding-bottom: 30px;
 }
 
 // Profile section of post
@@ -134,11 +134,17 @@
     color: dimgray;
   }
 
+  span {
+    padding-left: 5px;
+  }
+
  .location {
     grid-column-start: 3;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    font-size: 15px;
+    padding-left: 7px;
   }
 }
 
@@ -151,6 +157,16 @@
   .card-text {
     font-size: 16px;
     grid-column-start: span 2;
+
+    a {
+      color: #585f66;
+      text-decoration: none;
+      padding-left: 10px;
+    }
+
+    a:hover {
+      font-weight: 500;
+    }
   }
 
 }
@@ -158,7 +174,7 @@
 #profile-pic {
   height: 60px;
   width: 60px;
-  clip-path: polygon(50% 14%, 9% 85%, 91% 85%);
+  clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
   object-fit: cover;
   object-position: 50% 50%;
   // This cuts off bottom corners atm
@@ -247,6 +263,7 @@
   h3 {
     align-self: center;
     margin: 0;
+    max-width: 90%;
   }
 
   img {
@@ -345,29 +362,29 @@ form {
   }
 }
 
-.modal-body {
-  padding: 16px 0 0 0;
+// .modal-body {
+//   padding: 16px 0 0 0;
 
-  p {
-    font-size: 18px;
-    width: 100%;
-    padding: 0 14px 0 0;
-    display: flex;
-    justify-content: space-between;
+//   p {
+//     font-size: 18px;
+//     width: 100%;
+//     padding: 0 14px 0 0;
+//     display: flex;
+//     justify-content: space-between;
 
-    input {
-      width: 70%;
-      border-radius: 3px;
-      padding: 0 5px;
-    }
+//     input {
+//       width: 70%;
+//       border-radius: 3px;
+//       padding: 0 5px;
+//     }
 
-    textarea {
-      width: 70%;
-      border-radius: 3px;
-      padding: 5px;
-    }
-  }
-}
+//     textarea {
+//       width: 70%;
+//       border-radius: 3px;
+//       padding: 5px;
+//     }
+//   }
+// }
 
 .modal-footer {
   width: 100%;
@@ -386,4 +403,20 @@ form {
 
 .addbutton-icons {
   place-items: center;
+}
+
+.comment-total {
+  margin: 4px 0 0 0;
+  background-color: rgba(255, 255, 255, 0.267);
+  border-radius: 5px;
+  font-family: "Poppins";
+  font-weight: 400;
+  color: #585f66;
+  text-decoration: none;
+  text-align: center;
+}
+
+.comment-total:hover {
+  color: inherit;
+  font-weight: 500;
 }
