@@ -325,6 +325,7 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 15px;
 
   label {
     margin: 10px;
@@ -348,19 +349,25 @@ form {
   p {
     font-size: 18px;
     width: 100%;
-    padding: 0 14px;
+    padding: 0 14px 0 0;
     display: flex;
     justify-content: space-between;
 
     input {
       width: 70%;
+      border-radius: 3px;
+    }
+
+    textarea {
+      width: 70%;
+      border-radius: 3px;
     }
   }
 }
 
 .modal-footer {
   width: 100%;
-  padding: 8px 16px;
+  padding: 16px;
   justify-content: space-around;
 }
 
