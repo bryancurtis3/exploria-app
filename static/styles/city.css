@@ -260,4 +260,7 @@ form {
 .post-submit:hover {
   background-color: #27c1ff; }
 
+.addbutton-icons {
+  place-items: center; }
+
 /*# sourceMappingURL=city.css.map */
