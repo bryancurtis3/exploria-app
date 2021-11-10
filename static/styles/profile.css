@@ -212,4 +212,11 @@ form {
   100% {
     transform: translateX(25%); } }
 
+.card-body p, .card-body a {
+  color: #6c757d !important;
+  font-size: 20px; }
+
+.card-body a:hover {
+  font-weight: 500; }
+
 /*# sourceMappingURL=profile.css.map */

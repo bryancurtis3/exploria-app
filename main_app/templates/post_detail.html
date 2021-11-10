@@ -31,7 +31,7 @@
       <img id="post-show-image" src="{{ post.img }}" alt="">
     </div>
 
-    <p id="post-description">{{ post.description }}</p>
+    <div id="post-description">{{ post.description | safe }}</div>
     {% if request.user == post.user %}
     <div class="edit-delete-buttons">
       <a href="{% url 'post_edit' post.pk %}" class="edit-btn btn neon">

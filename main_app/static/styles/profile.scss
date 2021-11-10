@@ -289,3 +289,15 @@ form {
       transform:translateX(25%);
     }
   }
+
+
+.card-body {
+  p, a{
+    color: #6c757d !important;
+    font-size: 20px;
+  }
+
+  a:hover {
+    font-weight: 500;
+  }
+}

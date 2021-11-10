@@ -60,7 +60,7 @@ class PostDelete(DeleteView):
 @method_decorator(login_required, name='dispatch')
 class PostEdit(UpdateView):
   model = Post
-  fields = ['img', 'description', 'location']
+  fields = ['title', 'img', 'description']
   template_name = "post_edit.html"
 
   def get_success_url(self):

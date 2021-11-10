@@ -48,6 +48,12 @@ form {
   form p {
     margin: 10px 40px;
     font-size: 20px; }
+    form p #id_title {
+      margin-left: 6px;
+      padding-left: 6px;
+      box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.5) inset;
+      -webkit-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.5) inset;
+      -moz-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.5) inset; }
     form p #id_img {
       margin-left: 10px;
       padding-left: 6px;
@@ -63,13 +69,6 @@ form {
       -webkit-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.5) inset;
       -moz-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.5) inset;
       padding: 4px 8px; }
-    form p #id_location {
-      margin-bottom: 0px;
-      margin-left: 10px;
-      padding-left: 6px;
-      box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.5) inset;
-      -webkit-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.5) inset;
-      -moz-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.5) inset; }
   form button {
     align-self: flex-end;
     padding: 15px;
