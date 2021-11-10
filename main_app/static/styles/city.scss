@@ -287,6 +287,27 @@
   grid-column: 2;
 }
 
+// Edit/Delete buttons
+.edit-delete-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon {
+  color: white;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+
+.neon:hover {
+  color: #fff;
+  transition-duration: .5s;
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px #fff;
+}
+
 // Background animation
 .bg {
   animation:slide 6s ease-in-out infinite alternate;
@@ -325,6 +346,7 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 15px;
 
   label {
     margin: 10px;
@@ -348,19 +370,27 @@ form {
   p {
     font-size: 18px;
     width: 100%;
-    padding: 0 14px;
+    padding: 0 14px 0 0;
     display: flex;
     justify-content: space-between;
 
     input {
       width: 70%;
+      border-radius: 3px;
+      padding: 0 5px;
+    }
+
+    textarea {
+      width: 70%;
+      border-radius: 3px;
+      padding: 5px;
     }
   }
 }
 
 .modal-footer {
   width: 100%;
-  padding: 8px 16px;
+  padding: 16px;
   justify-content: space-around;
 }
 

@@ -29,7 +29,7 @@
         </div>
       </section>
       <section class="col right-user-posts">
-      {% for post in posts%}
+      {% for post in profile.user.posts.all %}
       <div class="post-border">
         <div class="card" id="post-cards">
           <div class="card-header">
