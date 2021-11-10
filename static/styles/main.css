@@ -215,4 +215,27 @@ ul {
 strong {
   font-weight: 500; }
 
+.dropdown {
+  visibility: hidden; }
+  .dropdown .dropdown-menu {
+    right: 0;
+    left: auto;
+    background-color: var(--neonyellow); }
+    .dropdown .dropdown-menu .dropdown-item:hover {
+      background-color: var(--blue); }
+
+@media only screen and (max-width: 690px) and (max-width: 450px) {
+  .navbar-one #top-left-exploria {
+    font-size: 32px; }
+    .navbar-one #top-left-exploria .up {
+      top: -5px; }
+    .navbar-one #top-left-exploria .dn {
+      bottom: -5px; } }
+
+@media only screen and (max-width: 690px) {
+  .auth-session {
+    display: none; }
+  .dropdown {
+    visibility: visible; } }
+
 /*# sourceMappingURL=main.css.map */

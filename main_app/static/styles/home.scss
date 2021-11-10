@@ -132,3 +132,9 @@
 			transform:translateX(25%);
 	}
 }
+
+@media only screen and (max-width: 420px)  {
+	#about-topics-container {
+	  grid-template-columns: 1fr;
+	}
+  }

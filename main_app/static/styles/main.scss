@@ -295,3 +295,45 @@ ul {
 strong {
   font-weight: 500;
 }
+
+.dropdown {
+  visibility: hidden;
+
+  .dropdown-menu {
+    right: 0;
+    left: auto;
+    background-color: var(--neonyellow);
+
+    .dropdown-item:hover {
+      background-color: var(--blue);
+    }
+  }
+}
+
+@media only screen and (max-width: 690px)  {
+
+  @media only screen and (max-width: 450px)  {
+    .navbar-one {
+      #top-left-exploria {
+        font-size: 32px;
+    
+        .up {
+          top: -5px;
+        }
+    
+        .dn {
+          bottom: -5px;
+        }
+      }
+    }
+  }
+
+
+  .auth-session {
+    display: none;
+  }
+
+  .dropdown {
+    visibility: visible;
+  }
+}

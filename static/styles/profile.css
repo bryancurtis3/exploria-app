@@ -136,7 +136,7 @@ img {
   animation-delay: -0.3s; }
 
 #post-cards:hover:before, #post-cards:hover:after {
-  animation-duration: 0.6s; }
+  animation-duration: 3s; }
 
 .profile-image {
   height: 300px;
@@ -218,5 +218,9 @@ form {
 
 .card-body a:hover {
   font-weight: 500; }
+
+@media (max-width: 420px) {
+  .main-view {
+    display: grid; } }
 
 /*# sourceMappingURL=profile.css.map */
