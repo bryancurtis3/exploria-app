@@ -86,7 +86,12 @@
               </div>
               <div class="card-text text-muted lead">{{post.description|truncatechars:"165" | safe}} <a id="see-more" href="{% url 'post_detail' post.pk %}">See more</a></div>
             </div>
-            <a class="comment-total" href="{% url 'post_detail' post.pk %}">{{ post.comments.all.count }} comments</a>
+            {% if post.comments.all.count != 0 %}
+              {% if post.comments.all.count == 1 %}
+                <a class="comment-total" href="{% url 'post_detail' post.pk %}">{{ post.comments.all.count }} comment</a>
+              {% endif %}
+              <a class="comment-total" href="{% url 'post_detail' post.pk %}">{{ post.comments.all.count }} comments</a>
+            {% endif %}
           </div>
         </div>
       </div> 
