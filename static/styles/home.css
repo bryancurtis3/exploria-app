@@ -1,10 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 #carousel-holder {
-  height: 40vh;
+  height: 50vh;
   overflow: hidden;
   object-position: center; }
 
 #carouselExampleIndicators {
-  height: 300px;
+  height: inherit;
   overflow: clip;
   object-fit: center; }
 
@@ -18,8 +19,8 @@
   object-fit: none;
   object-position: center bottom; }
 
-body {
-  background-color: var(--mediumorange); }
+#home-about-section {
+  font-family: Poppins; }
 
 #home-title {
   margin: 1em auto;
@@ -28,20 +29,35 @@ body {
 #about-topics-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin: 0 24px 24px 24px;
-  gap: 24px; }
+  margin: 0 30px 30px 30px;
+  gap: 30px; }
+  #about-topics-container .paragraph {
+    padding: 30px 30px 20px 30px;
+    color: dimgray;
+    text-indent: 1em;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(7px); }
   #about-topics-container h3 {
-    font-size: larger; }
+    font-size: 24px;
+    color: var(--pink);
+    text-indent: 0; }
+  #about-topics-container p {
+    background-color: rgba(255, 255, 255, 0.267);
+    border-radius: 30px;
+    padding: 20px 20px;
+    margin-top: 20px; }
   #about-topics-container a {
     text-decoration: none;
-    background-color: #ff6f39;
-    color: #7edaff;
+    color: #4bcbff;
     border-radius: 3px;
     padding: 0 2px; }
   #about-topics-container a:hover {
     font-weight: 600;
     padding: 0 0px 0 2px;
-    box-shadow: 1px 1px 10px 1px #ff7c4b; }
+    transition-duration: .2s;
+    text-shadow: 0 0 3px #7edaff, 0 0 6px #7edaff; }
 
 .slide, .carousel-inner, .carousel-item {
   height: inherit; }
@@ -50,11 +66,29 @@ body {
   height: inherit;
   object-fit: cover; }
 
-.paragraph {
-  padding: 10px;
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px); }
+.bg {
+  animation: slide 9s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, var(--neonyellow) 40%, var(--pink) 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: .5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1; }
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 12s; }
+
+.bg3 {
+  animation-duration: 15s;
+  background-image: linear-gradient(-60deg, var(--mediumorange) 40%, var(--blue) 50%); }
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%); }
+  100% {
+    transform: translateX(25%); } }
 
 /*# sourceMappingURL=home.css.map */

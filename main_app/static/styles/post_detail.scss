@@ -1,7 +1,3 @@
-body {
-    // background-color: var(--blue);
-    background: url(https://images.unsplash.com/photo-1544306094-e2dcf9479da3) no-repeat;
-}
 
 .post-show-content {
     margin: 24px auto;
@@ -15,13 +11,13 @@ body {
     max-width: 680px;
     width: 100%;
     margin: 0 auto;
-    padding: 10px;
+    padding: 25px;
     
     // Optionally change this to just be on the description below
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, .2);
-    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, .3);
+    backdrop-filter: blur(7px);
 
     h1 {
         font-size: 48px;
@@ -139,3 +135,37 @@ body {
       0 0 10px #fff,
       0 0 20px #fff;
   }
+
+// Background animation - Bryan's Version
+.bg {
+    animation:slide 9s ease-in-out infinite alternate;
+    background-image: 
+      linear-gradient(-60deg, var(--neonyellow) 40%, var(--pink) 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+}
+
+.bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:12s;
+}
+  
+.bg3 {
+    animation-duration:15s;
+    background-image: 
+      linear-gradient(-60deg, var(--mediumorange) 40%, var(--blue) 50%);
+}
+
+@keyframes slide {
+    0% {
+        transform:translateX(-25%);
+    }
+    100% {
+        transform:translateX(25%);
+    }
+}

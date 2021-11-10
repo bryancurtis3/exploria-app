@@ -16,87 +16,101 @@
 // Holds all user information on left
 .left-user-info {
   border-width: 50px; 
+  padding-right: 20px; 
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
+  box-shadow: 1px 1px 1rem 0 rgba(0, 0, 0, .2); 
+  background-color: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(7px);
 
   // Box containing the profile
   .left-box {
-    background: radial-gradient(circle, rgba(247, 203, 92, 0.8) 0%, rgba(255, 230, 130, 0.8) 51%, rgba(255,183,112,0.8) 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0px 70px 40px 70px;
-    border-radius: 5px;
-    border: 10px ridge #ff972f2d;
-    box-shadow: 1px 1px 10px rgb(93, 92, 92);
-  }
-
-  // Info card text
-  .user-info-text {
-    padding: 20px 20px 10px 20px;
-    background-color: rgba(235, 233, 233, 0.445);
-    padding: 10px 20px;
+    padding: 0px 70px 40px 70px; 
     border-radius: 7px;
-    text-align: center;
-
-    .username {
-      color: black;
-      font-size: 32px;
-      font-weight: 600;
-      background-color: var(--neonyellow);
-      border-radius: 5px;
-
-    }
-    .location {
-      color:rgb(66, 66, 66);
-      font-size: 20px;
-      font-style: italic;
-      background-color: lighten(#E9FF70, 15%);
-      border-radius: 5px;
-    }
-    .joined {
-      color:rgb(109, 109, 109);
-      font-size: 18px;
-      text-align: left;
-      
-    } 
-    .since {
-      color:rgb(109, 109, 109);
-      font-size: 18px;
-      text-align: left;
-      
-    }   
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    background-color: rgba(246, 209, 64, 0.466);
+    backdrop-filter: blur(7px);
   }
-  img {
-    clip-path: polygon(50% 14%, 9% 85%, 91% 85%);
-  }
-  .edit-button {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
+}
+  // Info card text
+.user-info-text {
+  padding: 20px 20px 10px 20px;
+  background-color: rgba(235, 233, 233, 0.445);
+  padding: 10px 20px;
+  border-radius: 7px;
+  text-align: center;
 
-    span {
-      display: none; 
-    }
+  .username {
+    color: black;
+    font-size: 32px;
+    font-weight: 600;
+    background-color: var(--neonyellow);
+    border-radius: 5px;
+
   }
+  .location {
+    color:rgb(66, 66, 66);
+    font-size: 20px;
+    font-style: italic;
+    background-color: lighten(#E9FF70, 15%);
+    border-radius: 5px;
+  }
+  .joined {
+    color:rgb(109, 109, 109);
+    font-size: 18px;
+    text-align: left;
+    
+  } 
+  .since {
+    color:rgb(109, 109, 109);
+    font-size: 18px;
+    text-align: left;
+    
+  }   
+}
+
+img {
+  clip-path: polygon(50% 14%, 9% 85%, 91% 85%);
+}
+
+.edit-button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: white;
+
+  span {
+    display: none; 
+  }
+}
   .edit-button:hover {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
+    font-size: 24px;
+    color: #fff;
+    transition-duration: .5s;
+    text-shadow:
+      0 0 10px #fff,
+      0 0 20px #fff; 
 
     span {
       display: inline;
     }
   }
-}
+
 // Holds all current user's posts on right-side
 .right-user-posts {
-  margin-left: 20px;
-  padding: 40px 60px 10px 20px;
-  background-color: transparent;
+  padding: 40px 60px 10px 100px;
   overflow: auto;
   height: 100vh;
+  box-shadow: 1px 1px 1rem 0 rgba(0, 0, 0, .2); 
+  background-color: rgba(255, 255, 255, .3);
+  backdrop-filter: blur(7px);
 
   img {
     margin: 20px 10px 5px 15px;
@@ -115,19 +129,61 @@
     }
   }
 }
-// Post card container with border
-.post-border {
-  border: 8px groove #f64e8ebe;
-  border-radius: 5px;
-  box-shadow: 2px 2px 10px rgb(93, 92, 92);
-  width: 700px;
+// POST container with animated border
+#post-cards{
+	width: 660px; 
+  height: 410px;
+	position: relative;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.294);
+  background-color: rgba(245, 245, 245, 0.931);
+  margin-top: 40px;
+  margin-bottom: 20px;
+
+  a {
+    text-decoration: none;
+  }
 }
-// Holds each post information
-#post-cards {
-  border: 8px groove #32c1fa98;
-  border-radius: 0;
-  background-color: rgba(245, 245, 245, 0.84);
+#post-cards:after, #post-cards:before{
+	mix-blend-mode:color-burn;
+	filter:none;
+	z-index: -1;
+	content:'';
+	width:calc(100% + (50px * 2));
+	height:calc(100% + (50px * 2));
+	position: absolute;
+	display: block;
+	animation: border 30s ease-in-out infinite;
+	transform:translateX(-50px) translateY(-50px);
 }
+@keyframes border {
+  0%, 100% {
+    -webkit-clip-path: polygon(0 0, calc(100% - (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 100%, calc(0% + (33.3333333333px)) calc(100% - (33.3333333333px)));
+            clip-path: polygon(0 0, calc(100% - (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 100%, calc(0% + (33.3333333333px)) calc(100% - (33.3333333333px)));
+  }
+  50% {
+    -webkit-clip-path: polygon(calc(0% + (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 0, calc(100% - (33.3333333333px)) calc(100% - (33.3333333333px)), 0 100%);
+            clip-path: polygon(calc(0% + (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 0, calc(100% - (33.3333333333px)) calc(100% - (33.3333333333px)), 0 100%);
+  }
+}
+
+#post-cards:after{
+	animation-delay: -15s;
+	// background-color: #93e1d8;
+  background-color: var(--neonyellow);
+	clip-path: polygon(0 0, calc(100% - (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 100%, calc(0% + (33.3333333333px)) calc(100% - (33.3333333333px)));
+}
+#post-cards:before {
+	background-color: var(--blue);
+	  clip-path: polygon(calc(0% + (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 0, calc(100% - (33.3333333333px)) calc(100% - (33.3333333333px)), 0 100%);
+}
+
+#post-cards:hover:after{
+	animation-delay: -0.3s;
+}
+#post-cards:hover:before, #post-cards:hover:after {
+          animation-duration: 0.6s;
+}
+
 
 // Bryan's additions
 .profile-image {
@@ -193,7 +249,7 @@ form {
 
 .edit-submit {
   background-color: var(--blue);
-  transition: all .1s ease-in-out;
+  transition: all .7s ease-in-out;
 }
 
 .edit-submit:hover {
@@ -204,7 +260,7 @@ form {
   .bg {
     animation:slide 12s ease-in-out infinite alternate;
     background-image: 
-      linear-gradient(-60deg, var(--neonyellow) 40%, var(--pink) 50%);
+      linear-gradient(-60deg, var(--neonyellow) 40%, var(--lightpink) 50%);
     bottom:0;
     left:-50%;
     opacity:.5;
@@ -222,7 +278,7 @@ form {
   .bg3 {
     animation-duration:20s;
     background-image: 
-      linear-gradient(-60deg, var(--neonyellow) 40%, var(--pink) 50%);
+      linear-gradient(-60deg, #f8cb04 40%, var(--lightpink) 50%);
   }
 
   @keyframes slide {
@@ -233,3 +289,15 @@ form {
       transform:translateX(25%);
     }
   }
+
+
+.card-body {
+  p, a{
+    color: #6c757d !important;
+    font-size: 20px;
+  }
+
+  a:hover {
+    font-weight: 500;
+  }
+}

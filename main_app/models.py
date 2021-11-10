@@ -28,7 +28,6 @@ class Post(Model):
   img = CharField(max_length=250)
   description = TextField(max_length=4000)
   location = CharField(max_length=50, default="San Francisco")
-  # Possibly created_at, but client didn't ask
 
   user = ForeignKey(User, on_delete=models.CASCADE, related_name="posts")
   city = ForeignKey(City, on_delete=models.CASCADE, related_name="posts")

@@ -4,7 +4,8 @@
   --pink: #FF70A6;
   --mediumorange: #FF9770;
   --lightorange: #FFD670;
-  --neonyellow: #E9FF70; }
+  --neonyellow: #E9FF70;
+  --lightpink: #f87dac; }
 
 * {
   box-sizing: border-box; }
@@ -210,5 +211,8 @@ ul {
   padding: 0 1rem 0 2rem;
   font-size: 12px;
   line-height: 1.3; }
+
+strong {
+  font-weight: 500; }
 
 /*# sourceMappingURL=main.css.map */
