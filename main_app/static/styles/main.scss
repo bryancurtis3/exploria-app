@@ -297,7 +297,7 @@ strong {
 }
 
 .dropdown {
-  visibility: hidden;
+  display: none;
 
   .dropdown-menu {
     right: 0;
@@ -334,6 +334,6 @@ strong {
   }
 
   .dropdown {
-    visibility: visible;
+    display: initial;
   }
 }

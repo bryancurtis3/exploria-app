@@ -219,8 +219,4 @@ form {
 .card-body a:hover {
   font-weight: 500; }
 
-@media (max-width: 420px) {
-  .main-view {
-    display: grid; } }
-
 /*# sourceMappingURL=profile.css.map */

@@ -216,7 +216,7 @@ strong {
   font-weight: 500; }
 
 .dropdown {
-  visibility: hidden; }
+  display: none; }
   .dropdown .dropdown-menu {
     right: 0;
     left: auto;
@@ -236,6 +236,6 @@ strong {
   .auth-session {
     display: none; }
   .dropdown {
-    visibility: visible; } }
+    display: initial; } }
 
 /*# sourceMappingURL=main.css.map */
