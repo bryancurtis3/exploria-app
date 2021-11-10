@@ -39,7 +39,7 @@
             <span><img src="{{post.img}}" class="card-img-top" alt="Picture of {{post.title}}"></span>
             <div class="card-body">
               <a href="{% url 'city' post.city.pk %}" class="text-decoration-none text-dark"<h4 class="card-title text-body">{{ post.location }}</h4></a>
-              <p class="card-text text-muted lead">{{post.description|truncatechars:"220"}} <a href="{% url 'post_detail' post.pk %}" class="text-dark">See more</a></p>
+              <p class="card-text text-muted lead">{{post.description|truncatechars:"220" | safe}} <a href="{% url 'post_detail' post.pk %}" class="text-dark">See more</a></p>
               
             </div>
           </div>
