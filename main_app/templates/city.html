@@ -47,16 +47,19 @@
             <a href="{% url 'post_detail' post.pk %}" class="text-decoration-none text-dark"><p class="display-6">{{post.title|truncatechars:"32"}}</p></a>
             <div class="post-buttons">
               {% if request.user == post.user %}
-              <a href="{% url 'post_edit' post.pk %}" class="small-btn edit-bt btn btn-info">
-                <span class="icon text-white">
-                  <i class="fas fa-edit"></i>
-                </span>
-              </a>
-              <a href="{% url 'post_delete' post.pk %}" class="small-btn delete-btn btn btn-danger">
-                <span class="icon">
-                  <i class="fas fa-trash-alt"></i>
-                </span>
-              </a>
+                <div class="edit-delete-buttons">
+                  <a href="{% url 'post_edit' post.pk %}" class="edit-btn btn neon">
+                    <span class="icon">
+                      <i class="fas fa-edit" style="font-weight: 400;"></i>
+                    </span>
+                  </a>
+                  <a href="{% url 'post_delete' post.pk %}" class="delete-btn btn neon">
+                    <span class="icon">
+                      <i class="fas fa-trash-alt" style="font-weight: 400;"></i>
+                    </span>
+                  </a>
+                </div>
+
               {% endif %}
             </div>
           </div>
