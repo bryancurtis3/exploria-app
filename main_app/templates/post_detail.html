@@ -36,17 +36,20 @@
 
     <div id="post-description">{{ post.description | safe }}</div>
     {% if request.user == post.user %}
-    <div class="edit-delete-buttons">
-      <a href="{% url 'post_edit' post.pk %}" class="edit-btn btn neon">
-        <span class="icon">
-          <i class="fas fa-edit"></i>
-        </span>
-      </a>
-      <a href="{% url 'post_delete' post.pk %}" class="delete-btn btn neon">
-        <span class="icon">
-          <i class="fas fa-trash-alt"></i>
-        </span>
-      </a>
+    <div id="comment-total" class="edit-delete-buttons">
+      <p class="comment-total">{{ post.comments.all.count }} comments</p>
+      <div>
+        <a href="{% url 'post_edit' post.pk %}" class="edit-btn btn neon">
+          <span class="icon">
+            <i class="fas fa-edit"></i>
+          </span>
+        </a>
+        <a href="{% url 'post_delete' post.pk %}" class="delete-btn btn neon">
+          <span class="icon">
+            <i class="fas fa-trash-alt"></i>
+          </span>
+        </a>
+      </div>
     </div>
     {% endif %}
     {% comment %} <img src="https://www.happysocks.com/icons/jazzburger.svg" alt=""> {% endcomment %}
@@ -109,10 +112,8 @@
           </span>
         </a>
       </div>
-    {% endif %}
+      {% endif %}
     </div>
-      {% empty %}
-      <p class="display-6"> This post currently has no comments.</p>
     {% endfor %}
     </div>
       

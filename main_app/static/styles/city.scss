@@ -106,7 +106,7 @@
   grid-template-columns: 1fr 2fr;
   gap: 10px;
   background-color: rgba(250, 250, 250, .7);
-  padding-bottom: 30px;
+  // padding-bottom: 30px;
 }
 
 // Profile section of post
@@ -139,6 +139,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    font-size: 15px;
   }
 }
 
@@ -151,6 +152,15 @@
   .card-text {
     font-size: 16px;
     grid-column-start: span 2;
+
+    a {
+      color: #585f66;
+      text-decoration: none;
+    }
+
+    a:hover {
+      font-weight: 500;
+    }
   }
 
 }
@@ -386,4 +396,20 @@ form {
 
 .addbutton-icons {
   place-items: center;
+}
+
+.comment-total {
+  margin: 4px 0 0 0;
+  background-color: rgba(255, 255, 255, 0.267);
+  border-radius: 5px;
+  font-family: "Poppins";
+  font-weight: 400;
+  color: #585f66;
+  text-decoration: none;
+  text-align: center;
+}
+
+.comment-total:hover {
+  color: inherit;
+  font-weight: 500;
 }
