@@ -4,7 +4,7 @@ from django.db import models
 from django.db.models import Model
 
 from django.contrib.auth.models import User
-from django.db.models.fields import CharField, TextField
+from django.db.models.fields import CharField, DateTimeField, TextField
 from django.db.models.fields.related import ForeignKey
 
 # Create your models here.
@@ -34,3 +34,11 @@ class Post(Model):
 
   def __str__(self) -> str:
     return self.title
+
+class Comment(Model):
+  content = TextField(max_length=500)
+  created_at = DateTimeField(auto_now_add=True)
+  updated_at = DateTimeField(auto_now=True)
+
+  user = ForeignKey(User, on_delete=models.CASCADE, related_name="comments")
+  post = ForeignKey(Post, on_delete=models.CASCADE, related_name="comments") 

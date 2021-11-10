@@ -93,8 +93,8 @@
   display: grid;
   grid-template-columns: 70px 130px;
   grid-template-rows: 1fr;
-  border-radius: 20px;
   align-items: center;
+  border-radius: 20px;
   background-color: #ececec; }
   .post-user-text a {
     text-decoration: none;
@@ -217,7 +217,7 @@
 
 .bg {
   animation: slide 6s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, var(--lightorange) 50%, var(--blue) 50%);
+  background-image: linear-gradient(-60deg, var(--lightorange) 45%, var(--blue) 50%);
   bottom: 0;
   left: -50%;
   opacity: .5;
@@ -231,7 +231,8 @@
   animation-duration: 8s; }
 
 .bg3 {
-  animation-duration: 10s; }
+  animation-duration: 10s;
+  background-image: linear-gradient(-60deg, var(--lightorange) 45%, var(--blue) 50%); }
 
 @keyframes slide {
   0% {
