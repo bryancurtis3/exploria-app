@@ -1,8 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load sass_tags %}
 
 {% block title %} {{ city.name }} {% endblock %}
 {% block styles %}<link rel="stylesheet" href="{% sass_src 'styles/city.scss' %}">{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.tiny.cloud/1/6n1nw89o0wocwf6waqym8xaljqftp79t3trlqdzpxy1vqlds/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+{% endblock scripts %}
 
 {% block content %}
 
@@ -76,7 +81,7 @@
                   <span class="location">{{ post.user.profile.location }}</span>
                 </a>
               </div>
-              <p class="card-text text-muted lead">{{post.description|truncatechars:"140"}}</p>
+              <div class="card-text text-muted lead">{{post.description|truncatechars:"140" | safe}}</div>
             </div>
           </div>
         </div>
@@ -99,6 +104,26 @@
                 <form action="{% url 'post_create' city.pk %}" method="POST">
                   {% csrf_token %}
                   {{form.as_p}}
+
+                  <!-- Tiny Formatter Script -->
+                  <script>
+                    document.getElementById("id_description").required = false;
+                    tinymce.init({
+                      selector: 'textarea',
+                      height: 500,
+                      menubar: false,
+                      plugins: [
+                        'advlist autolink lists link image charmap print preview anchor',
+                        'searchreplace visualblocks code fullscreen',
+                        'insertdatetime media table paste code help wordcount'
+                      ],
+                      toolbar: 'undo redo | formatselect | ' +
+                      'bold italic backcolor | alignleft aligncenter ' +
+                      'alignright alignjustify | bullist numlist outdent indent | ' +
+                      'removeformat | help',
+                      content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                    });
+                  </script>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                     <input type="submit" class="btn btn-primary post-submit" value="Create Post" />
