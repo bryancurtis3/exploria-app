@@ -84,7 +84,7 @@
                   <span class="location">{{ post.user.profile.location }}</span>
                 </a>
               </div>
-              <div class="card-text text-muted lead">{{post.description|truncatechars:"140" | safe}}</div>
+              <div class="card-text text-muted lead">{{post.description|truncatechars:"140" | safe}} <a href="{% url 'post_detail' post.pk %}" class="text-dark">See more</a></div>
             </div>
           </div>
         </div>

@@ -8,7 +8,6 @@
 // Right 2/3 of screen
 .city-data {
   font-family: 'Poppins', sans-serif;
-  // width: 60vw;
   object-fit: contain;
   display: flex;
   flex-direction: column;
@@ -72,9 +71,6 @@
     display: flex;
     justify-content: space-between;
     gap: 10px;
-    // grid-template-columns: 1fr 140px;
-    // align-items: center;
-    // justify-content: space-between;
 
     .post-buttons {
       width: 92px;
@@ -105,13 +101,12 @@
   }
 }
 
-
 .card-body {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 10px;
-  background-color: rgba(250, 250, 250, .7)
-  // width: 300px;
+  background-color: rgba(250, 250, 250, .7);
+  padding-bottom: 30px;
 }
 
 // Profile section of post
@@ -124,16 +119,14 @@
 .post-user-text {
   width: 300px;
   max-height: 82px;
-  // max-width: 200px;
-  // min-width: none;
   margin: 10px 0;
   padding: 5px 0 5px 10px;
   
   display: grid;
   grid-template-columns: 70px 130px;
   grid-template-rows: 1fr;
-  border-radius: 20px;
   align-items: center;
+  border-radius: 20px;
   background-color: #ececec;
   
   a {
@@ -154,7 +147,6 @@
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: minmax(100px, 100px);
   align-content: center;
-  // justify-items: center;
 
   .card-text {
     font-size: 16px;
@@ -174,7 +166,6 @@
 }
 
 // Kathy's part of the button for adding posts
-
 .addbutton {
   font-size: 15px;
   padding: 10px;
@@ -203,8 +194,6 @@
   font-size: 28px;
   width: 70px;
   height: 70px;
-  
-  // clip-path: polygon(8% 0, 92% 0, 100% 50%, 92% 100%, 8% 100%, 0% 50%);
 }
 
 .new-post:hover {
@@ -218,35 +207,26 @@
   font-weight: 500;
 }
 
-
-
 // Elliot's code
 
 .city-list{
   display: inline-grid;
   grid-template-columns: 6fr, 4fr;
-  // margin-top: 6px;
-  // gap: 6px;
 }
 
 .city-list-container{
   display: grid;
   grid-column: 1;
   background-color: rgba(255, 112, 166, .5);
-  // margin-left: 10px;
   display: flex;
   flex-direction: column;
   padding: 10px;
-  
-
 }
 
 .city-heading {
   background-color: var(--blue);
   padding: 15px;
   border-radius: 4px;
-  // margin-left: 10px;
-  
 }
 
 .city-name-container {
@@ -257,7 +237,6 @@
   width: 100%;
   margin: 10px 15px;
   background-color: var(--lightorange);
-  // border: 1px solid black;
   border-radius: 4px;
   place-items: center;
   text-decoration: none;
@@ -312,7 +291,7 @@
 .bg {
   animation:slide 6s ease-in-out infinite alternate;
   background-image: 
-    linear-gradient(-60deg, var(--lightorange) 50%, var(--blue) 50%);
+    linear-gradient(-60deg, var(--lightorange) 45%, var(--blue) 50%);
   bottom:0;
   left:-50%;
   opacity:.5;
@@ -329,6 +308,8 @@
 
 .bg3 {
   animation-duration:10s;
+  background-image: 
+    linear-gradient(-60deg, var(--lightorange) 45%, var(--blue) 50%);
 }
 
 @keyframes slide {
