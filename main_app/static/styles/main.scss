@@ -243,7 +243,8 @@ form {
 }
 
 .modal-body {
-  padding: 16px 50px 0 50px;
+  // height was 16px
+  padding: 0px 50px 0 50px;
 
   p {
     font-size: 18px;
@@ -260,6 +261,7 @@ form {
 
     input, label {
       width: 100%;
+      margin-left: 0;
     }
   }
 }

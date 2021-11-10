@@ -91,9 +91,6 @@
     <div class="all-comments">
     {% for comment in post.comments.all reversed %}
     <div class="comment-card">
-      <div class="comment-text">
-        <h4>{{ comment.content|safe }}</h4>
-      </div>
       <div class="post-user-text">
         <a id="profile-link" href="{% url 'profile' post.user.profile.pk %}">
           <img id="profile-pic" src="{{ post.user.profile.image }}" alt="Picture of {{post.user.username}}">
@@ -101,7 +98,6 @@
         <a id="profile-link" href="{% url 'profile' post.user.profile.pk %}">
           <span class="username">{{ post.user.username }}
           </span>
-          <span class="location">{{ post.user.profile.location }}</span>
         </a>
       </div>
       {% if request.user == comment.user %}
@@ -113,6 +109,9 @@
         </a>
       </div>
       {% endif %}
+      <div class="comment-text">
+        <h4>{{ comment.content|safe }}</h4>
+      </div>
     </div>
     {% endfor %}
     </div>

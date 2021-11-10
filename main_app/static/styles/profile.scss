@@ -51,8 +51,8 @@
     font-weight: 600;
     background-color: var(--neonyellow);
     border-radius: 5px;
-
   }
+
   .location {
     color:rgb(66, 66, 66);
     font-size: 20px;
@@ -60,12 +60,13 @@
     background-color: lighten(#E9FF70, 15%);
     border-radius: 5px;
   }
+
   .joined {
     color:rgb(109, 109, 109);
     font-size: 18px;
     text-align: left;
-    
   } 
+
   .since {
     color:rgb(109, 109, 109);
     font-size: 18px;
@@ -75,7 +76,8 @@
 }
 
 img {
-  clip-path: polygon(50% 14%, 9% 85%, 91% 85%);
+  // clip-path: polygon(50% 14%, 9% 85%, 91% 85%);
+  clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
 }
 
 .edit-button {
@@ -189,6 +191,7 @@ img {
 .profile-image {
   height: 300px;
   aspect-ratio: 1;
+  margin: 40px 0;
 
   img {
     height: inherit;
