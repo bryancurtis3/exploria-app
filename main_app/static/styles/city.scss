@@ -287,6 +287,27 @@
   grid-column: 2;
 }
 
+// Edit/Delete buttons
+.edit-delete-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon {
+  color: white;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+
+.neon:hover {
+  color: #fff;
+  transition-duration: .5s;
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px #fff;
+}
+
 // Background animation
 .bg {
   animation:slide 6s ease-in-out infinite alternate;
