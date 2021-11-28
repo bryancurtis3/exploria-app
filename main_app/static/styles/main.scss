@@ -11,6 +11,12 @@
   --lightpink: #f87dac;
 }
 
+// example: 
+// $blue: hex;
+  
+//$background-darken: darken($blue, 5%);
+// this makes it easy to swap colors and it
+// will automatically take effect
 // Resets browser CSS 
 * {
   box-sizing: border-box;
